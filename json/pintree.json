@@ -58,6 +58,13 @@
               },
               {
                 "type": "link",
+                "addDate": 1727423535491,
+                "title": "炸了么",
+                "icon": "https://logo.clearbit.com/zhale.me",
+                "url": "https://zhale.me/"
+              },
+              {
+                "type": "link",
                 "addDate": 1704037396687,
                 "title": "ITDOG",
                 "icon": "https://logo.clearbit.com/www.itdog.cn",
@@ -2897,6 +2904,13 @@
                 "title": "庭说",
                 "icon": "https://logo.clearbit.com/tingtalk.me",
                 "url": "https://tingtalk.me/"
+              },
+              {
+                "type": "link",
+                "addDate": 1727425389271,
+                "title": "宝塔迷",
+                "icon": "https://logo.clearbit.com/www.baota.me",
+                "url": "https://www.baota.me/"
               },
               {
                 "type": "link",
