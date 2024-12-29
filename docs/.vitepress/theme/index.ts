@@ -1,6 +1,7 @@
 /* .vitepress/theme/index.ts */
 import DefaultTheme from 'vitepress/theme'
 import MNavLinks from './components/MNavLinks.vue'
+import HomeUnderline from "./components/HomeUnderline.vue"
 import giscusTalk from 'vitepress-plugin-comment-with-giscus';
 import './style/index.css'
 import 'virtual:group-icons.css' //代码组样式
@@ -27,6 +28,7 @@ export default {
   enhanceApp({ app }) {
     // 注册组件
     app.component('MNavLinks', MNavLinks)
+    app.component('HomeUnderline', HomeUnderline)
   },
 
   setup() {

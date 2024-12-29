@@ -7,10 +7,6 @@ export const nav: DefaultTheme.Config['nav'] = [
   { text: '导航', link: '/nav/' },
 
   {
-    text: '思源', link: '/思源/第一年上学期/2024年12月31号/00.数据库原理及应用'
-  },
-
-  {
     text: '学习笔记',
     items: [
       { text: 'Git', link: '/Notes/Git/00.Git-学习笔记' },
@@ -20,6 +16,7 @@ export const nav: DefaultTheme.Config['nav'] = [
       { text: 'Markdown', link: '/Notes/Markdown/00.Markdown-入门教程及书写风格' },
       { text: 'Docker', link: '/Notes/Docker/00.Docker-管理工具-Portainer' },
       { text: '备忘录', link: '/Notes/Memo/00.英语语法' },
+      { text: '思源', link: '/思源/第一年上学期/2024年12月31号/00.数据库原理及应用' },
     ]
   },
 

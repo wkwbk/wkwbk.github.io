@@ -9,7 +9,7 @@ footer: false
 
 hero: 
   name: LI SIR
-  text: 个人博客
+  text: 我的个人博客
   tagline: 你的时间花在哪里，你的收获就在哪里
   image:
     src: /logo.png
@@ -33,6 +33,7 @@ features:
     title: 综合运用
     details: 整合各个组件，灵活运用，创造价值
 ---
+<HomeUnderline />
 
 <script setup>
 import MFriends from './home/MFriends.vue'
