@@ -113,7 +113,7 @@ export default defineConfig({
         resolvePath: '/思源/',
         useTitleFromFileHeading: true, // 从 h1 标签中获取菜单标题
         collapsed: false, // 折叠组关闭
-        collapseDepth: 2, // 折叠组 2 级菜单
+        collapseDepth: 3, // 折叠组 2 级菜单
         useFolderTitleFromIndexFile: true, // 使用当前文件夹的 index.md 文件中的信息来获取菜单名称
         includeFolderIndexFile: false,  // 关闭在侧边栏菜单中包含文件夹路径 index.md 文件
         sortMenusByName: true, // 按名称对菜单项中的项目进行排序
