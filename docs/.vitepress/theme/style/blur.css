@@ -5,13 +5,13 @@
     /* 首页下滑后导航透明 */
     .VPNavBar:not(.has-sidebar):not(.home.top) {
         background-color: rgba(255, 255, 255, 0);
-        backdrop-filter: blur(10px);
+        backdrop-filter: blur(12px);
     }
 
     /* 搜索框透明 */
     .DocSearch-Button {
         background-color: rgba(255, 255, 255, 0);
-        backdrop-filter: blur(10px);
+        backdrop-filter: blur(12px);
     }
 
     /* Feature透明 */
@@ -24,7 +24,7 @@
     /* 文档页侧边栏顶部透明 */
     .curtain {
         background-color: rgba(255, 255, 255, 0);
-        backdrop-filter: blur(10px);
+        backdrop-filter: blur(12px);
     }
 
     @media (min-width: 960px) {
@@ -32,14 +32,14 @@
         /* 文档页导航中间透明 */
         .VPNavBar:not(.home.top) .content-body {
             background-color: rgba(255, 255, 255, 0);
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(12px);
         }
     }
 
     /* 移动端大纲栏透明 */
     .VPLocalNav {
         background-color: rgba(255, 255, 255, 0);
-        backdrop-filter: blur(10px);
+        backdrop-filter: blur(12px);
     }
 
 }
