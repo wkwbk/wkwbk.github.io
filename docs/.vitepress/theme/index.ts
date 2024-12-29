@@ -1,5 +1,6 @@
 /* .vitepress/theme/index.ts */
 import DefaultTheme from 'vitepress/theme'
+import MLayout from './components/MLayout.vue'
 import MNavLinks from './components/MNavLinks.vue'
 import HomeUnderline from "./components/HomeUnderline.vue"
 import giscusTalk from 'vitepress-plugin-comment-with-giscus';
@@ -22,7 +23,7 @@ export default {
       props.class = frontmatter.value.layoutClass
     }
 
-    return h(DefaultTheme.Layout, props)
+    return h(MLayout, props)
   },
 
   enhanceApp({ app }) {
