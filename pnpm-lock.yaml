@@ -14,6 +14,9 @@ importers:
       markdown-it-mathjax3:
         specifier: ^4.3.2
         version: 4.3.2
+      medium-zoom:
+        specifier: ^1.1.0
+        version: 1.1.0
       vitepress:
         specifier: ^1.5.0
         version: 1.5.0(@algolia/client-search@5.17.1)(markdown-it-mathjax3@4.3.2)(postcss@8.4.49)(search-insights@2.17.3)
@@ -887,6 +890,9 @@ packages:
 
   mdurl@2.0.0:
     resolution: {integrity: sha512-Lf+9+2r+Tdp5wXDXC4PcIBjTDtq4UKjCPMQhKIuzpJNW0b96kVqSwW0bT7FhRSfmAiFYgP+SCRvdrDozfh0U5w==}
+
+  medium-zoom@1.1.0:
+    resolution: {integrity: sha512-ewyDsp7k4InCUp3jRmwHBRFGyjBimKps/AJLjRSox+2q/2H4p/PNpQf+pwONWlJiOudkBXtbdmVbFjqyybfTmQ==}
 
   mensch@0.3.4:
     resolution: {integrity: sha512-IAeFvcOnV9V0Yk+bFhYR07O3yNina9ANIN5MoXBKYJ/RLYPurd2d0yw14MDhpr9/momp0WofT1bPUh3hkzdi/g==}
@@ -2124,6 +2130,8 @@ snapshots:
       vfile: 6.0.3
 
   mdurl@2.0.0: {}
+
+  medium-zoom@1.1.0: {}
 
   mensch@0.3.4: {}
 

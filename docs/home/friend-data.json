@@ -27,12 +27,24 @@
     "title": "Ordis",
     "desc": "船到桥头自然直，柳暗花明又一村",
     "link": "https://imbhj.com",
-    "icon": "https://imbhj.com/img/avatar1.png"
+    "icon": "https://www.imbhj.com/static/img/logo-bailuobo.jpg"
   },
   {
     "title": "小嘉的部落格",
     "desc": "一个爱折腾的Java开发工程师",
     "link": "https://blog.imzjw.cn",
     "icon": "https://npm.elemecdn.com/nanshen/avatar.jpg"
+  },
+  {
+    "title": "茂茂物语",
+    "desc": "茂茂的成长之路，包含前端常用知识、源码阅读笔记、各种奇淫技巧、日常提效工具等",
+    "link": "https://notes.fe-mm.com",
+    "icon": "https://notes.fe-mm.com/logo.png"
+  },
+  {
+    "title": "VitePress",
+    "desc": "VitePress 快速上手中文教程，如果你也想搭建它，那跟我一起做吧",
+    "link": "https://vitepress.yiov.top",
+    "icon": "https://vitepress.yiov.top/logo.png"
   }
 ]

@@ -11,7 +11,6 @@
   --vp-c-brand-2: #30a46c;
   --vp-c-brand-3: #298459;
 }
-/* 以前的vp-c-brand已弃用 */
 
 :root {
   /* hero标题渐变色 */
@@ -23,19 +22,6 @@
   --vp-home-hero-image-filter: blur(40px);
 }
 
-/* 也可自行单独修改brand按钮 */
-/* :root {
-  --vp-button-brand-border: #F6CEEC;
-  --vp-button-brand-text: #F6CEEC;
-  --vp-button-brand-bg: #D939CD;
-
-  --vp-button-brand-hover-border: #F6CEEC;
-  --vp-button-brand-hover-text: #fff;
-  --vp-button-brand-hover-bg: #D939CD;
-
-  --vp-button-brand-active-border: #F6CEEC;
-} */
-
 h1 {
   background: -webkit-linear-gradient(10deg, #bd34fe 5%, #e43498 15%);
   background-clip: text;
@@ -45,4 +31,12 @@ h1 {
 
 .vp-doc a {
     text-decoration: none;
+}
+
+.medium-zoom-overlay {
+  z-index: 30;
+}
+
+.medium-zoom-image {
+  z-index: 999 !important;
 }
