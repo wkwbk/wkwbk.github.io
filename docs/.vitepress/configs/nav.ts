@@ -16,7 +16,7 @@ export const nav: DefaultTheme.Config['nav'] = [
       { text: 'Markdown', link: '/Notes/Markdown/00.Markdown-入门教程及书写风格' },
       { text: 'Docker', link: '/Notes/Docker/00.Docker-管理工具-Portainer' },
       { text: '备忘录', link: '/Notes/Memo/00.英语语法' },
-      { text: '思源', link: '/思源/第一年上学期/2025年01月02号/00.嵌入式' },
+      { text: '思源', link: '/思源/第一年上学期/2025年01月03号/01.离散数学' },
     ]
   },
 
