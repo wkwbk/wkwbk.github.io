@@ -4,9 +4,6 @@ layout: home
 title: LI SIR
 titleTemplate: 个人博客
 
-# 关闭页脚
-footer: false
-
 hero: 
   name: LI SIR
   text: 我的个人博客
@@ -72,3 +69,7 @@ import MFriends from './home/MFriends.vue'
 ```
 
 :::
+
+## 🎧 [**Spotify 正在播放**](https://open.spotify.com/user/31s4ftvnfnus65uynvxmxu7rkfom)
+
+[![spotify-github-profile](https://spotify-github-profile.kittinanx.com/api/view?uid=31s4ftvnfnus65uynvxmxu7rkfom&cover_image=true&theme=default&show_offline=false&background_color=121212&interchange=true&bar_color_cover=true)](https://spotify-github-profile.kittinanx.com/api/view?uid=31s4ftvnfnus65uynvxmxu7rkfom&redirect=true)
