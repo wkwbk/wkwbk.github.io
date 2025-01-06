@@ -40,10 +40,10 @@ export default {
 
     // giscus配置
     giscusTalk({
-      repo: 'wkwbk/wkwbk.github.io', //仓库
-      repoId: 'R_kgDONd7uZQ', //仓库ID
+      repo: 'wkwbk/wkwbk.github.io', // 仓库
+      repoId: 'R_kgDONmmefA', // 仓库ID
       category: 'Announcements', // 讨论分类
-      categoryId: 'DIC_kwDONd7uZc4ClPm1', //讨论分类ID
+      categoryId: 'DIC_kwDONmmefM4ClyiP', // 讨论分类ID
       mapping: 'pathname',
       inputPosition: 'bottom',
       lang: 'zh-CN',
