@@ -42,17 +42,21 @@ import MFriends from './home/MFriends.vue'
 
 ::: details 申请友链
 
-**友链要求**:
+### 申请前请先添加本站
+
+> 申请前请先添加本站！！！
+
+### 友链要求
 
 - 网站应保持清洁，避免过多广告内容
 - 网站需要有良好的稳定性和可靠性
 
-**申请方式**:
+### 申请方式
 
-1. 在本页面留言
-2. 直接访问 [GitHub 友链申请页面](https://github.com/wkwbk/wkwbk.github.io/issues/1) 提交您的申请
+- 在本站留言或者访问 [GitHub 友链申请页面](https://github.com/wkwbk/wkwbk.github.io/issues/1) 提交您的申请
+- 申请格式同本站信息（二选一即可）
 
-**本站信息**：
+### 本站信息
 
 - 网站名称：**LI SIR**
 - 网站描述：**你的时间花在哪里，你的收获就在哪里**
