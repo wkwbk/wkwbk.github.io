@@ -10,7 +10,7 @@ export const nav: DefaultTheme.Config['nav'] = [
     text: '学习笔记',
     items: [
       { text: 'Git', link: '/Notes/Git/00.Git-学习笔记' },
-      { text: 'Java', link: '/Notes/Java/00.Java-类的五大成员' },
+      { text: 'Java', link: '/Notes/Java/基础知识/00.Java-环境变量配置' },
       { text: 'Linux', link: '/Notes/Linux/00.Linux-学习笔记' },
       { text: 'Hadoop', link: '/Notes/Hadoop/00.虚拟机中搭建-Hadoop-集群' },
       { text: 'Markdown', link: '/Notes/Markdown/00.Markdown-入门教程及书写风格' },
