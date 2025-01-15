@@ -3,6 +3,7 @@ import DefaultTheme from 'vitepress/theme'
 import MLayout from './components/MLayout.vue'
 import MNavLinks from './components/MNavLinks.vue'
 import HomeUnderline from "./components/HomeUnderline.vue"
+import ArticleMetadata from "./components/ArticleMetadata.vue"
 import giscusTalk from 'vitepress-plugin-comment-with-giscus';
 import './style/index.css'
 import 'virtual:group-icons.css' //代码组样式
@@ -31,6 +32,7 @@ export default {
     // 注册组件
     app.component('MNavLinks', MNavLinks)
     app.component('HomeUnderline', HomeUnderline)
+    app.component('ArticleMetadata', ArticleMetadata)
   },
 
   setup() {

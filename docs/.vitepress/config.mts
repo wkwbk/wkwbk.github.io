@@ -30,7 +30,13 @@ export default defineConfig({
     },
     config(md) {
       md.use(groupIconMdPlugin) //代码组图标
-    },
+      // 组件插入 h1 标题下
+      md.renderer.rules.heading_close = (tokens, idx, options, env, slf) => {
+        let htmlResult = slf.renderToken(tokens, idx, options);
+        if (tokens[idx].tag === 'h1') htmlResult += `<ArticleMetadata />`;
+        return htmlResult;
+      }
+    }
   },
 
   vite: {
