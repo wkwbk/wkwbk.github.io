@@ -3,7 +3,6 @@ import { useData } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import { nextTick, provide } from 'vue'
 
-const { Layout } = DefaultTheme
 const { isDark } = useData()
 
 const enableTransitions = () =>
@@ -20,11 +19,10 @@ provide('toggle-appearance', async ({ clientX: x, clientY: y }: MouseEvent) => {
     `circle(0px at ${x}px ${y}px)`,
     `circle(${Math.hypot(
       Math.max(x, innerWidth - x),
-      Math.max(y, innerHeight - y),
-    )}px at ${x}px ${y}px)`,
+      Math.max(y, innerHeight - y)
+    )}px at ${x}px ${y}px)`
   ]
 
-  // @ts-ignore
   await document.startViewTransition(async () => {
     isDark.value = !isDark.value
     await nextTick()
@@ -35,12 +33,21 @@ provide('toggle-appearance', async ({ clientX: x, clientY: y }: MouseEvent) => {
     {
       duration: 300,
       easing: 'ease-in',
-      pseudoElement: `::view-transition-${isDark.value ? 'old' : 'new'}(root)`,
-    },
+      pseudoElement: `::view-transition-${isDark.value ? 'old' : 'new'}(root)`
+    }
   )
 })
 </script>
 
 <template>
-  <Layout v-bind="$attrs" />
+  <DefaultTheme.Layout>
+    <!-- 这里可以插入其他插槽组件 -->
+  </DefaultTheme.Layout>
 </template>
+
+<style>
+/* 修正因视图过渡导致的按钮图标偏移 */
+.check .icon {
+  top: -2px;
+}
+</style>
