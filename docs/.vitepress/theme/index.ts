@@ -1,6 +1,6 @@
 /* .vitepress/theme/index.ts */
 import DefaultTheme from 'vitepress/theme'
-import MLayout from './components/MLayout.vue'
+import MyLayout from './components/MyLayout.vue'
 import confetti from "./components/confetti.vue"
 import MNavLinks from './components/MNavLinks.vue'
 import HomeUnderline from "./components/HomeUnderline.vue"
@@ -16,17 +16,8 @@ import { onMounted, watch, nextTick, h } from 'vue';
 export default {
   extends: DefaultTheme,
 
-  Layout: () => {
-    const props: Record<string, any> = {}
-    // 获取 frontmatter
-    const { frontmatter } = useData()
-
-    /* 添加自定义 class */
-    if (frontmatter.value?.layoutClass) {
-      props.class = frontmatter.value.layoutClass
-    }
-
-    return h(MLayout, props)
+  Layout() {
+    return h(MyLayout)
   },
 
   enhanceApp({ app }) {
