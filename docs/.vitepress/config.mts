@@ -44,6 +44,19 @@ export default defineConfig({
       groupIconVitePlugin(), //代码组图标
       RssPlugin(RSS)
     ],
+    optimizeDeps: {
+      exclude: [
+        '@nolebase/vitepress-plugin-enhanced-readabilities/client',
+        'vitepress',
+        '@nolebase/ui',
+      ],
+    },
+    ssr: {
+      noExternal: [
+        '@nolebase/vitepress-plugin-enhanced-readabilities',
+        '@nolebase/ui'
+      ],
+    },
   },
 
   // Fav 图标
