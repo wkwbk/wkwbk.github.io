@@ -30,6 +30,7 @@ features:
     title: 综合运用
     details: 整合各个组件，灵活运用，创造价值
 ---
+<confetti />
 <HomeUnderline />
 
 <script setup>

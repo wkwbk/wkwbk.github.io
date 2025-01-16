@@ -1,6 +1,7 @@
 /* .vitepress/theme/index.ts */
 import DefaultTheme from 'vitepress/theme'
 import MLayout from './components/MLayout.vue'
+import confetti from "./components/confetti.vue"
 import MNavLinks from './components/MNavLinks.vue'
 import HomeUnderline from "./components/HomeUnderline.vue"
 import ArticleMetadata from "./components/ArticleMetadata.vue"
@@ -30,6 +31,7 @@ export default {
 
   enhanceApp({ app }) {
     // 注册组件
+    app.component('confetti', confetti)
     app.component('MNavLinks', MNavLinks)
     app.component('HomeUnderline', HomeUnderline)
     app.component('ArticleMetadata', ArticleMetadata)
