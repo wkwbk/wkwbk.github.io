@@ -8,6 +8,10 @@ import ArticleMetadata from "./components/ArticleMetadata.vue"
 import giscusTalk from 'vitepress-plugin-comment-with-giscus';
 import './style/index.css'
 import 'virtual:group-icons.css' //代码组样式
+import { NolebaseEnhancedReadabilitiesMenu, NolebaseEnhancedReadabilitiesScreenMenu } from "@nolebase/vitepress-plugin-enhanced-readabilities/client";
+import "@nolebase/vitepress-plugin-enhanced-readabilities/client/style.css";
+import type { Options } from '@nolebase/vitepress-plugin-enhanced-readabilities/client'
+import { InjectionKey } from '@nolebase/vitepress-plugin-enhanced-readabilities/client'
 
 import { useData, useRoute } from 'vitepress'
 import mediumZoom from 'medium-zoom';
@@ -26,6 +30,16 @@ export default {
     app.component('MNavLinks', MNavLinks)
     app.component('HomeUnderline', HomeUnderline)
     app.component('ArticleMetadata', ArticleMetadata)
+    app.component('NolebaseEnhancedReadabilitiesMenu', NolebaseEnhancedReadabilitiesMenu)
+    app.component('NolebaseEnhancedReadabilitiesScreenMenu', NolebaseEnhancedReadabilitiesScreenMenu)
+    app.provide(InjectionKey, {
+      layoutSwitch: {
+        defaultMode: 1, // 设置布局默认全部展开
+      },
+      spotlight: {
+        defaultToggle: true, // 设置聚光灯默认开启
+      },
+    } as Options)
   },
 
   setup() {

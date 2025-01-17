@@ -2,8 +2,6 @@
 import { useData } from "vitepress";
 import DefaultTheme from "vitepress/theme";
 import { nextTick, provide } from "vue";
-import { NolebaseEnhancedReadabilitiesMenu, NolebaseEnhancedReadabilitiesScreenMenu } from "@nolebase/vitepress-plugin-enhanced-readabilities/client";
-import "@nolebase/vitepress-plugin-enhanced-readabilities/client/style.css";
 
 const { isDark } = useData();
 
