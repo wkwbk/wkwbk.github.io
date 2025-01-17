@@ -14,6 +14,8 @@ import type { Options } from '@nolebase/vitepress-plugin-enhanced-readabilities/
 import { InjectionKey } from '@nolebase/vitepress-plugin-enhanced-readabilities/client'
 import { NolebaseHighlightTargetedHeading } from '@nolebase/vitepress-plugin-highlight-targeted-heading/client'
 import '@nolebase/vitepress-plugin-highlight-targeted-heading/client/style.css'
+import { NolebaseGitChangelogPlugin } from '@nolebase/vitepress-plugin-git-changelog/client'
+import '@nolebase/vitepress-plugin-git-changelog/client/style.css'
 
 import { useData, useRoute } from 'vitepress'
 import mediumZoom from 'medium-zoom';
@@ -28,6 +30,7 @@ export default {
 
   enhanceApp({ app }) {
     // 注册组件
+    app.use(NolebaseGitChangelogPlugin)
     app.component('confetti', confetti)
     app.component('MNavLinks', MNavLinks)
     app.component('HomeUnderline', HomeUnderline)

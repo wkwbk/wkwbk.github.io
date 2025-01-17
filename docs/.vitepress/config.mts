@@ -3,6 +3,7 @@ import { nav } from './configs'
 import { generateSidebar } from 'vitepress-sidebar';
 import { groupIconMdPlugin, groupIconVitePlugin } from 'vitepress-plugin-group-icons'
 import { RSSOptions, RssPlugin } from 'vitepress-plugin-rss'
+import { GitChangelog, GitChangelogMarkdownSection, } from '@nolebase/vitepress-plugin-git-changelog/vite'
 
 const baseUrl = 'https://lisir.me'
 const RSS: RSSOptions = {
@@ -42,7 +43,12 @@ export default defineConfig({
   vite: {
     plugins: [
       groupIconVitePlugin(), //代码组图标
-      RssPlugin(RSS)
+      RssPlugin(RSS),
+      GitChangelog({
+        // 填写在此处填写您的仓库链接
+        repoURL: () => 'https://github.com/wkwbk/wkwbk.github.io',
+      }),
+      GitChangelogMarkdownSection(),
     ],
     optimizeDeps: {
       exclude: [
