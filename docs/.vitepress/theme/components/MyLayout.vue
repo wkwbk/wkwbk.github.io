@@ -41,6 +41,10 @@ provide("toggle-appearance", async ({ clientX: x, clientY: y }: MouseEvent) => {
     <template #nav-screen-content-after>
       <NolebaseEnhancedReadabilitiesScreenMenu />
     </template>
+    <!-- 闪烁高亮当前的目标标题 -->
+    <template #layout-top>
+      <NolebaseHighlightTargetedHeading />
+    </template>
   </DefaultTheme.Layout>
 </template>
 

@@ -12,6 +12,8 @@ import { NolebaseEnhancedReadabilitiesMenu, NolebaseEnhancedReadabilitiesScreenM
 import "@nolebase/vitepress-plugin-enhanced-readabilities/client/style.css";
 import type { Options } from '@nolebase/vitepress-plugin-enhanced-readabilities/client'
 import { InjectionKey } from '@nolebase/vitepress-plugin-enhanced-readabilities/client'
+import { NolebaseHighlightTargetedHeading } from '@nolebase/vitepress-plugin-highlight-targeted-heading/client'
+import '@nolebase/vitepress-plugin-highlight-targeted-heading/client/style.css'
 
 import { useData, useRoute } from 'vitepress'
 import mediumZoom from 'medium-zoom';
@@ -30,6 +32,7 @@ export default {
     app.component('MNavLinks', MNavLinks)
     app.component('HomeUnderline', HomeUnderline)
     app.component('ArticleMetadata', ArticleMetadata)
+    app.component('NolebaseHighlightTargetedHeading', NolebaseHighlightTargetedHeading)
     app.component('NolebaseEnhancedReadabilitiesMenu', NolebaseEnhancedReadabilitiesMenu)
     app.component('NolebaseEnhancedReadabilitiesScreenMenu', NolebaseEnhancedReadabilitiesScreenMenu)
     app.provide(InjectionKey, {
