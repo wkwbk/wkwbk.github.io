@@ -135,62 +135,52 @@ export default defineConfig({
     sidebar: generateSidebar([
       {
         documentRootPath: '/docs',
-        scanStartPath: '思源',
-        resolvePath: '/思源/',
-        useTitleFromFileHeading: true, // 从 h1 标签中获取菜单标题
-        collapsed: false, // 折叠组关闭
-        collapseDepth: 3, // 折叠组 2 级菜单
-        useFolderTitleFromIndexFile: true, // 使用当前文件夹的 index.md 文件中的信息来获取菜单名称
-        includeFolderIndexFile: false,  // 关闭在侧边栏菜单中包含文件夹路径 index.md 文件
+        scanStartPath: 'Notes',
+        resolvePath: '/Notes/',
+        collapseDepth: 2, // 折叠组 2 级菜单
         sortMenusByName: true, // 按名称对菜单项中的项目进行排序
+        useTitleFromFileHeading: true, // 从 h1 标签中获取菜单标题
+        useFolderTitleFromIndexFile: true, // 使用当前文件夹的 index.md 文件中的信息来获取菜单名称
         sortMenusOrderNumericallyFromLink: true, // 如果菜单名称以数字开头，则按数字而不是名称排序
       },
       {
         documentRootPath: '/docs',
-        scanStartPath: 'Notes',
-        resolvePath: '/Notes/',
-        useTitleFromFileHeading: true, // 从 h1 标签中获取菜单标题
-        collapsed: false, // 折叠组关闭
-        collapseDepth: 2, // 折叠组 2 级菜单
-        useFolderTitleFromIndexFile: true, // 使用当前文件夹的 index.md 文件中的信息来获取菜单名称
-        includeFolderIndexFile: false,  // 关闭在侧边栏菜单中包含文件夹路径 index.md 文件
-        sortMenusByName: true, // 按名称对菜单项中的项目进行排序
-        sortMenusOrderNumericallyFromLink: true, // 如果菜单名称以数字开头，则按数字而不是名称排序
+        scanStartPath: '思源',
+        resolvePath: '/思源/',
+        collapseDepth: 3,
+        sortMenusByName: true,
+        useTitleFromFileHeading: true,
+        useFolderTitleFromIndexFile: true,
+        sortMenusOrderNumericallyFromLink: true,
       },
       {
         documentRootPath: '/docs',
         scanStartPath: 'Exam',
         resolvePath: '/Exam/',
-        useTitleFromFileHeading: true,
-        collapsed: false,
         collapseDepth: 2,
-        useFolderTitleFromIndexFile: true,
-        includeFolderIndexFile: false,
         sortMenusByName: true,
+        useTitleFromFileHeading: true,
+        useFolderTitleFromIndexFile: true,
         sortMenusOrderNumericallyFromLink: true,
       },
       {
         documentRootPath: '/docs',
         scanStartPath: 'GFW',
         resolvePath: '/GFW/',
-        useTitleFromFileHeading: true,
-        collapsed: false,
         collapseDepth: 2,
-        useFolderTitleFromIndexFile: true,
-        includeFolderIndexFile: false,
         sortMenusByName: true,
+        useTitleFromFileHeading: true,
+        useFolderTitleFromIndexFile: true,
         sortMenusOrderNumericallyFromLink: true,
       },
       {
         documentRootPath: '/docs',
         scanStartPath: 'DP',
         resolvePath: '/DP/',
-        useTitleFromFileHeading: true,
-        collapsed: false,
         collapseDepth: 2,
-        useFolderTitleFromIndexFile: true,
-        includeFolderIndexFile: false,
         sortMenusByName: true,
+        useTitleFromFileHeading: true,
+        useFolderTitleFromIndexFile: true,
         sortMenusOrderNumericallyFromLink: true,
       },
     ]),
