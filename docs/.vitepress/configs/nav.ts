@@ -10,19 +10,21 @@ export const nav: DefaultTheme.Config['nav'] = [
     text: '学习笔记',
     items: [
       { text: 'Git', link: '/Notes/Git/00.Git-学习笔记' },
-      { text: 'Java', link: '/Notes/Java/基础知识/00.Java-环境变量配置' },
+      { text: 'Java', link: '/Notes/Java/第一阶段/00.Java-环境变量配置' },
       { text: 'Linux', link: '/Notes/Linux/00.Linux-学习笔记' },
-      { text: 'Hadoop', link: '/Notes/Hadoop/00.虚拟机中搭建-Hadoop-集群' },
-      { text: 'Markdown', link: '/Notes/Markdown/00.Markdown-入门教程及书写风格' },
+      { text: 'Shell', link: '/Notes/Shell/00.Shell 脚本- 学习笔记' },
+      { text: 'MySQL', link: '/Notes/MySQL/00.MySQL-学习笔记' },
       { text: 'Docker', link: '/Notes/Docker/00.Docker-管理工具-Portainer' },
+      { text: 'Hadoop', link: '/Notes/Hadoop/00.虚拟机中搭建-Hadoop-集群' },
+      { text: 'Markdown', link: '/Notes/Markdown/00.Markdown-入门教程' },
       { text: '备忘录', link: '/Notes/Memo/00.英语语法' },
-      { text: '思源', link: '/思源/第一年上学期/2025年01月06号/00.Java程序设计' },
     ]
   },
 
   {
     text: '证书考试',
     items: [
+      { text: '思源', link: '/思源/第一年上学期/2025年01月06号/00.Java程序设计' },
       { text: '软考中级', link: '/Exam/SDE/00.软考中级-软件设计师' },
       { text: '计算机二级', link: '/Exam/NCRE/00.计算机二级-MS-Office' },
     ]
