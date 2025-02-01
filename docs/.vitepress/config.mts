@@ -142,6 +142,17 @@ export default defineConfig({
         useTitleFromFileHeading: true, // 从 h1 标签中获取菜单标题
         useFolderTitleFromIndexFile: true, // 使用当前文件夹的 index.md 文件中的信息来获取菜单名称
         sortMenusOrderNumericallyFromLink: true, // 如果菜单名称以数字开头，则按数字而不是名称排序
+        excludePattern: ['Memo/'], // 根据文件模式字符串数组排除文件或文件夹
+      },
+      {
+        documentRootPath: '/docs/Notes',
+        scanStartPath: 'Memo',
+        resolvePath: '/Notes/Memo/',
+        collapseDepth: 2,
+        sortMenusByName: true,
+        useTitleFromFileHeading: true,
+        useFolderTitleFromIndexFile: true,
+        sortMenusOrderNumericallyFromLink: true,
       },
       {
         documentRootPath: '/docs',
