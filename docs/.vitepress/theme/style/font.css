@@ -1,0 +1,9 @@
+@font-face {
+  font-family: "Fira Code";
+  src: url("/FiraCode-Regular.woff2") format("woff2");
+}
+
+:root {
+  --vp-font-family-base: "Microsoft YaHei"; /* 普通文本字体 */
+  --vp-font-family-mono: "Fira Code"; /* 代码块字体 */
+}
