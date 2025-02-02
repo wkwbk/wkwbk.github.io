@@ -4,6 +4,6 @@
 }
 
 :root {
-  --vp-font-family-base: "Microsoft YaHei"; /* 普通文本字体 */
+  --vp-font-family-base: sans-serif; /* 普通文本字体 */
   --vp-font-family-mono: "Fira Code"; /* 代码块字体 */
 }
