@@ -10,7 +10,7 @@ export const nav: DefaultTheme.Config['nav'] = [
     text: '学习笔记',
     items: [
       { text: 'Git', link: '/Notes/Git/00.Git-学习笔记' },
-      { text: 'Java', link: '/Notes/Java/第一阶段/00.Java-环境变量配置' },
+      { text: 'Java', link: '/Notes/Java/第一阶段/00.Java-环境配置' },
       { text: 'Linux', link: '/Notes/Linux/00.Linux-学习笔记' },
       { text: 'Shell', link: '/Notes/Shell/00.Shell-脚本-学习笔记' },
       { text: 'MySQL', link: '/Notes/MySQL/00.MySQL-学习笔记' },
