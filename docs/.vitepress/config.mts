@@ -42,7 +42,16 @@ export default defineConfig({
 
   vite: {
     plugins: [
-      groupIconVitePlugin(), //代码组图标
+      // 代码组图标
+      groupIconVitePlugin({
+        customIcon: {
+          java: 'logos:java',
+          js: 'logos:javascript',
+          md: 'logos:markdown',
+          css: 'logos:css-3',
+          bash: 'logos:bash-icon',
+        },
+      }),
       RssPlugin(RSS),
       GitChangelog({
         // 填写在此处填写您的仓库链接
