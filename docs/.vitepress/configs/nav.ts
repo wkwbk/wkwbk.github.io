@@ -63,9 +63,10 @@ export const nav: DefaultTheme.Config['nav'] = [
   {
     text: '设计模式',
     items: [
-      { text: '创建型模式', link: '/DP/创建型模式' },
-      { text: '结构型模式', link: '/DP/结构型模式' },
-      { text: '行为型模式', link: '/DP/行为型模式' }
+      { text: '六大原则', link: '/DP/六大原则' },
+      { text: '创建型模式', link: '/DP/创建型模式/00.工厂方法' },
+      { text: '结构型模式', link: '/DP/结构型模式/00.适配器' },
+      { text: '行为型模式', link: '/DP/行为型模式/00.责任链' }
     ]
   },
 ]
