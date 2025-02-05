@@ -16,15 +16,11 @@
 危险是红色
 :::
 
-油管链接图标：[Youtube](https://www.youtube.com/)
+- <sapn class="marker-text">这里是重重点</sapn>
 
-B站链接图标：[哔哩哔哩](https://www.bilibili.com/)
+- <sapn class="marker-text-highlight">这里是荧光笔</sapn>
 
-<sapn class="marker-text">这里是重重点</sapn>
-
-<sapn class="marker-text-highlight">这里是荧光笔</sapn>
-
-<sapn class="marker-evy">这里是尤雨溪的主页样式，鼠标放在我上面看效果</sapn>
+- <sapn class="marker-evy">这里是尤雨溪的主页样式，鼠标放在我上面看效果</sapn>
 
 ```sh
 #默认有行号
@@ -50,23 +46,8 @@ yarn -v
 
 :::
 
-::: code-group
-
-```sh [pnpm]
-pnpm -v
-```
-
-```sh [yarn]
-yarn -v
-```
-
-```sh [bun]
-bun -v
-```
-
-:::
-
 When $a \ne 0$, there are two solutions to $(ax^2 + bx + c = 0)$ and they are
+
 $$ x = {-b \pm \sqrt{b^2-4ac} \over 2a} $$
 
 **Maxwell's equations:**
