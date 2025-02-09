@@ -9,7 +9,7 @@ jobs:
   algolia:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       - name: Get the content of docsearch.json as config
         id: algolia_config
