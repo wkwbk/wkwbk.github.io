@@ -2,8 +2,8 @@
   "index_name": "doc",
   "start_urls": [
     {
-      "url": "https://lisir.me",
-      "selectors_key": "1eb87f0da62467f51ae708610d6a7c05"
+      "url": "https://lisir.me/",
+      "selectors_key": ""
     }
   ],
   "stop_urls": [],
