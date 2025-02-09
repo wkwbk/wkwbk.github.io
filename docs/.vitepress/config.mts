@@ -110,13 +110,13 @@ export default defineConfig({
     //   provider: 'local'
     // },
 
-    //Algolia搜索纯中文版
+    // Algolia 搜索纯中文版
     search: {
       provider: 'algolia',
       options: {
-        appId: '<Application ID>',
-        apiKey: '<Search-Only API Key>',
-        indexName: '<INDEX_NAME>',
+        appId: 'AFUXLWG8EE',
+        apiKey: '4ddb5fd63bdcf6128cfac0b9c5471d83',
+        indexName: 'doc',
         locales: {
           root: {
             placeholder: '搜索文档',
