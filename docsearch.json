@@ -2,7 +2,7 @@
   "index_name": "doc",
   "start_urls": [
     {
-      "url": "https://lisir.me/",
+      "url": "https://lisir.me",
       "selectors_key": ""
     }
   ],
