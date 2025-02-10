@@ -1,12 +1,15 @@
 {
   "index_name": "doc",
+
   "start_urls": [
     {
       "url": "https://lisir.me",
       "selectors_key": ""
     }
   ],
+
   "stop_urls": [],
+
   "selectors": {
     "default": {
       "lvl0": {
@@ -27,7 +30,8 @@
       }
     }
   },
+
   "custom_settings": {
-    "attributesForFaceting": ["lang"]
+    "attributesForFaceting": ["lang", "tags"]
   }
 }
