@@ -5,7 +5,12 @@
     {
       "url": "https://lisir.me/Notes/Memo/",
       "selectors_key": "Memo",
-      "tags": ["Memo"]
+      "tags": ["Memo"],
+      "next_page": {
+        "selector": ".content a",
+        "attr": "href",
+        "regex": "^/Notes/Memo/.*"
+      }
     },
     {
       "url": "https://lisir.me/nav/",
