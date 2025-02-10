@@ -1,64 +1,11 @@
 {
   "index_name": "doc",
 
-  "start_urls": [
-    {
-      "url": "https://lisir.me/Notes/Memo/",
-      "selectors_key": "Memo",
-      "tags": ["Memo"],
-      "next_page": {
-        "selector": ".content a",
-        "attr": "href",
-        "regex": "^/Notes/Memo/.*"
-      }
-    },
-    {
-      "url": "https://lisir.me/nav/",
-      "selectors_key": "nav",
-      "tags": ["nav"]
-    },
-    "https://lisir.me/"
-  ],
+  "start_urls": ["https://lisir.me/"],
 
   "stop_urls": [],
 
   "selectors": {
-    "Memo": {
-      "lvl0": {
-        "selector": "",
-        "default_value": "备忘录"
-      },
-      "lvl1": ".content h1",
-      "lvl2": ".content h2",
-      "lvl3": ".content h3",
-      "lvl4": ".content h4",
-      "lvl5": ".content h5",
-      "lvl6": ".content h6",
-      "text": ".content p, .content li",
-      "lang": {
-        "selector": "/html/@lang",
-        "type": "xpath",
-        "global": true
-      }
-    },
-    "nav": {
-      "lvl0": {
-        "selector": "",
-        "default_value": "导航页"
-      },
-      "lvl1": ".content h1",
-      "lvl2": ".content h2",
-      "lvl3": ".content h3",
-      "lvl4": ".content h4",
-      "lvl5": ".content h5",
-      "lvl6": ".content h6",
-      "text": ".content p, .content li",
-      "lang": {
-        "selector": "/html/@lang",
-        "type": "xpath",
-        "global": true
-      }
-    },
     "default": {
       "lvl0": {
         "selector": "",
