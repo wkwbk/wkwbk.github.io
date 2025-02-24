@@ -21,6 +21,9 @@ import { useData, useRoute } from 'vitepress'
 import mediumZoom from 'medium-zoom';
 import { onMounted, watch, nextTick, h } from 'vue';
 
+// 彩虹背景动画样式
+let homePageStyle: HTMLStyleElement | undefined
+
 export default {
   extends: DefaultTheme,
 
@@ -28,7 +31,7 @@ export default {
     return h(MyLayout)
   },
 
-  enhanceApp({ app }) {
+  enhanceApp({ app, router }) {
     // 注册组件
     app.use(NolebaseGitChangelogPlugin)
     app.component('confetti', confetti)
@@ -46,6 +49,16 @@ export default {
         defaultToggle: true, // 设置聚光灯默认开启
       },
     } as Options)
+
+    // 彩虹背景动画样式
+    if (typeof window !== 'undefined') {
+      watch(
+        () => router.route.data.relativePath,
+        () => updateHomePageStyle(location.pathname === '/'),
+        { immediate: true },
+      )
+    }
+
   },
 
   setup() {
@@ -53,12 +66,12 @@ export default {
     const { frontmatter } = useData();
     const route = useRoute();
 
-    // giscus配置
+    // giscus 配置
     giscusTalk({
       repo: 'wkwbk/wkwbk.github.io', // 仓库
-      repoId: 'R_kgDONmmefA', // 仓库ID
+      repoId: 'R_kgDONmmefA', // 仓库 ID
       category: 'Announcements', // 讨论分类
-      categoryId: 'DIC_kwDONmmefM4ClyiP', // 讨论分类ID
+      categoryId: 'DIC_kwDONmmefM4ClyiP', // 讨论分类 ID
       mapping: 'pathname',
       inputPosition: 'bottom',
       lang: 'zh-CN',
@@ -66,8 +79,8 @@ export default {
       {
         frontmatter, route
       },
-      //默认值为true，表示已启用，此参数可以忽略；
-      //如果为false，则表示未启用
+      //默认值为 true，表示已启用，此参数可以忽略；
+      //如果为 false，则表示未启用
       //您可以使用“comment:true”序言在页面上单独启用它
       true
     );
@@ -83,5 +96,24 @@ export default {
       () => route.path,
       () => nextTick(() => initZoom())
     );
+  }
+}
+
+// 彩虹背景动画样式
+function updateHomePageStyle(value: boolean) {
+  if (value) {
+    if (homePageStyle) return
+
+    homePageStyle = document.createElement('style')
+    homePageStyle.innerHTML = `
+    :root {
+      animation: rainbow 12s linear infinite;
+    }`
+    document.body.appendChild(homePageStyle)
+  } else {
+    if (!homePageStyle) return
+
+    homePageStyle.remove()
+    homePageStyle = undefined
   }
 }
