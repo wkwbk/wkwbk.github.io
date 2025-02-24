@@ -4,6 +4,7 @@ import { generateSidebar } from 'vitepress-sidebar';
 import { groupIconMdPlugin, groupIconVitePlugin } from 'vitepress-plugin-group-icons'
 import { RSSOptions, RssPlugin } from 'vitepress-plugin-rss'
 import { GitChangelog, GitChangelogMarkdownSection, } from '@nolebase/vitepress-plugin-git-changelog/vite'
+import { MermaidMarkdown, MermaidPlugin } from 'vitepress-plugin-mermaid'
 
 const baseUrl = 'https://lisir.me'
 const RSS: RSSOptions = {
@@ -30,7 +31,8 @@ export default defineConfig({
       lazyLoading: true,
     },
     config(md) {
-      md.use(groupIconMdPlugin) //代码组图标
+      md.use(groupIconMdPlugin) // 代码组图标
+      md.use(MermaidMarkdown)
       // 组件插入 h1 标题下
       md.renderer.rules.heading_close = (tokens, idx, options, env, slf) => {
         let htmlResult = slf.renderToken(tokens, idx, options);
@@ -64,6 +66,7 @@ export default defineConfig({
         repoURL: () => 'https://github.com/wkwbk/wkwbk.github.io',
       }),
       GitChangelogMarkdownSection(),
+      MermaidPlugin(),
     ],
     optimizeDeps: {
       exclude: [
@@ -71,12 +74,14 @@ export default defineConfig({
         'vitepress',
         '@nolebase/ui',
       ],
+      include: ['mermaid'],
     },
     ssr: {
       noExternal: [
         '@nolebase/vitepress-plugin-enhanced-readabilities',
         '@nolebase/vitepress-plugin-highlight-targeted-heading',
-        '@nolebase/ui'
+        '@nolebase/ui',
+        'mermaid'
       ],
     },
   },
