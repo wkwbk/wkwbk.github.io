@@ -16,6 +16,7 @@ export const nav: DefaultTheme.Config['nav'] = [
         items: [
           { text: 'Java', link: '/Notes/Java/第一阶段/00.Java-环境配置' },
           { text: 'Shell', link: '/Notes/Shell/00.Shell-脚本-学习笔记' },
+          { text: 'Python', link: '/Notes/Python/00.pip-使用国内镜像源' },
           { text: 'Markdown', link: '/Notes/Markdown/00.Markdown-入门教程' },
         ]
       },
@@ -54,7 +55,7 @@ export const nav: DefaultTheme.Config['nav'] = [
   {
     text: '科学上网',
     items: [
-      { text: '介绍', link: '/GFW/introduce/00.科学上网工具哪个好？' },
+      { text: '介绍', link: '/GFW/introduce/00.科学上网工具哪个好' },
       { text: '搭建', link: '/GFW/build/00.233-一键安装脚本' },
       { text: '使用', link: '/GFW/use/00.v2rayN-使用教程' }
     ]
