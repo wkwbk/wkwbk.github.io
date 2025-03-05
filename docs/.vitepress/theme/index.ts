@@ -70,8 +70,8 @@ export default {
     giscusTalk({
       repo: 'wkwbk/wkwbk.github.io', // 仓库
       repoId: 'R_kgDONmmefA', // 仓库 ID
-      category: 'Announcements', // 讨论分类
-      categoryId: 'DIC_kwDONmmefM4ClyiP', // 讨论分类 ID
+      category: 'General', // 讨论分类
+      categoryId: 'DIC_kwDONmmefM4ClyiQ', // 讨论分类 ID
       mapping: 'pathname',
       inputPosition: 'bottom',
       lang: 'zh-CN',
