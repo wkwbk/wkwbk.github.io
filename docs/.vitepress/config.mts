@@ -207,21 +207,40 @@ export default defineConfig({
     // 侧边栏
     sidebar: generateSidebar([
       {
-        documentRootPath: '/docs',
-        scanStartPath: 'Notes',
-        resolvePath: '/Notes/',
-        collapseDepth: 2, // 折叠组 2 级菜单
-        sortMenusByName: true, // 按名称对菜单项中的项目进行排序
-        useTitleFromFileHeading: true, // 从 h1 标签中获取菜单标题
-        useFolderTitleFromIndexFile: true, // 使用当前文件夹的 index.md 文件中的信息来获取菜单名称
+        documentRootPath: '/docs/Notes',
+        scanStartPath: 'Lang',
+        resolvePath: '/Notes/Lang/',
+        collapseDepth: 3,                        // 折叠组 3 级菜单
+        sortMenusByName: true,                   // 按名称对菜单项中的项目进行排序
+        useTitleFromFileHeading: true,           // 从 h1 标签中获取菜单标题
+        useFolderTitleFromIndexFile: true,       // 使用当前文件夹的 index.md 文件中的信息来获取菜单名称
         sortMenusOrderNumericallyFromLink: true, // 如果菜单名称以数字开头，则按数字而不是名称排序
-        excludePattern: ['Memo/'], // 根据文件模式字符串数组排除文件或文件夹
       },
       {
         documentRootPath: '/docs/Notes',
-        scanStartPath: 'Memo',
-        resolvePath: '/Notes/Memo/',
-        collapseDepth: 2,
+        scanStartPath: 'Sys',
+        resolvePath: '/Notes/Sys/',
+        collapseDepth: 3,
+        sortMenusByName: true,
+        useTitleFromFileHeading: true,
+        useFolderTitleFromIndexFile: true,
+        sortMenusOrderNumericallyFromLink: true,
+      },
+      {
+        documentRootPath: '/docs/Notes',
+        scanStartPath: 'DB',
+        resolvePath: '/Notes/DB/',
+        collapseDepth: 3,
+        sortMenusByName: true,
+        useTitleFromFileHeading: true,
+        useFolderTitleFromIndexFile: true,
+        sortMenusOrderNumericallyFromLink: true,
+      },
+      {
+        documentRootPath: '/docs/Notes',
+        scanStartPath: 'Tool',
+        resolvePath: '/Notes/Tool/',
+        collapseDepth: 3,
         sortMenusByName: true,
         useTitleFromFileHeading: true,
         useFolderTitleFromIndexFile: true,

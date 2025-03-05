@@ -6,38 +6,37 @@ export const nav: DefaultTheme.Config['nav'] = [
 
   { text: '导航', link: '/nav/' },
 
-  { text: '备忘录', link: '/Notes/Memo/00.英语语法' },
-
   {
     text: '学习笔记',
     items: [
       {
         text: '语言基础',
         items: [
-          { text: 'Java', link: '/Notes/Java/第一阶段/00.Java-环境配置' },
-          { text: 'Shell', link: '/Notes/Shell/00.Shell-脚本-学习笔记' },
-          { text: 'Python', link: '/Notes/Python/00.pip-使用国内镜像源' },
-          { text: 'Markdown', link: '/Notes/Markdown/00.Markdown-入门教程' },
+          { text: 'Java', link: '/Notes/Lang/Java/第一阶段/00.Java-环境配置' },
+          { text: 'Shell', link: '/Notes/Lang/Shell/00.Shell-脚本-学习笔记' },
+          { text: 'Python', link: '/Notes/Lang/Python/00.pip-使用国内镜像源' },
+          { text: 'English', link: '/Notes/Lang/English/00.英语语法.md' },
+          { text: 'Markdown', link: '/Notes/Lang/Markdown/00.Markdown-入门教程' },
         ]
       },
       {
         text: '系统运维',
         items: [
-          { text: 'Linux', link: '/Notes/Linux/00.Linux-学习笔记' },
-          { text: 'Docker', link: '/Notes/Docker/00.Docker-管理工具-Portainer' },
+          { text: 'Linux', link: '/Notes/Sys/Linux/00.Linux-学习笔记' },
+          { text: 'Docker', link: '/Notes/Sys/Docker/00.Docker-管理工具-Portainer' },
         ]
       },
       {
         text: '数据存储',
         items: [
-          { text: 'MySQL', link: '/Notes/MySQL/00.MySQL-学习笔记' },
-          { text: 'Hadoop', link: '/Notes/Hadoop/00.虚拟机中搭建-Hadoop-集群' },
+          { text: 'MySQL', link: '/Notes/DB/MySQL/00.MySQL-学习笔记' },
+          { text: 'Hadoop', link: '/Notes/DB/Hadoop/00.虚拟机中搭建-Hadoop-集群' },
         ]
       },
       {
         text: '协作工具',
         items: [
-          { text: 'Git', link: '/Notes/Git/00.Git-学习笔记' },
+          { text: 'Git', link: '/Notes/Tool/Git/00.Git-学习笔记' },
         ]
       },
     ]
