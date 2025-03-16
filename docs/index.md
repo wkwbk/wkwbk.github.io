@@ -78,3 +78,9 @@ import MFriends from './home/MFriends.vue'
 ## 🎧 [**Spotify 正在播放**](https://open.spotify.com/user/31s4ftvnfnus65uynvxmxu7rkfom)
 
 [![spotify-github-profile](https://spotify-github-profile.kittinanx.com/api/view?uid=31s4ftvnfnus65uynvxmxu7rkfom&cover_image=true&theme=default&show_offline=true&background_color=121212&interchange=true&bar_color_cover=true)](https://spotify-github-profile.kittinanx.com/api/view?uid=31s4ftvnfnus65uynvxmxu7rkfom&redirect=true)
+
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/5RlAHB43BgBxAOKruTWkYm?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+<br/>
+
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/14xDEqPsOMWjY4hUJtDihj?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
