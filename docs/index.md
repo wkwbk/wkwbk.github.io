@@ -14,7 +14,7 @@ hero:
   actions:
     - theme: brand
       text: 开始学习
-      link: /GFW/introduce/01.科学上网工具介绍
+      link: /GFW/介绍/00.科学上网工具介绍
     - theme: alt
       text: 我的导航
       link: /nav/

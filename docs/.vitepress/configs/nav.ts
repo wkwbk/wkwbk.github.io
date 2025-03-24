@@ -54,9 +54,9 @@ export const nav: DefaultTheme.Config['nav'] = [
   {
     text: '科学上网',
     items: [
-      { text: '介绍', link: '/GFW/introduce/00.科学上网工具哪个好' },
-      { text: '搭建', link: '/GFW/build/00.233-一键安装脚本' },
-      { text: '使用', link: '/GFW/use/00.v2rayN-使用教程' }
+      { text: '介绍', link: '/GFW/介绍/00.科学上网工具介绍' },
+      { text: '搭建', link: '/GFW/搭建/00.233-一键安装脚本' },
+      { text: '使用', link: '/GFW/使用/00.v2rayN-使用教程' }
     ]
   },
 
