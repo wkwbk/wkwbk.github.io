@@ -79,8 +79,15 @@ import MFriends from './home/MFriends.vue'
 
 [![spotify-github-profile](https://spotify-github-profile.kittinanx.com/api/view?uid=31s4ftvnfnus65uynvxmxu7rkfom&cover_image=true&theme=default&show_offline=true&background_color=121212&interchange=true&bar_color_cover=true)](https://spotify-github-profile.kittinanx.com/api/view?uid=31s4ftvnfnus65uynvxmxu7rkfom&redirect=true)
 
-<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/5RlAHB43BgBxAOKruTWkYm?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+::: details 我的歌单
 
-<br/>
+<div style="display: flex; flex-wrap: wrap;">
+  <div style="width: 50%; padding-right: 10px;">
+    <iframe style="border-radius:15px; width: 100%;" src="https://siteproxy.libk.top/default/https/open.spotify.com/embed/playlist/5RlAHB43BgBxAOKruTWkYm?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+  </div>
+  <div style="width: 50%; padding-left: 10px;">
+    <iframe style="border-radius:15px; width: 100%;" src="https://siteproxy.libk.top/default/https/open.spotify.com/embed/playlist/14xDEqPsOMWjY4hUJtDihj?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+  </div>
+</div>
 
-<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/14xDEqPsOMWjY4hUJtDihj?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+:::
