@@ -14,7 +14,7 @@
   {
     "title": "山暮云秋",
     "desc": "千里关山边草暮，一星烽火朔云秋",
-    "link": "https://www.muyun.space",
+    "link": "https://blog.muyun.space",
     "icon": "https://jsd.vxo.im/gh/ShanMuYunQiu/Image/info/user.jpg"
   },
   {
@@ -26,14 +26,8 @@
   {
     "title": "Ordis",
     "desc": "船到桥头自然直，柳暗花明又一村",
-    "link": "https://imbhj.com",
+    "link": "https://blog.imbhj.com",
     "icon": "https://www.imbhj.com/static/img/logo-bailuobo.jpg"
-  },
-  {
-    "title": "小嘉的部落格",
-    "desc": "一个爱折腾的Java开发工程师",
-    "link": "https://blog.imzjw.cn",
-    "icon": "https://npm.elemecdn.com/nanshen/avatar.jpg"
   },
   {
     "title": "茂茂物语",
@@ -52,5 +46,11 @@
     "desc": "迄今所有人生都大写着失败，但不妨碍我继续向前✨",
     "link": "https://love.xingji.fun",
     "icon": "https://love.xingji.fun/img/XingJi.jpg"
+  },
+  {
+    "title": "iFluxArt",
+    "desc": "斐启智境 · 流韵新生",
+    "link": "https://iflux.art",
+    "icon": "https://iflux.art/favicon.ico"
   }
 ]
