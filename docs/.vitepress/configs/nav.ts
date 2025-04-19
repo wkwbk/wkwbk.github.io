@@ -7,6 +7,13 @@ export const nav: DefaultTheme.Config['nav'] = [
   { text: '导航', link: '/nav/' },
 
   {
+    text: '人工智能',
+    items: [
+      { text: 'Cursor', link: '/Notes/AI/01.Cursor-基本使用' },
+    ]
+  },
+
+  {
     text: '学习笔记',
     items: [
       {
