@@ -23,7 +23,7 @@ export const nav: DefaultTheme.Config['nav'] = [
         text: '系统运维',
         items: [
           { text: 'Linux', link: '/Notes/Sys/Linux/00.Linux-学习笔记' },
-          { text: 'Docker', link: '/Notes/Sys/Docker/00.Docker-管理工具-Portainer' },
+          { text: 'Docker', link: '/Notes/Sys/Docker/00.Docker-安装教程' },
         ]
       },
       {
