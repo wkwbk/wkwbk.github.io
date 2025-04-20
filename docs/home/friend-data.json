@@ -6,7 +6,7 @@
     "icon": "https://blog.zhheo.com/img/avatar.png"
   },
   {
-    "title": "Akilarの糖果屋",
+    "title": "Akilar の糖果屋",
     "desc": "期待您的光临！",
     "link": "https://akilar.top",
     "icon": "https://npm.elemecdn.com/akilar-candyassets/image/siteicon/favicon.png"
@@ -42,7 +42,7 @@
     "icon": "https://vitepress.yiov.top/logo.png"
   },
   {
-    "title": "XingJiのBlog",
+    "title": "XingJi の Blog",
     "desc": "迄今所有人生都大写着失败，但不妨碍我继续向前✨",
     "link": "https://love.xingji.fun",
     "icon": "https://love.xingji.fun/img/XingJi.jpg"
@@ -52,5 +52,17 @@
     "desc": "斐启智境 · 流韵新生",
     "link": "https://iflux.art",
     "icon": "https://iflux.art/favicon.ico"
+  },
+  {
+    "title": "三水水水碎碎念",
+    "desc": "Share life, bit by bit",
+    "link": "https://sanshui756.github.io",
+    "icon": "https://i.postimg.cc/1zRmgtv1/log1.jpg"
+  },
+  {
+    "title": "龚东海的博客",
+    "desc": "真诚记录，生活值得",
+    "link": "https://gdhblog.com",
+    "icon": "https://gdhblog.com/avatar.png"
   }
 ]
