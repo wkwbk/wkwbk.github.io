@@ -69,4 +69,4 @@ pnpm docs:preview
 
 ## 许可证
 
-本项目采用 MIT 许可证
+本项目采用 GPL 许可证
