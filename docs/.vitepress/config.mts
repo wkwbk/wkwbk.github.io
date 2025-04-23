@@ -214,7 +214,7 @@ export default defineConfig({
         documentRootPath: '/docs/Notes',
         scanStartPath: 'Lang',
         resolvePath: '/Notes/Lang/',
-        collapseDepth: 3,                        // 折叠组 3 级菜单
+        collapseDepth: 2,                        // 折叠组 3 级菜单
         sortMenusByName: true,                   // 按名称对菜单项中的项目进行排序
         useTitleFromFileHeading: true,           // 从 h1 标签中获取菜单标题
         useFolderTitleFromIndexFile: true,       // 使用当前文件夹的 index.md 文件中的信息来获取菜单名称
@@ -224,7 +224,7 @@ export default defineConfig({
         documentRootPath: '/docs/Notes',
         scanStartPath: 'AI',
         resolvePath: '/Notes/AI/',
-        collapseDepth: 3,
+        collapseDepth: 2,
         sortMenusByName: true,
         useTitleFromFileHeading: true,
         useFolderTitleFromIndexFile: true,
@@ -234,7 +234,7 @@ export default defineConfig({
         documentRootPath: '/docs/Notes',
         scanStartPath: 'Sys',
         resolvePath: '/Notes/Sys/',
-        collapseDepth: 3,
+        collapseDepth: 2,
         sortMenusByName: true,
         useTitleFromFileHeading: true,
         useFolderTitleFromIndexFile: true,
@@ -244,7 +244,7 @@ export default defineConfig({
         documentRootPath: '/docs/Notes',
         scanStartPath: 'DB',
         resolvePath: '/Notes/DB/',
-        collapseDepth: 3,
+        collapseDepth: 2,
         sortMenusByName: true,
         useTitleFromFileHeading: true,
         useFolderTitleFromIndexFile: true,
@@ -254,7 +254,7 @@ export default defineConfig({
         documentRootPath: '/docs/Notes',
         scanStartPath: 'Tool',
         resolvePath: '/Notes/Tool/',
-        collapseDepth: 3,
+        collapseDepth: 2,
         sortMenusByName: true,
         useTitleFromFileHeading: true,
         useFolderTitleFromIndexFile: true,

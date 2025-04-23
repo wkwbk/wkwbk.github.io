@@ -9,7 +9,9 @@ export const nav: DefaultTheme.Config['nav'] = [
   {
     text: '人工智能',
     items: [
-      { text: 'Cursor', link: '/Notes/AI/01.Cursor-基本使用' },
+      { text: 'API', link: '/Notes/AI/API/00.主流人工智能-API-使用指南' },
+      { text: 'Cursor', link: '/Notes/AI/Cursor/01.Cursor-基本使用' },
+      { text: 'MCP', link: '/Notes/AI/MCP/00.MCP-配置指南' },
     ]
   },
 
@@ -44,6 +46,7 @@ export const nav: DefaultTheme.Config['nav'] = [
         text: '协作工具',
         items: [
           { text: 'Git', link: '/Notes/Tool/Git/00.Git-学习笔记' },
+          { text: 'GitHub', link: '/Notes/Tool/GitHub/00.GitHub-基础操作' },
         ]
       },
     ]
@@ -70,7 +73,6 @@ export const nav: DefaultTheme.Config['nav'] = [
   {
     text: '设计模式',
     items: [
-      { text: '六大原则', link: '/DP/六大原则' },
       { text: '创建型模式', link: '/DP/创建型模式/00.工厂方法' },
       { text: '结构型模式', link: '/DP/结构型模式/00.适配器' },
       { text: '行为型模式', link: '/DP/行为型模式/00.责任链' }
