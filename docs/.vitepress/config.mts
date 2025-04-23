@@ -301,6 +301,16 @@ export default defineConfig({
         useFolderTitleFromIndexFile: true,
         sortMenusOrderNumericallyFromLink: true,
       },
+      {
+        documentRootPath: '/docs',
+        scanStartPath: 'Stack',
+        resolvePath: '/Stack/',
+        collapseDepth: 2,
+        sortMenusByName: true,
+        useTitleFromFileHeading: true,
+        useFolderTitleFromIndexFile: true,
+        sortMenusOrderNumericallyFromLink: true,
+      },
     ]),
 
     // 社交链接
