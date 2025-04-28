@@ -18,7 +18,7 @@
   **设置示例：**
 
   ```bash
-  setx /m ANDROID_HOME "D:\Android\SDK\"
+  setx /m ANDROID_HOME "D:\Android\SDK"
   ```
 
   :::
@@ -27,7 +27,7 @@
 
   ::: tip 提示
 
-  用于指定 Android SDK 相关工具的用户配置目录。默认位置为 `%USERPROFILE%\.android\`。
+  用于指定 Android SDK 相关工具的用户配置目录。默认位置为 `%USERPROFILE%\.android`。
 
   **用途：**
 
@@ -37,7 +37,7 @@
   **设置示例：**
 
   ```bash
-  setx /m ANDROID_USER_HOME "D:\Android\.android\"
+  setx /m ANDROID_USER_HOME "D:\Android\.android"
   ```
 
   :::
@@ -46,9 +46,9 @@
 
   ::: tip 提示
 
-  默认位置为 `ANDROID_USER_HOME` 目录下。
+  默认位置为 `%ANDROID_USER_HOME%` 目录下。
 
-  如果 `ANDROID_USER_HOME` 未设置，则保存在 `%USERPROFILE%\.android\`。
+  如果 `ANDROID_USER_HOME` 未设置，则保存在 `%USERPROFILE%\.android`。
 
   **用途：**
 
@@ -57,7 +57,7 @@
   **设置示例：**
 
   ```bash
-  setx /m ANDROID_EMULATOR_HOME "D:\Android\.android\"
+  setx /m ANDROID_EMULATOR_HOME "D:\Android\.android"
   ```
 
   :::
@@ -66,9 +66,9 @@
 
   ::: tip 提示
 
-  默认位置为 `ANDROID_EMULATOR_HOME\avd\` 目录下。
+  默认位置为 `%ANDROID_EMULATOR_HOME%\avd` 目录下。
 
-  如果 `ANDROID_EMULATOR_HOME` 未设置，则保存在 `ANDROID_USER_HOME\avd\`。
+  如果 `ANDROID_EMULATOR_HOME` 未设置，则保存在 `%ANDROID_USER_HOME%\avd`。
 
   **用途：**
 
@@ -79,7 +79,7 @@
   **设置示例：**
 
   ```bash
-  setx /m ANDROID_USER_HOME "D:\Android\.android\avd\"
+  setx /m ANDROID_AVD_HOME "D:\Android\.android\avd"
   ```
 
   设置此变量后，新创建的 AVD 将保存在指定目录下。
@@ -92,8 +92,30 @@
 
   `emulator -avd <avd_name>` 命令会按照以下顺序搜索 AVD 目录：
 
-  1. `ANDROID_AVD_HOME`
-  2. `ANDROID_USER_HOME\avd\`
-  3. `%USERPROFILE%\.android\avd\`
+  1. `%ANDROID_AVD_HOME%`
+  2. `%ANDROID_USER_HOME%\avd`
+  3. `%USERPROFILE%\.android\avd`
+
+  :::
+
+- GRADLE_USER_HOME
+
+  ::: tip 提示
+
+  用于指定 Gradle 的用户配置目录。默认位置是 `%USERPROFILE%\.gradle`。
+
+  **用途：**
+
+  - 自定义 Gradle 的缓存、构建缓存、初始化脚本、wrapper 配置等的存储位置。
+  - 避免系统盘空间占用过大，或在多项目、多用户环境中集中管理缓存。
+  - 提升 Gradle 构建效率（通过共享缓存）或便于备份和迁移。
+
+  **设置示例：**
+
+  ```bash
+  setx /m GRADLE_USER_HOME "D:\Android\.gradle"
+  ```
+
+  设置后，Gradle 的缓存和配置文件将保存到 `D:\Android\.gradle`，包括依赖包缓存、构建缓存等内容。
 
   :::
