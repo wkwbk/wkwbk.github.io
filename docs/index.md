@@ -79,14 +79,58 @@ import MFriends from './home/MFriends.vue'
 
 [![spotify-github-profile](https://spotify-github-profile.kittinanx.com/api/view?uid=31s4ftvnfnus65uynvxmxu7rkfom&cover_image=true&theme=default&show_offline=true&background_color=121212&interchange=true&bar_color_cover=true)](https://spotify-github-profile.kittinanx.com/api/view?uid=31s4ftvnfnus65uynvxmxu7rkfom&redirect=true)
 
-::: details 我的歌单
+::: details 我的歌单（需翻墙）
 
-<div style="display: flex; flex-wrap: wrap;">
-  <div style="width: 50%; padding-right: 10px;">
-    <iframe style="border-radius:15px; width: 100%;" src="https://siteproxy.libk.top/default/https/open.spotify.com/embed/playlist/5RlAHB43BgBxAOKruTWkYm?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+<style>
+  .spotify-grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -10px;
+  }
+
+  .spotify-item {
+    width: 50%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  .spotify-item iframe {
+    border-radius: 15px;
+    width: 100%;
+    height: 352px;
+  }
+
+  @media (max-width: 768px) {
+    .spotify-item {
+      width: 100%;
+    }
+  }
+</style>
+
+<div class="spotify-grid">
+  <div class="spotify-item">
+    <iframe src="https://open.spotify.com/embed/playlist/5RlAHB43BgBxAOKruTWkYm?utm_source=generator&theme=0" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
   </div>
-  <div style="width: 50%; padding-left: 10px;">
-    <iframe style="border-radius:15px; width: 100%;" src="https://siteproxy.libk.top/default/https/open.spotify.com/embed/playlist/14xDEqPsOMWjY4hUJtDihj?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+  <div class="spotify-item">
+    <iframe src="https://open.spotify.com/embed/playlist/14xDEqPsOMWjY4hUJtDihj?utm_source=generator&theme=0" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+  </div>
+  <div class="spotify-item">
+    <iframe src="https://open.spotify.com/embed/playlist/2rUZisBK3EY7a3IZKkxGI4?utm_source=generator&theme=0" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+  </div>
+  <div class="spotify-item">
+    <iframe src="https://open.spotify.com/embed/playlist/4s72wKpWU6kKviYPHrhFNC?utm_source=generator&theme=0" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+  </div>
+  <div class="spotify-item">
+    <iframe src="https://open.spotify.com/embed/playlist/2Wxgd4CUaEnul1QbWx2AwX?utm_source=generator&theme=0" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+  </div>
+  <div class="spotify-item">
+    <iframe src="https://open.spotify.com/embed/playlist/6RzDg5egia7VjcRWTlSSUX?utm_source=generator&theme=0" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+  </div>
+  <div class="spotify-item">
+    <iframe src="https://open.spotify.com/embed/playlist/3XjLl5xVoaILM1CsX0LESM?utm_source=generator&theme=0" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+  </div>
+  <div class="spotify-item">
+    <iframe src="https://open.spotify.com/embed/playlist/5yZvh95YQOeVdK4hEacbIU?utm_source=generator&theme=0" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
   </div>
 </div>
 
