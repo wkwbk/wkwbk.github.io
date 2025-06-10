@@ -57,7 +57,7 @@ export const nav: DefaultTheme.Config['nav'] = [
   {
     text: '证书考试',
     items: [
-      { text: '思源', link: '/Exam/思源/第一年上学期/2024年12月31号/00.数据库原理及应用' },
+      { text: '思源', link: '/Exam/XASYU/第一年下学期/2025-06-30/UML-可视化建模与' },
       { text: '软考中级', link: '/Exam/SDE/00.软考中级-软件设计师' },
       { text: '计算机二级', link: '/Exam/NCRE/00.计算机二级-MS-Office' },
     ]
