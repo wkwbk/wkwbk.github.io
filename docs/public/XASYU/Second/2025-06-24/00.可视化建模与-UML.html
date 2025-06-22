@@ -135,6 +135,7 @@
         cursor: pointer;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         transition: background-color 0.3s;
+        text-decoration: none;
       }
 
       /* 各按钮颜色 */
@@ -158,6 +159,14 @@
       }
       #download-source-button:hover {
         background-color: #e0a800;
+      }
+
+      #donate-button {
+        background-color: #e83e8c;
+      }
+
+      #donate-button:hover {
+        background-color: #c2185b;
       }
 
       /* 打印专用样式 */
@@ -186,6 +195,7 @@
   </head>
   <body>
     <div class="button-container">
+      <a href="/donate.html" id="donate-button" class="action-button" target="_blank" rel="noopener noreferrer">❤️ 请作者喝杯咖啡</a>
       <button id="download-source-button" class="action-button" onclick="downloadSource()">💾 下载源码</button>
       <button id="print-button" class="action-button" onclick="window.print()">🖨️ 打印</button>
     </div>

@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Linux-操作系统</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+      integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <style>
+      /* Basic reset and page background */
+      body {
+        background: #f0f0f0;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* A4 page container styles */
+      .page {
+        background: white;
+        width: 210mm;
+        min-height: 297mm;
+        margin: 10mm auto;
+        padding: 8mm;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        box-sizing: border-box;
+      }
+
+      /* Main content container styles */
+      .page-content {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 10px;
+        line-height: 1.2;
+        color: #333;
+        column-count: 3;
+        column-gap: 5mm;
+        column-rule: 1px solid #eee;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        margin: 4px 0;
+        padding: 0;
+        break-after: avoid;
+      }
+
+      h2 {
+        font-size: 14px;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 2px;
+        margin-top: 5mm;
+        column-span: all;
+      }
+      h2:first-child {
+        margin-top: 0;
+      }
+      h3 {
+        font-size: 12px;
+      }
+
+      p,
+      ul,
+      ol,
+      table {
+        margin: 3px 0;
+      }
+      ul,
+      ol {
+        padding-left: 15px;
+      }
+      li {
+        margin-bottom: 2px;
+      }
+      strong {
+        font-weight: bold;
+      }
+
+      table,
+      img,
+      pre {
+        break-inside: avoid;
+      }
+
+      pre {
+        background-color: #f4f4f4;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 8px;
+        font-family: "Courier New", Courier, monospace;
+        font-size: 9px;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        margin: 5px 0;
+      }
+
+      code {
+        font-family: inherit;
+      }
+
+      /* 强制分页的样式 */
+      .new-page {
+        break-before: page;
+      }
+
+      /* Button container styles */
+      .button-container {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 9999;
+        display: flex;
+        gap: 10px;
+      }
+
+      /* General button styles */
+      .action-button {
+        padding: 8px 16px;
+        font-size: 14px;
+        font-weight: bold;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.3s;
+        text-decoration: none;
+      }
+
+      /* Button colors */
+      #print-button {
+        background-color: #007bff;
+      }
+      #print-button:hover {
+        background-color: #0056b3;
+      }
+
+      #download-button {
+        background-color: #28a745;
+      }
+      #download-button:hover {
+        background-color: #1e7e34;
+      }
+
+      #download-source-button {
+        background-color: #ffc107;
+        color: #212529;
+      }
+      #download-source-button:hover {
+        background-color: #e0a800;
+      }
+
+      #donate-button {
+        background-color: #e83e8c;
+      }
+
+      #donate-button:hover {
+        background-color: #c2185b;
+      }
+
+      /* Print-specific styles */
+      @page {
+        size: A4;
+        margin: 0;
+      }
+
+      @media print {
+        body {
+          background: none;
+        }
+        .page {
+          margin: 0;
+          padding: 5mm;
+          box-shadow: none;
+          width: 100%;
+          min-height: 0;
+        }
+        .button-container {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="button-container">
+      <a href="/donate.html" id="donate-button" class="action-button" target="_blank" rel="noopener noreferrer">❤️ 请作者喝杯咖啡</a>
+      <button id="download-source-button" class="action-button" onclick="downloadSource()">💾 下载源码</button>
+      <button id="print-button" class="action-button" onclick="window.print()">🖨️ 打印</button>
+    </div>
+
+    <div class="page" id="page-content-to-download">
+      <div class="page-content">
+        <h2>第一大题</h2>
+
+        <h3>1.1</h3>
+        <p><strong>使用虚拟机的原因</strong>：</p>
+        <ul>
+          <li>资源隔离和安全性：虚拟机提供隔离环境，避免影响物理主机</li>
+          <li>快速部署和复制：可以快速创建多个相同配置的虚拟机</li>
+          <li>便于测试和开发：不会影响生产环境</li>
+          <li>节省硬件成本：多台虚拟机可运行在同一物理服务器上</li>
+          <li>快照功能：便于系统备份和恢复</li>
+        </ul>
+        <p><strong>创建虚拟机的软件</strong>：</p>
+        <ul>
+          <li>VMware Workstation</li>
+          <li>VirtualBox</li>
+          <li>Hyper-V</li>
+        </ul>
+
+        <h3>1.2</h3>
+        <p><strong>准备阶段</strong>：</p>
+        <ul>
+          <li>下载 CentOS Stream 9 ISO 镜像</li>
+          <li>准备虚拟机环境</li>
+          <li>确保硬件满足最低要求 (CPU、内存、存储)</li>
+        </ul>
+        <p><strong>安装过程</strong>：</p>
+        <ul>
+          <li>启动系统并从 ISO 镜像引导</li>
+          <li>配置网络连接</li>
+          <li>选择安装类型</li>
+          <li>配置磁盘分区 (建议：<code>/boot</code>, <code>swap</code>, <code>/</code>, <code>/home</code> 等)</li>
+          <li>设置 root 密码和创建普通用户</li>
+          <li>开始安装并等待完成</li>
+          <li>安装完成后重启系统</li>
+        </ul>
+
+        <h3>1.3</h3>
+        <p><strong>使用快照备份工具的步骤</strong>：</p>
+        <ol>
+          <li>打开虚拟机管理软件 (如 VMware 或 VirtualBox)</li>
+          <li>选择目标虚拟机</li>
+          <li>找到"快照"或"Snapshot"功能菜单</li>
+          <li>点击"创建快照"或"Take Snapshot"</li>
+          <li>输入快照名称和描述 (如"初始安装完成状态")</li>
+          <li>确认创建快照</li>
+          <li>等待快照创建完成</li>
+        </ol>
+        <p><strong>恢复快照的步骤</strong>：</p>
+        <ol>
+          <li>打开虚拟机管理软件</li>
+          <li>选择目标虚拟机</li>
+          <li>找到"快照管理器"或"Snapshot Manager"</li>
+          <li>选择要恢复的快照</li>
+          <li>点击"恢复"或"Revert"</li>
+          <li>确认恢复操作</li>
+        </ol>
+
+        <h3>1.4</h3>
+        <pre><code># 创建用户组
+sudo groupadd group1      # 销售部
+sudo groupadd group2      # 技术部
+
+# 创建用户并设置初始密码
+sudo useradd -g group1 -m tom1
+echo "111111" | sudo passwd --stdin tom1
+sudo useradd -g group2 -m tom2
+echo "111111" | sudo passwd --stdin tom2</code></pre>
+
+        <h3>1.5</h3>
+        <pre><code># 1. 查看磁盘情况
+sudo fdisk -l
+
+# 2. 假设/dev/sdb是第二块磁盘，创建文件系统
+sudo mkfs.ext4 /dev/sdb
+
+# 3. 创建挂载点目录
+sudo mkdir -p /var/www/images
+
+# 4. 临时挂载
+sudo mount /dev/sdb /var/www/images
+
+# 5. 永久挂载(编辑/etc/fstab)
+echo "/dev/sdb /var/www/images ext4 defaults 0 0" | sudo tee -a /etc/fstab
+
+# 6. 验证挂载
+mount | grep /var/www/images</code></pre>
+
+        <h2>第二大题</h2>
+
+        <h3>2.1</h3>
+        <pre><code># 安装Nginx
+sudo dnf install nginx -y
+
+# 启用Nginx开机自启动
+sudo systemctl enable nginx
+
+# 验证Nginx是否可以正常访问
+ping -I 192.168.10.20</code></pre>
+
+        <h3>2.2</h3>
+        <p>常用的编辑器主要有 Vim 和 Nano</p>
+        <p><strong>Vim 的三种主要模式</strong>：</p>
+        <ol>
+          <li>
+            普通模式 (Normal mode) - 打开文件后默认进入的模式
+            <ul>
+              <li><code>i</code> 进入插入模式</li>
+              <li><code>:</code> 进入命令模式</li>
+              <li><code>h</code> <code>j</code> <code>k</code> <code>l</code> 分别对应左、下、上、右移动光标</li>
+              <li><code>x</code> 删除当前字符</li>
+              <li><code>dd</code> 删除当前行</li>
+              <li><code>yy</code> 复制当前行</li>
+              <li><code>p</code> 粘贴</li>
+              <li><code>u</code> 撤销</li>
+              <li><code>Ctrl + r</code> 重做</li>
+            </ul>
+          </li>
+          <li>
+            插入模式 (Insert mode) - 编辑文本内容
+            <ul>
+              <li>按 <code>i</code> 进入插入模式</li>
+              <li>此时可以像普通编辑器一样输入文本</li>
+              <li>按 <code>Esc</code> 返回普通模式</li>
+            </ul>
+          </li>
+          <li>
+            命令模式 (Command mode) - 执行保存、退出等操作
+            <ul>
+              <li>在普通模式下按 : 进入</li>
+              <li><code>:w</code> 保存文件</li>
+              <li><code>:q</code> 退出</li>
+              <li><code>:wq</code> 保存并退出</li>
+              <li><code>:q!</code> 不保存强制退出</li>
+              <li><code>:set number</code> 显示行号</li>
+              <li><code>:/</code> 搜索词，向下搜索</li>
+              <li><code>:?</code> 搜索词，向上搜索</li>
+            </ul>
+          </li>
+        </ol>
+        <p><strong>Nano 编辑器常用快捷键</strong>：</p>
+        <ul>
+          <li><code>Ctrl + O</code> 保存文件，然后按 Enter 确认</li>
+          <li><code>Ctrl + X</code> 退出，如果有未保存的修改会提示保存</li>
+          <li><code>Ctrl + K</code> 剪切当前行</li>
+          <li><code>Ctrl + U</code> 粘贴</li>
+          <li><code>Ctrl + W</code> 搜索</li>
+          <li><code>Ctrl + \</code> 替换</li>
+          <li><code>Ctrl + G</code> 打开帮助</li>
+          <li><code>Alt + U</code> 撤销</li>
+          <li><code>Alt + E</code> 重做</li>
+        </ul>
+
+        <h3>2.3</h3>
+        <pre><code>#!/bin/bash
+size=$(find /var/log -type f -name "*.log" -exec du -ch {} + | awk '/total$/{print $1}')
+echo "${size:-0}" > logsize.txt</code></pre>
+
+        <h3>2.4</h3>
+        <pre><code>#!/bin/bash
+
+# 获取第一台服务器价格
+read -p "请输入第一台服务器的价格(元): " a
+
+# 获取第二台服务器价格
+read -p "请输入第二台服务器的价格(元): " b
+
+# 计算总价
+total=$(echo "$a+ $b")
+
+# 显示结果
+echo "总价格: ${total}元"</code></pre>
+
+        <h2>第三大题</h2>
+
+        <h3>3.1</h3>
+        <pre><code>#!/bin/bash
+# 批量重命名.txt为.md的脚本
+cd /home/students/documents
+
+# 进入目录并执行重命名
+for f in *.txt;
+do
+    mv -v "$f" "${f%.txt}.md"
+done</code></pre>
+
+        <h3>3.2</h3>
+        <pre><code>#!/bin/bash
+# 创建组
+groupadd group1
+
+# 创建10个用户
+for i in {01..10};
+do
+    useradd -g group1 "stu$i"
+done</code></pre>
+
+        <h3>3.3</h3>
+        <pre><code>#!/bin/bash
+n=$((RANDOM%10+1))
+while read -p "猜1-10的数: " g;
+do
+    ((g==n)) && echo "对了!" && break
+    echo $((g>n?"大了":"小了"))
+done</code></pre>
+
+        <h2 class="new-page">第四大题</h2>
+
+        <h3>4.1</h3>
+        <pre><code>#include &lt;stdio.h&gt;
+
+void main() {
+    int i, j;
+    // 外层循环控制行数 (1-9)
+    for (i = 1; i &lt;= 9; i++) {
+        // 内层循环控制每行的列数 (1-i)
+        for (j = 1; j &lt;= i; j++) {
+            // 格式化输出乘法算式，%-2d 保证对齐
+            printf("%d×%d=%-2d ", j, i, i * j);
+        }
+
+        // 每行结束后换行
+        printf("\n");
+    }
+}</code></pre>
+
+        <h3>4.2</h3>
+        <ol>
+          <li>
+            预处理（Preprocessing）
+            <pre><code>gcc -E source.c -o source.i</code></pre>
+          </li>
+          <li>
+            编译（Compilation）
+            <pre><code>gcc -S source.i -o source.s</code></pre>
+          </li>
+          <li>
+            汇编（Assembly）
+            <pre><code>gcc -c source.s -o source.o</code></pre>
+          </li>
+          <li>
+            链接（Linking）
+            <pre><code>gcc source.o -o executable</code></pre>
+          </li>
+        </ol>
+
+        <h3>4.3</h3>
+        <p>
+          启动 GDB 调试程序的命令格式是：<code>gdb 可执行文件</code><br />
+          查看当前所有断点和监视点信息的命令：<code>info breakpoints</code><br />
+          运行程序的命令是：<code>run</code><br />
+          继续执行到下一个断点的命令是：<code>continue</code><br />
+          给变量设置一个监视点：<code>watch 变量名</code><br />
+          在 GDB 中设置断点的命令是：<code>break 行号或函数名</code>
+        </p>
+
+        <h3>4.4</h3>
+        <pre><code>sy:sy.c
+    gcc sy.c -o sy
+
+clean:
+    rm -f sy.o</code></pre>
+      </div>
+    </div>
+
+    <script>
+      // 下载 HTML 源代码功能
+      function downloadSource() {
+        const htmlContent = document.documentElement.outerHTML;
+        const blob = new Blob([htmlContent], { type: "text/html;charset=utf-8" });
+        const link = document.createElement("a");
+        link.href = URL.createObjectURL(blob);
+        link.download = "Linux-操作系统 - 源代码.html";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        URL.revokeObjectURL(link.href);
+      }
+    </script>
+  </body>
+</html>
