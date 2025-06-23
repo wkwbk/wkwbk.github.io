@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <title>大数据技术基础</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+      integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <style>
+      /* Basic reset and page background */
+      body {
+        background: #f0f0f0;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* A4 page container styles */
+      .page {
+        background: white;
+        width: 210mm;
+        min-height: 297mm;
+        margin: 10mm auto;
+        padding: 8mm;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        box-sizing: border-box;
+      }
+
+      /* Main content container styles */
+      .page-content {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 10px;
+        line-height: 1.2;
+        color: #333;
+        column-count: 3;
+        column-gap: 5mm;
+        column-rule: 1px solid #eee;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        margin: 4px 0;
+        padding: 0;
+        break-after: avoid;
+      }
+
+      h2 {
+        font-size: 14px;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 2px;
+        margin-top: 5mm;
+        column-span: all;
+      }
+      h2:first-child {
+        margin-top: 0;
+      }
+      h3 {
+        font-size: 12px;
+      }
+
+      p,
+      ul,
+      ol,
+      table {
+        margin: 3px 0;
+      }
+      ul,
+      ol {
+        padding-left: 15px;
+      }
+      li {
+        margin-bottom: 2px;
+      }
+      strong {
+        font-weight: bold;
+      }
+
+      table,
+      img,
+      pre {
+        break-inside: avoid;
+      }
+
+      pre {
+        background-color: #f4f4f4;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 8px;
+        font-family: "Courier New", Courier, monospace;
+        font-size: 9px;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        margin: 5px 0;
+      }
+
+      code {
+        font-family: inherit;
+      }
+
+      /* 强制分页的样式 */
+      .new-page {
+        break-before: page;
+      }
+
+      /* Button container styles */
+      .button-container {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      /* General button styles */
+      .action-button {
+        display: block;
+        padding: 8px 16px;
+        font-size: 14px;
+        font-weight: bold;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.3s;
+        text-decoration: none;
+        text-align: center;
+      }
+
+      /* Button colors */
+      #print-button {
+        background-color: #007bff;
+      }
+      #print-button:hover {
+        background-color: #0056b3;
+      }
+
+      #download-button {
+        background-color: #28a745;
+      }
+      #download-button:hover {
+        background-color: #1e7e34;
+      }
+
+      #download-source-button {
+        background-color: #ffc107;
+        color: #212529;
+      }
+      #download-source-button:hover {
+        background-color: #e0a800;
+      }
+
+      #donate-button {
+        background-color: #e83e8c;
+      }
+      #donate-button:hover {
+        background-color: #c2185b;
+      }
+
+      /* Print-specific styles */
+      @page {
+        size: A4;
+        margin: 0;
+      }
+
+      @media print {
+        body {
+          background: none;
+        }
+        .page {
+          margin: 0;
+          padding: 5mm;
+          box-shadow: none;
+          width: 100%;
+          min-height: 0;
+        }
+        .button-container {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="button-container">
+      <a href="/donate/index.html" id="donate-button" class="action-button" target="_blank" rel="noopener noreferrer">❤️ 请作者喝杯咖啡</a>
+      <button id="download-source-button" class="action-button" onclick="downloadSource()">💾 下载源码</button>
+      <button id="print-button" class="action-button" onclick="window.print()">🖨️ 打印</button>
+    </div>
+
+    <div class="page" id="page-content-to-download">
+      <div class="page-content">
+        <h2>第一大题</h2>
+
+        <h3>1.1</h3>
+        <p><strong>数据获取方式</strong>：</p>
+        <ul>
+          <li><strong>用户骑行数据</strong>：通过单车内置的 GPS 和智能锁记录骑行轨迹、时间、起点/终点位置。</li>
+          <li><strong>用户注册信息</strong>：APP 注册时收集的用户年龄、性别、职业等。</li>
+          <li><strong>用户行为数据</strong>：APP 搜索记录、找车时间、预约/取消行为。</li>
+          <li><strong>车辆状态数据</strong>：单车传感器检测的故障信息（如刹车损坏、电量不足）。</li>
+          <li><strong>外部数据</strong>：天气数据、地铁/公交时刻表、商圈活动信息等。</li>
+        </ul>
+        <p><strong>大数据特征（4V）</strong>：</p>
+        <ul>
+          <li><strong>Volume（大量）</strong>：十万级单车每天产生海量 GPS 轨迹、用户行为数据。</li>
+          <li><strong>Velocity（高速）</strong>：实时采集骑行数据，需快速处理调度需求。</li>
+          <li><strong>Variety（多样）</strong>：结构化（用户信息）、半结构化（GPS 轨迹）、非结构化（用户反馈文本）。</li>
+          <li><strong>Value（价值）</strong>：分析后可优化调度、提升用户体验。</li>
+        </ul>
+
+        <h3>1.2</h3>
+        <ul>
+          <li><strong>数据实时处理</strong>：需处理千万级 GPS 数据流，确保调度决策的时效性。</li>
+          <li><strong>数据质量</strong>：GPS 信号漂移、用户误操作导致的数据异常。</li>
+          <li><strong>隐私保护</strong>：用户轨迹数据涉及隐私，需合规存储和使用。</li>
+          <li><strong>算法优化</strong>：动态调度需平衡供需，避免“无车可用”或“车辆堆积”。</li>
+          <li><strong>系统稳定性</strong>：高并发访问时，大数据平台需保证高可用性。</li>
+        </ul>
+
+        <h2>第二大题</h2>
+
+        <h3>2.1</h3>
+        <p><strong>填充方法</strong>：</p>
+        <ul>
+          <li><strong>均值填充</strong>：适用于数据分布较均匀时。</li>
+          <li><strong>中位数填充</strong>：适用于存在极端值时。</li>
+          <li><strong>众数填充</strong>：适用于分类数据或特定模式的数据。</li>
+          <li><strong>回归预测填充</strong>：利用其他字段（如 <code>score</code>）预测缺失值。</li>
+        </ul>
+        <p><strong>均值填充的问题</strong>：</p>
+        <ul>
+          <li>若学习时长分布不均匀（如部分用户学习时间极长），均值可能偏离真实情况。</li>
+          <li>掩盖真实的数据分布特征，影响后续分析（如异常检测）。</li>
+        </ul>
+
+        <h3>2.2</h3>
+        <p><strong>可能原因</strong>：</p>
+        <ul>
+          <li>数据采集时未强制校验用户输入，导致提交空值。</li>
+          <li>系统故障或 API 传输错误，未正确记录用户名。</li>
+        </ul>
+        <p><strong>处理方法</strong>：</p>
+        <ul>
+          <li><strong>删除记录</strong>：若缺失比例低且不影响分析。</li>
+          <li><strong>填充默认值</strong>：如 <code>"Unknown"</code>，但需标注为缺失数据。</li>
+          <li><strong>数据溯源</strong>：检查采集流程，修复校验逻辑。</li>
+        </ul>
+
+        <h3>2.3</h3>
+        <pre><code>import pandas as pd
+import numpy as np
+
+# 读取数据
+study = pd.read_csv("study.csv")
+
+# 找出 score &lt; 0 或 &gt; 100 的异常值，并将对应 lt 设为 NaN
+study.loc[(study["score"] &lt; 0) | (study["score"] &gt; 100), "lt"] = np.nan
+
+# 输出处理后的数据
+print(study)</code></pre>
+
+        <h2>第三大题</h2>
+
+        <h3>3.1</h3>
+        <ol>
+          <li><strong>数据采集</strong>：整合出租车 GPS、地铁刷卡、路口监控、天气数据。</li>
+          <li><strong>数据清洗</strong>：处理缺失值、异常值（如 GPS 漂移）。</li>
+          <li><strong>数据存储</strong>：使用分布式存储（如 HDFS）或时序数据库（如 InfluxDB）。</li>
+          <li><strong>数据分析</strong>：计算拥堵指数、出行热点区域。</li>
+          <li><strong>可视化设计</strong>：选择合适图表（如热力图、折线图）。</li>
+          <li><strong>交互优化</strong>：提供动态筛选（如时间段、区域）。</li>
+          <li><strong>部署应用</strong>：集成到交通管理平台或公众出行 APP。</li>
+        </ol>
+
+        <h3>3.2</h3>
+        <ul>
+          <li><strong>热力图</strong>：展示路口/地铁站拥堵程度（基于 GPS 密度）。</li>
+          <li><strong>折线图</strong>：显示全天交通流量变化趋势。</li>
+          <li><strong>地理信息图（GIS）</strong>：叠加实时路况和事故点。</li>
+          <li><strong>散点图</strong>：分析天气（如降雨）与拥堵的关联性。</li>
+        </ul>
+        <p><strong>选择依据</strong>：</p>
+        <ul>
+          <li>热力图适合空间密度分析，折线图适合时间趋势，GIS 适合地理位置关联。</li>
+        </ul>
+
+        <h3>3.3</h3>
+        <p><strong>修改后代码：</strong></p>
+        <pre><code>import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+sns.set_style('darkgrid')
+sns.set(font='SimHei')
+
+titanic = pd.read_csv("titanic.csv")
+
+titanic['sex']= ["男" if i == "male" else "女" for i in titanic['sex']]
+titanic['class'] = ['1' if i == "First" else "2" if i == "Second" else "3" for i in titanic['class']]
+titanic = titanic.rename(columns={"class":"舱位等级", "age":"乘客年龄", "sex":"乘客性别"})
+
+sns.boxplot(x = "舱位等级", y = "乘客年龄", hue = "乘客性别", data=titanic)
+
+plt.show()</code></pre>
+        <p><strong>箱形图关键特征</strong>：</p>
+        <ul>
+          <li><strong>舱位等级</strong>：1 等舱乘客年龄中位数较高，3 等舱年龄分布更分散。</li>
+          <li><strong>性别差异</strong>：女性在 1/2 等舱年龄较高，男性在 3 等舱更多年轻人。</li>
+          <li><strong>异常值</strong>：部分高龄乘客（如 1 等舱男性）可能为特殊群体。</li>
+        </ul>
+
+        <h2>第四大题</h2>
+
+        <h3>4.1</h3>
+        <p><strong>数据类型</strong>：结构化数据（CSV 格式的销售记录）。</p>
+        <p><strong>增量采集方法</strong>：</p>
+        <ul>
+          <li>每日定时（如凌晨）通过 ETL 工具（如 Sqoop）将各门店 CSV 文件增量同步到 HDFS。</li>
+          <li>使用 <code>last_modified_time</code> 判断新增文件，避免重复采集。</li>
+        </ul>
+
+        <h3>4.2</h3>
+        <p><strong>核心函数</strong>：</p>
+        <pre><code>df[['商品名称', '销量']] = df['商品名称_销量'].str.split('_', expand=True)</code></pre>
+
+        <h3>4.3</h3>
+        <p><strong>图表类型</strong>：<strong>折线图</strong>（展示时间趋势）或 <strong>柱状图</strong>（对比不同水果销量）。</p>
+        <p><strong>选择理由</strong>：折线图能清晰反映销量随时间的变化趋势。</p>
+        <p><strong>关键字段</strong>：</p>
+        <ul>
+          <li><code>销售日期</code>（筛选 2024-Q3）</li>
+          <li><code>商品名称</code>（筛选水果类，如苹果、香蕉）</li>
+        </ul>
+      </div>
+    </div>
+
+    <script>
+      // 下载 HTML 源代码功能
+      function downloadSource() {
+        const htmlContent = document.documentElement.outerHTML;
+        const blob = new Blob([htmlContent], { type: "text/html;charset=utf-8" });
+        const link = document.createElement("a");
+        link.href = URL.createObjectURL(blob);
+        link.download = "大数据技术基础 - 源代码.html";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        URL.revokeObjectURL(link.href);
+      }
+    </script>
+  </body>
+</html>

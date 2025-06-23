@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <title>机器学习</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+      integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <style>
+      /* Basic reset and page background */
+      body {
+        background: #f0f0f0;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* A4 page container styles */
+      .page {
+        background: white;
+        width: 210mm;
+        min-height: 297mm;
+        margin: 10mm auto;
+        padding: 8mm;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        box-sizing: border-box;
+      }
+
+      /* Main content container styles */
+      .page-content {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 10px;
+        line-height: 1.3;
+        color: #333;
+        column-count: 3;
+        column-gap: 5mm;
+        column-rule: 1px solid #eee;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        margin: 4px 0;
+        padding: 0;
+        break-after: avoid;
+      }
+
+      h2 {
+        font-size: 14px;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 2px;
+        margin-top: 5mm;
+        column-span: all;
+      }
+      h2:first-child {
+        margin-top: 0;
+      }
+      h3 {
+        font-size: 12px;
+        font-weight: bold;
+        margin-top: 8px;
+      }
+
+      p,
+      ul,
+      ol {
+        margin: 3px 0;
+      }
+      ul,
+      ol {
+        padding-left: 15px;
+      }
+      li {
+        margin-bottom: 2px;
+      }
+      strong {
+        font-weight: bold;
+      }
+
+      table,
+      img,
+      pre {
+        break-inside: avoid;
+      }
+
+      pre {
+        background-color: #f4f4f4;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 8px;
+        font-family: "Courier New", Courier, monospace;
+        font-size: 9px;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        margin: 5px 0;
+      }
+
+      code {
+        font-family: "Courier New", Courier, monospace;
+        background-color: #eee;
+        padding: 1px 3px;
+        border-radius: 3px;
+      }
+      pre code {
+        background-color: transparent;
+        padding: 0;
+        border-radius: 0;
+      }
+
+      /* Button container styles */
+      .button-container {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      /* General button styles */
+      .action-button {
+        display: block;
+        padding: 8px 16px;
+        font-size: 14px;
+        font-weight: bold;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.3s;
+        text-decoration: none;
+        text-align: center;
+      }
+
+      /* Button colors */
+      #print-button {
+        background-color: #007bff;
+      }
+      #print-button:hover {
+        background-color: #0056b3;
+      }
+
+      #download-button {
+        background-color: #28a745;
+      }
+      #download-button:hover {
+        background-color: #1e7e34;
+      }
+
+      #download-source-button {
+        background-color: #ffc107;
+        color: #212529;
+      }
+      #download-source-button:hover {
+        background-color: #e0a800;
+      }
+
+      #donate-button {
+        background-color: #e83e8c;
+      }
+      #donate-button:hover {
+        background-color: #c2185b;
+      }
+
+      /* Print-specific styles */
+      @page {
+        size: A4;
+        margin: 0;
+      }
+
+      @media print {
+        body {
+          background: none;
+        }
+        .page {
+          margin: 0;
+          padding: 5mm;
+          box-shadow: none;
+          width: 100%;
+          min-height: 0;
+        }
+        .button-container {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="button-container">
+      <a href="/donate/index.html" id="donate-button" class="action-button" target="_blank" rel="noopener noreferrer">❤️ 请作者喝杯咖啡</a>
+      <button id="download-source-button" class="action-button" onclick="downloadSource()">💾 下载源码</button>
+      <button id="print-button" class="action-button" onclick="window.print()">🖨️ 打印</button>
+    </div>
+
+    <div class="page" id="page-content-to-download">
+      <div class="page-content">
+        <h2>基础知识</h2>
+        <h3>人工智能、机器学习、深度学习之间的关系</h3>
+        <ul>
+          <li><strong>人工智能（AI）</strong>：旨在让计算机模拟人类的智能行为，包括思考、学习和决策。应用范围广泛，如语音识别、图像处理、自然语言处理和自动驾驶等。</li>
+          <li>
+            <strong>机器学习（ML）</strong
+            >：是实现人工智能的核心技术，通过算法让计算机从数据中学习规律，无需显式编程。例如，通过分析大量图片数据区分猫和狗。是人工智能的子集，专注于通过数据训练模型完成特定任务。常见算法：线性回归、决策树、支持向量机等。
+          </li>
+          <li><strong>深度学习（DL）</strong>：是机器学习的分支，利用多层神经网络处理复杂任务（如图像识别、语音翻译）。模仿人脑神经元结构，自动提取高级特征。</li>
+        </ul>
+        <p><strong>总结</strong>：人工智能是框架，机器学习是实现方法，深度学习是更先进的技术。三者是包含与被包含的关系，层层递进。</p>
+
+        <h3>机器学习常用数据分析库及数据类型设置</h3>
+        <ul>
+          <li><strong>Pandas</strong>：数据处理和分析，提供 <code>DataFrame</code> 和 <code>Series</code> 数据结构。支持数据清洗、筛选、分组、聚合等，常用于数据预处理和特征工程。</li>
+          <li><strong>NumPy</strong>：基础科学计算库，提供高效的多维数组（<code>ndarray</code>）和矩阵运算。支持数学函数、随机数生成，是数值计算的核心工具。</li>
+          <li><strong>Matplotlib</strong>：数据可视化库，支持折线图、柱状图、散点图等，可自定义样式。</li>
+          <li><strong>Seaborn</strong>：基于 Matplotlib 的高级可视化库，专注统计图表（如热力图、箱线图）。</li>
+          <li><strong>Scikit-learn</strong>：机器学习工具库，涵盖分类、回归、聚类等算法。</li>
+          <li><strong>OpenCV</strong>：计算机视觉库，支持图像/视频处理（读取、裁剪、滤波、特征检测等）。</li>
+          <li><strong>jieba</strong>：中文分词库，支持精确模式、全模式等分词模式。</li>
+        </ul>
+
+        <h3>使用 Pandas 读取 CSV 文件</h3>
+        <pre><code>import pandas as pd
+data = pd.read_csv('文件名.csv')</code></pre>
+
+        <h2>KNN 算法</h2>
+        <h3>1. 简述 KNN 算法的基本思想</h3>
+        <p>确定一个 K 值，计算待预测样本与所有训练样本的距离，选取距离最近的 K 个样本，根据这 K 个样本中出现最多的类别进行预测。</p>
+
+        <h3>2. KNN 算法的应用流程</h3>
+        <ol>
+          <li>构建数据集：明确数据特征和标签。</li>
+          <li>数据预处理：清洗异常值/缺失值，标准化消除量纲差异。</li>
+          <li>选取 K 值：人工设定超参数 K。</li>
+          <li>模型训练与评估：使用精确率、召回率、F1 值等指标评估性能。</li>
+          <li>预测：对符合性能要求的新样本进行预测。</li>
+        </ol>
+
+        <h2>K-means 聚类算法</h2>
+        <h3>1. 简述 K-means 聚类的基本思想</h3>
+        <p>随机初始化 K 个聚类中心，计算所有样本与中心的距离，将样本归入最近中心对应的类；更新聚类中心（重新计算各类均值）；重复上述过程直至聚类中心不再变化。</p>
+
+        <h3>2. K-means 算法的应用流程</h3>
+        <ol>
+          <li>准备数据：构建无标签数据集。</li>
+          <li>初始化聚类中心：随机选择 K 个中心点。</li>
+          <li>
+            迭代聚类：
+            <ul>
+              <li>分配样本：将每个样本分配到最近的中心类别。</li>
+              <li>更新中心：重新计算各类均值作为新中心。</li>
+            </ul>
+          </li>
+          <li>终止条件：中心点不再变化时停止迭代。</li>
+        </ol>
+
+        <h2>线性回归</h2>
+        <h3>1. 线性回归与分类任务的核心区别</h3>
+        <p>线性回归预测连续值（如温度、股价），分类任务预测离散类别（如猫/狗）。</p>
+
+        <h3>2. 线性回归的应用流程</h3>
+        <ol>
+          <li>构建数据集：定义特征变量（X）和目标变量（y）。</li>
+          <li>
+            特征工程：
+            <ul>
+              <li>数据清洗（处理异常值、缺失值）。</li>
+              <li>标准化（消除特征间量纲差异）。</li>
+            </ul>
+          </li>
+          <li>建模与训练：导入线性回归模型（如 <code>LinearRegression</code>），训练模型。</li>
+          <li>评估与预测：评估模型性能（如 R²分数），达标后用于预测。</li>
+        </ol>
+
+        <h2>参数计算</h2>
+        <h3>卷积神经网络和全连接网络的参数量计算</h3>
+        <ul>
+          <li>
+            <strong>卷积神经网络参数量</strong>：<br />
+            <code>(输入通道数 * 卷积核宽度 * 卷积核高度 * 输出通道数) + 输出通道数</code>
+          </li>
+          <li>
+            <strong>全连接网络参数量</strong>：<br />
+            <code>(左边神经元个数 * 右边神经元个数) + 右边神经元个数</code>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <script>
+      // 下载 HTML 源代码功能
+      function downloadSource() {
+        const htmlContent = document.documentElement.outerHTML;
+        const blob = new Blob([htmlContent], { type: "text/html;charset=utf-8" });
+        const link = document.createElement("a");
+        link.href = URL.createObjectURL(blob);
+        link.download = "机器学习 - 源代码.html";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        URL.revokeObjectURL(link.href);
+      }
+    </script>
+  </body>
+</html>
