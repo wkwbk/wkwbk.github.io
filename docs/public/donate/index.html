@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>感谢支持</title>
+    <link rel="icon" href="/logo.png" type="image/png" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="./js/qr_codes.js" defer></script>
+  </head>
+  <body>
+    <div class="donation-card">
+      <h1>感谢您的慷慨支持！</h1>
+      <p>您的每一次鼓励都是我前进的动力</p>
+
+      <div class="tab-buttons">
+        <button class="tab-button alipay active" onclick="showTab('alipay')">支付宝</button>
+        <button class="tab-button wechat" onclick="showTab('wechat')">微信支付</button>
+      </div>
+
+      <div id="alipay" class="tab-content active">
+        <img id="alipay-qr-img" src="" alt="支付宝收款码" />
+        <p class="scan-tip">请打开支付宝 App 扫一扫</p>
+      </div>
+
+      <div id="wechat" class="tab-content">
+        <img id="wechat-qr-img" src="" alt="微信收款码" />
+        <p class="scan-tip">请打开微信 App 扫一扫</p>
+      </div>
+
+      <div class="donation-records">
+        <h2>近期支持者</h2>
+        <div class="records-table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>昵称</th>
+                <th>金额</th>
+                <th>日期</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>**兴</td>
+                <td>¥ 18.88</td>
+                <td>06-23</td>
+              </tr>
+              <tr>
+                <td>**芃</td>
+                <td>¥ 7.00</td>
+                <td>06-23</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function showTab(tabName) {
+        // 获取所有内容区域和按钮
+        const contents = document.querySelectorAll(".tab-content");
+        const buttons = document.querySelectorAll(".tab-button");
+
+        // 隐藏所有内容区域并移除按钮的激活状态
+        contents.forEach((content) => {
+          content.classList.remove("active");
+        });
+        buttons.forEach((button) => {
+          button.classList.remove("active");
+        });
+
+        // 显示选定的内容区域并激活对应的按钮
+        document.getElementById(tabName).classList.add("active");
+        document.querySelector(".tab-button." + tabName).classList.add("active");
+      }
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // 检查 qrImages 对象是否存在，防止 qr_codes.js 加载失败时报错
+        if (typeof qrImages !== "undefined") {
+          document.getElementById("alipay-qr-img").src = qrImages.alipay;
+          document.getElementById("wechat-qr-img").src = qrImages.wechat;
+        } else {
+          console.error("错误：qr_codes.js 未能成功加载或 qrImages 对象不存在。");
+        }
+      });
+    </script>
+  </body>
+</html>
