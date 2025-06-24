@@ -33,7 +33,7 @@
       .page-content {
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
         font-size: 10px;
-        line-height: 1.2;
+        line-height: 1.3;
         color: #333;
         column-count: 3;
         column-gap: 5mm;
@@ -67,8 +67,7 @@
 
       p,
       ul,
-      ol,
-      table {
+      ol {
         margin: 3px 0;
       }
       ul,
@@ -76,41 +75,16 @@
         padding-left: 15px;
       }
       li {
-        margin-bottom: 2px;
+        margin-bottom: 5px;
       }
       strong {
         font-weight: bold;
       }
 
-      table,
       img,
       pre,
       iframe {
         break-inside: avoid;
-      }
-
-      table {
-        border-collapse: collapse;
-        width: 100%;
-        font-size: 9px;
-        margin: 5px 0;
-      }
-
-      /* 解决方案：让指定的宽表格横跨所有列 */
-      .wide-table {
-        column-span: all;
-      }
-
-      th,
-      td {
-        border: 1px solid #ccc;
-        padding: 2px 4px;
-        text-align: left;
-        vertical-align: top;
-      }
-      th {
-        background-color: #f2f2f2 !important;
-        font-weight: bold;
       }
 
       img {
@@ -135,6 +109,13 @@
 
       code {
         font-family: inherit;
+        background-color: #eee;
+        padding: 1px 3px;
+        border-radius: 3px;
+      }
+      pre code {
+        background-color: transparent;
+        padding: 0;
       }
 
       iframe {
@@ -231,7 +212,7 @@
   </head>
   <body>
     <div class="button-container">
-      <a href="/donate/index.html" id="donate-button" class="action-button" target="_blank" rel="noopener noreferrer">❤️ 请作者喝杯咖啡</a>
+      <a href="/donate.html" id="donate-button" class="action-button" target="_blank" rel="noopener noreferrer">❤️ 请作者喝杯咖啡</a>
       <button id="download-source-button" class="action-button" onclick="downloadSource()">💾 下载源码</button>
       <button id="print-button" class="action-button" onclick="window.print()">🖨️ 打印</button>
     </div>
@@ -255,269 +236,49 @@
         </ul>
 
         <h3>1.2</h3>
-        <p>设定测试输入数据的顺序为（金额，账户状态，交易频次，是否高风险区域），按语句覆盖要求，每条独立路径的测试用例如下表所示：</p>
-        <table>
-          <thead>
-            <tr>
-              <th>独立路径</th>
-              <th>测试数据组合</th>
-              <th>预期输出</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>路径 1</td>
-              <td>（500，False，3，True）</td>
-              <td>True</td>
-            </tr>
-            <tr>
-              <td>路径 2</td>
-              <td>（15000，True，2，False）</td>
-              <td>True</td>
-            </tr>
-            <tr>
-              <td>路径 3</td>
-              <td>（21000，True，5，False）</td>
-              <td>True</td>
-            </tr>
-            <tr>
-              <td>路径 4</td>
-              <td>（21000，True，3，False）</td>
-              <td>False</td>
-            </tr>
-          </tbody>
-        </table>
+        <p>设定测试输入数据的顺序为（金额，账户状态，交易频次，是否高风险区域），按语句覆盖要求，每条独立路径的测试用例如下：</p>
+        <ul>
+          <li><strong>路径 1:</strong> 数据 (500, False, 3, True)，预期：True</li>
+          <li><strong>路径 2:</strong> 数据 (15000, True, 2, False)，预期：True</li>
+          <li><strong>路径 3:</strong> 数据 (21000, True, 5, False)，预期：True</li>
+          <li><strong>路径 4:</strong> 数据 (21000, True, 3, False)，预期：False</li>
+        </ul>
 
         <h2>第二大题</h2>
 
         <h3>2.1</h3>
-        <table class="wide-table">
-          <thead>
-            <tr>
-              <th colspan="2"></th>
-              <th>条件与动作</th>
-              <th>1</th>
-              <th>2</th>
-              <th>3</th>
-              <th>4</th>
-              <th>5</th>
-              <th>6</th>
-              <th>7</th>
-              <th>8</th>
-              <th>9</th>
-              <th>10</th>
-              <th>11</th>
-              <th>12</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td rowspan="4"><strong>条件桩</strong></td>
-              <td>C4</td>
-              <td>是否限时秒杀商品</td>
-              <td>1</td>
-              <td>1</td>
-              <td>1</td>
-              <td>1</td>
-              <td>0</td>
-              <td>0</td>
-              <td>0</td>
-              <td>0</td>
-              <td>0</td>
-              <td>0</td>
-              <td>0</td>
-              <td>0</td>
-            </tr>
-            <tr>
-              <td>C1</td>
-              <td>用户类型</td>
-              <td>-</td>
-              <td>-</td>
-              <td>-</td>
-              <td>-</td>
-              <td>0</td>
-              <td>0</td>
-              <td>0</td>
-              <td>0</td>
-              <td>1</td>
-              <td>1</td>
-              <td>1</td>
-              <td>1</td>
-            </tr>
-            <tr>
-              <td>C2</td>
-              <td>优惠券类型</td>
-              <td>0</td>
-              <td>0</td>
-              <td>1</td>
-              <td>1</td>
-              <td>0</td>
-              <td>0</td>
-              <td>1</td>
-              <td>1</td>
-              <td>0</td>
-              <td>0</td>
-              <td>1</td>
-              <td>1</td>
-            </tr>
-            <tr>
-              <td>C3</td>
-              <td>订单金额 ≥ 门槛金额</td>
-              <td>1</td>
-              <td>0</td>
-              <td>1</td>
-              <td>0</td>
-              <td>1</td>
-              <td>0</td>
-              <td>1</td>
-              <td>0</td>
-              <td>1</td>
-              <td>0</td>
-              <td>1</td>
-              <td>0</td>
-            </tr>
-            <tr>
-              <td rowspan="4"><strong>动作桩</strong></td>
-              <td>A1</td>
-              <td>执行满减券</td>
-              <td>✔</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td>✔</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td>✔</td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>A2</td>
-              <td>执行折扣券</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td>✔</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td>✔</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>A3</td>
-              <td>VIP 叠加优惠</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td>✔</td>
-              <td></td>
-              <td>✔</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>A4</td>
-              <td>提示不可用</td>
-              <td></td>
-              <td>✔</td>
-              <td>✔</td>
-              <td>✔</td>
-              <td></td>
-              <td>✔</td>
-              <td></td>
-              <td>✔</td>
-              <td></td>
-              <td>✔</td>
-              <td></td>
-              <td>✔</td>
-            </tr>
-          </tbody>
-        </table>
-        <p><strong>符号说明</strong>：<code>1</code>：真，<code>0</code>：假，<code>-</code>：不相关，<code>✔</code>：执行</p>
+        <p><strong>决策表规则：</strong></p>
+        <ol>
+          <li><strong>条件：</strong> 限时秒杀 (是), 满减券，金额达标 (是)。<strong>动作：</strong> 执行满减券 (A1)。</li>
+          <li><strong>条件：</strong> 限时秒杀 (是), 满减券，金额达标 (否)。<strong>动作：</strong> 提示不可用 (A4)。</li>
+          <li><strong>条件：</strong> 限时秒杀 (是), 折扣券，金额达标 (是)。<strong>动作：</strong> 提示不可用 (A4)。</li>
+          <li><strong>条件：</strong> 限时秒杀 (是), 折扣券，金额达标 (否)。<strong>动作：</strong> 提示不可用 (A4)。</li>
+          <li><strong>条件：</strong> 普通商品，普通用户，满减券，金额达标 (是)。<strong>动作：</strong> 执行满减券 (A1)。</li>
+          <li><strong>条件：</strong> 普通商品，普通用户，满减券，金额达标 (否)。<strong>动作：</strong> 提示不可用 (A4)。</li>
+          <li><strong>条件：</strong> 普通商品，普通用户，折扣券，金额达标 (是)。<strong>动作：</strong> 执行折扣券 (A2)。</li>
+          <li><strong>条件：</strong> 普通商品，普通用户，折扣券，金额达标 (否)。<strong>动作：</strong> 提示不可用 (A4)。</li>
+          <li><strong>条件：</strong> 普通商品，VIP 用户，满减券，金额达标 (是)。<strong>动作：</strong> 执行满减券 (A1) + VIP 叠加优惠 (A3)。</li>
+          <li><strong>条件：</strong> 普通商品，VIP 用户，满减券，金额达标 (否)。<strong>动作：</strong> 提示不可用 (A4)。</li>
+          <li><strong>条件：</strong> 普通商品，VIP 用户，折扣券，金额达标 (是)。<strong>动作：</strong> 执行折扣券 (A2) + VIP 叠加优惠 (A3)。</li>
+          <li><strong>条件：</strong> 普通商品，VIP 用户，折扣券，金额达标 (否)。<strong>动作：</strong> 提示不可用 (A4)。</li>
+        </ol>
 
         <h3>2.2</h3>
-        <p>设定输入数据的顺序为（商品类型，用户类型，优惠券类型，订单金额达标），则测试用例如表所示。</p>
-        <table>
-          <thead>
-            <tr>
-              <th>规则</th>
-              <th>测试数据组合</th>
-              <th>预期输出</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>（限时秒杀，不考虑，满减券，是）</td>
-              <td>A1</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>商品类型=限时秒杀，优惠券类型=满减券，订单金额达标=否</td>
-              <td>A4</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>商品类型=限时秒杀，优惠券类型=折扣券，订单金额达标=是</td>
-              <td>A4</td>
-            </tr>
-            <tr>
-              <td>4</td>
-              <td>商品类型=限时秒杀，优惠券类型=折扣券，订单金额达标=否</td>
-              <td>A4</td>
-            </tr>
-            <tr>
-              <td>5</td>
-              <td>商品类型=普通，用户类型=普通，优惠券类型=满减券，订单金额达标=是</td>
-              <td>A1</td>
-            </tr>
-            <tr>
-              <td>6</td>
-              <td>商品类型=普通，用户类型=普通，优惠券类型=满减券，订单金额达标=否</td>
-              <td>A4</td>
-            </tr>
-            <tr>
-              <td>7</td>
-              <td>商品类型=普通，用户类型=普通，优惠券类型=折扣券，订单金额达标=是</td>
-              <td>A2</td>
-            </tr>
-            <tr>
-              <td>8</td>
-              <td>商品类型=普通，用户类型=普通，优惠券类型=折扣券，订单金额达标=否</td>
-              <td>A4</td>
-            </tr>
-            <tr>
-              <td>9</td>
-              <td>商品类型=普通，用户类型=VIP, 优惠券类型=满减券，订单金额达标=是</td>
-              <td>A1 + A3</td>
-            </tr>
-            <tr>
-              <td>10</td>
-              <td>商品类型=普通，用户类型=VIP, 优惠券类型=满减券，订单金额达标=否</td>
-              <td>A4</td>
-            </tr>
-            <tr>
-              <td>11</td>
-              <td>商品类型=普通，用户类型=VIP, 优惠券类型=折扣券，订单金额达标=是</td>
-              <td>A2 + A3</td>
-            </tr>
-            <tr>
-              <td>12</td>
-              <td>商品类型=普通，用户类型=VIP, 优惠券类型=折扣券，订单金额达标=否</td>
-              <td>A4</td>
-            </tr>
-          </tbody>
-        </table>
+        <p>设定输入数据的顺序为（商品类型，用户类型，优惠券类型，订单金额达标），则测试用例如下。</p>
+        <ol>
+          <li><strong>数据：</strong> (限时秒杀，不考虑，满减券，是); <strong>预期：</strong> A1</li>
+          <li><strong>数据：</strong> (限时秒杀，不考虑，满减券，否); <strong>预期：</strong> A4</li>
+          <li><strong>数据：</strong> (限时秒杀，不考虑，折扣券，是); <strong>预期：</strong> A4</li>
+          <li><strong>数据：</strong> (限时秒杀，不考虑，折扣券，否); <strong>预期：</strong> A4</li>
+          <li><strong>数据：</strong> (普通，普通，满减券，是); <strong>预期：</strong> A1</li>
+          <li><strong>数据：</strong> (普通，普通，满减券，否); <strong>预期：</strong> A4</li>
+          <li><strong>数据：</strong> (普通，普通，折扣券，是); <strong>预期：</strong> A2</li>
+          <li><strong>数据：</strong> (普通，普通，折扣券，否); <strong>预期：</strong> A4</li>
+          <li><strong>数据：</strong> (普通，VIP, 满减券，是); <strong>预期：</strong> A1 + A3</li>
+          <li><strong>数据：</strong> (普通，VIP, 满减券，否); <strong>预期：</strong> A4</li>
+          <li><strong>数据：</strong> (普通，VIP, 折扣券，是); <strong>预期：</strong> A2 + A3</li>
+          <li><strong>数据：</strong> (普通，VIP, 折扣券，否); <strong>预期：</strong> A4</li>
+        </ol>
 
         <h2>第三大题</h2>
 
@@ -539,37 +300,34 @@ def iterative_calculation(initial_num, operation_type):
 
         <h3>3.2</h3>
         <p><strong>修改后代码：</strong></p>
-        <pre><code># sort_test.py
-import sys
-import unittest
-from ddt import ddt, data, unpack
+        <pre><code>
+from ddt import _____, _____, _____
+应填入 ddt, data, unpack
+from sort import _____
+应填入 iterative_calculation
 
-sys.path.append(r"D:\Demo")
-from sort import iterative_calculation
+(0, 0, _____) 应填入 0
+(5, 1, _____) 应填入 50
+(5, 2, _____) 应填入 100
+(-1, 5, _____) 应填入 0
+(10, 1, _____) 应填入 100
+        </pre></code>
+        <pre><code>
+result = iterative_calculation(_____, _____)
+应填入 input_num, mode
 
-@ddt
-class TestRewardSystem(unittest.TestCase):
-    @data(
-        (3, 0, 6),
-        (0, 0, 0),
-        (5, 1, 50),
-        (5, 2, 100),
-        (-1, 0, 0), # 修正: 无效次数应为0分
-        (10, 1, 100)
-    )
-    @unpack
-    def test_calculate_rewards(self, input_num, mode, expected):
-        result = iterative_calculation(input_num, mode)
-        self.assertEqual(result, expected, msg=f"实际结果:{result}")
+self._____(result, expected, msg=f"实际结果:{result}")
+应填入 assertEqual
 
-    def test_policy_compliance(self):
-        # 修正: 假设测试农产品兑换场景
-        agricultural_points = iterative_calculation(15, 2)
-        self.assertEqual(agricultural_points, 300, "金卡15次消费应为300分")
+agricultural_points = iterative_calculation(_____, _____)
+应填入 15, 2
+
+self.assertEqual(agricultural_points, _____, "应支持农产品兑换")
+应填入 300
 
 if __name__ == '__main__':
-    unittest.main()</code></pre>
-
+    _____ 应填入 unittest.main()
+        </pre></code>
         <h2 class="new-page">第四大题</h2>
 
         <h3>4.1</h3>
@@ -605,7 +363,7 @@ if __name__ == '__main__':
         const blob = new Blob([htmlContent], { type: "text/html;charset=utf-8" });
         const link = document.createElement("a");
         link.href = URL.createObjectURL(blob);
-        link.download = "软件测试 - 小抄 - 源代码.html";
+        link.download = "软件测试 - 源代码.html";
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
