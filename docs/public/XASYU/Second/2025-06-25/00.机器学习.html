@@ -147,14 +147,12 @@
       #print-button:hover {
         background-color: #0056b3;
       }
-
       #download-button {
         background-color: #28a745;
       }
       #download-button:hover {
         background-color: #1e7e34;
       }
-
       #download-source-button {
         background-color: #ffc107;
         color: #212529;
@@ -162,7 +160,6 @@
       #download-source-button:hover {
         background-color: #e0a800;
       }
-
       #donate-button {
         background-color: #e83e8c;
       }
@@ -202,98 +199,142 @@
 
     <div class="page" id="page-content-to-download">
       <div class="page-content">
-        <h2>基础知识</h2>
-        <h3>人工智能、机器学习、深度学习之间的关系</h3>
+        <h2>基础概念</h2>
+        <h3>1. AI, ML, DL 关系</h3>
+        <p>
+          <strong>AI (人工智能)</strong> 是顶层概念，旨在让机器模拟人类智能。<strong>ML (机器学习)</strong> 是实现 AI 的核心方法，通过算法从数据中学习。<strong>DL (深度学习)</strong>
+          是 ML 的一个分支，使用多层神经网络处理复杂任务。关系为：AI ⊃ ML ⊃ DL。
+        </p>
+
+        <h3>2. 常用数据分析库</h3>
         <ul>
-          <li><strong>人工智能（AI）</strong>：旨在让计算机模拟人类的智能行为，包括思考、学习和决策。应用范围广泛，如语音识别、图像处理、自然语言处理和自动驾驶等。</li>
-          <li>
-            <strong>机器学习（ML）</strong
-            >：是实现人工智能的核心技术，通过算法让计算机从数据中学习规律，无需显式编程。例如，通过分析大量图片数据区分猫和狗。是人工智能的子集，专注于通过数据训练模型完成特定任务。常见算法：线性回归、决策树、支持向量机等。
-          </li>
-          <li><strong>深度学习（DL）</strong>：是机器学习的分支，利用多层神经网络处理复杂任务（如图像识别、语音翻译）。模仿人脑神经元结构，自动提取高级特征。</li>
+          <li><strong>Pandas:</strong> 数据处理与分析 (DataFrame)。</li>
+          <li><strong>NumPy:</strong> 科学计算 (多维数组 ndarray)。</li>
+          <li><strong>Matplotlib/Seaborn:</strong> 数据可视化。</li>
+          <li><strong>Scikit-learn:</strong> 机器学习算法库。</li>
+          <li><strong>OpenCV:</strong> 计算机视觉。</li>
+          <li><strong>jieba:</strong> 中文分词。</li>
         </ul>
-        <p><strong>总结</strong>：人工智能是框架，机器学习是实现方法，深度学习是更先进的技术。三者是包含与被包含的关系，层层递进。</p>
+        <pre><code># 读取CSV
+import pandas as pd
+data = pd.read_csv('file.csv')</code></pre>
 
-        <h3>机器学习常用数据分析库及数据类型设置</h3>
+        <h3>3. 训练集、验证集、测试集</h3>
+        <p>
+          三者应互不重叠。<strong>训练集</strong>用于模型学习参数；<strong>验证集</strong>用于调整超参数和模型选择（如调 K 值）；<strong>测试集</strong>用于最终评估模型的泛化能力，只在最后用一次。
+        </p>
+
+        <h3>4. 拟合与泛化能力</h3>
+        <p>
+          <strong>拟合</strong
+          >指模型学习训练数据的过程。<strong>欠拟合</strong>是模型太简单，训练和测试误差都高；<strong>过拟合</strong>是模型太复杂，在训练集上表现好，但在测试集上差。<strong>泛化能力</strong>指模型对未见过的新数据的预测能力，是衡量模型好坏的关键。
+        </p>
+
+        <h3>5. 机器学习方法分类</h3>
         <ul>
-          <li><strong>Pandas</strong>：数据处理和分析，提供 <code>DataFrame</code> 和 <code>Series</code> 数据结构。支持数据清洗、筛选、分组、聚合等，常用于数据预处理和特征工程。</li>
-          <li><strong>NumPy</strong>：基础科学计算库，提供高效的多维数组（<code>ndarray</code>）和矩阵运算。支持数学函数、随机数生成，是数值计算的核心工具。</li>
-          <li><strong>Matplotlib</strong>：数据可视化库，支持折线图、柱状图、散点图等，可自定义样式。</li>
-          <li><strong>Seaborn</strong>：基于 Matplotlib 的高级可视化库，专注统计图表（如热力图、箱线图）。</li>
-          <li><strong>Scikit-learn</strong>：机器学习工具库，涵盖分类、回归、聚类等算法。</li>
-          <li><strong>OpenCV</strong>：计算机视觉库，支持图像/视频处理（读取、裁剪、滤波、特征检测等）。</li>
-          <li><strong>jieba</strong>：中文分词库，支持精确模式、全模式等分词模式。</li>
+          <li><strong>监督学习：</strong> 使用带标签的数据进行训练，用于分类和回归。算法：KNN, SVM, 决策树。</li>
+          <li><strong>非监督学习：</strong> 处理无标签数据，发现数据结构。算法：K-Means, PCA。</li>
+          <li><strong>半监督学习：</strong> 结合少量有标签和大量无标签数据。</li>
+          <li><strong>强化学习：</strong> 通过与环境交互和奖励机制来学习最优策略。算法：Q-learning。</li>
         </ul>
 
-        <h3>使用 Pandas 读取 CSV 文件</h3>
-        <pre><code>import pandas as pd
-data = pd.read_csv('文件名.csv')</code></pre>
-
-        <h2>KNN 算法</h2>
-        <h3>1. 简述 KNN 算法的基本思想</h3>
-        <p>确定一个 K 值，计算待预测样本与所有训练样本的距离，选取距离最近的 K 个样本，根据这 K 个样本中出现最多的类别进行预测。</p>
-
-        <h3>2. KNN 算法的应用流程</h3>
-        <ol>
-          <li>构建数据集：明确数据特征和标签。</li>
-          <li>数据预处理：清洗异常值/缺失值，标准化消除量纲差异。</li>
-          <li>选取 K 值：人工设定超参数 K。</li>
-          <li>模型训练与评估：使用精确率、召回率、F1 值等指标评估性能。</li>
-          <li>预测：对符合性能要求的新样本进行预测。</li>
-        </ol>
-
-        <h2>K-means 聚类算法</h2>
-        <h3>1. 简述 K-means 聚类的基本思想</h3>
-        <p>随机初始化 K 个聚类中心，计算所有样本与中心的距离，将样本归入最近中心对应的类；更新聚类中心（重新计算各类均值）；重复上述过程直至聚类中心不再变化。</p>
-
-        <h3>2. K-means 算法的应用流程</h3>
-        <ol>
-          <li>准备数据：构建无标签数据集。</li>
-          <li>初始化聚类中心：随机选择 K 个中心点。</li>
-          <li>
-            迭代聚类：
-            <ul>
-              <li>分配样本：将每个样本分配到最近的中心类别。</li>
-              <li>更新中心：重新计算各类均值作为新中心。</li>
-            </ul>
-          </li>
-          <li>终止条件：中心点不再变化时停止迭代。</li>
-        </ol>
-
-        <h2>线性回归</h2>
-        <h3>1. 线性回归与分类任务的核心区别</h3>
-        <p>线性回归预测连续值（如温度、股价），分类任务预测离散类别（如猫/狗）。</p>
-
-        <h3>2. 线性回归的应用流程</h3>
-        <ol>
-          <li>构建数据集：定义特征变量（X）和目标变量（y）。</li>
-          <li>
-            特征工程：
-            <ul>
-              <li>数据清洗（处理异常值、缺失值）。</li>
-              <li>标准化（消除特征间量纲差异）。</li>
-            </ul>
-          </li>
-          <li>建模与训练：导入线性回归模型（如 <code>LinearRegression</code>），训练模型。</li>
-          <li>评估与预测：评估模型性能（如 R²分数），达标后用于预测。</li>
-        </ol>
-
-        <h2>参数计算</h2>
-        <h3>卷积神经网络和全连接网络的参数量计算</h3>
+        <h2>模型评估</h2>
+        <h3>1. 常用性能指标</h3>
+        <p><strong>分类任务：</strong></p>
         <ul>
-          <li>
-            <strong>卷积神经网络参数量</strong>：<br />
-            <code>(输入通道数 * 卷积核宽度 * 卷积核高度 * 输出通道数) + 输出通道数</code>
-          </li>
-          <li>
-            <strong>全连接网络参数量</strong>：<br />
-            <code>(左边神经元个数 * 右边神经元个数) + 右边神经元个数</code>
-          </li>
+          <li><strong>准确率 (Accuracy):</strong> 适合类别均衡数据。</li>
+          <li><strong>精确率 (Precision):</strong> 预测为正中实际为正的比例。</li>
+          <li><strong>召回率 (Recall):</strong> 实际为正中预测为正的比例。</li>
+          <li><strong>F1 分数：</strong> 精确率和召回率的调和平均值。</li>
+          <li><strong>混淆矩阵：</strong> 直观展示各类别预测情况。</li>
+          <li><strong>ROC 曲线与 AUC 值：</strong> 评估分类器整体性能。</li>
         </ul>
+        <p><strong>回归任务：</strong></p>
+        <ul>
+          <li><strong>MSE (均方误差):</strong> 预测值与真实值差的平方的均值。</li>
+          <li><strong>RMSE (均方根误差):</strong> MSE 的平方根。</li>
+          <li><strong>MAE (平均绝对误差):</strong> 预测值与真实值差的绝对值的均值。</li>
+          <li><strong>R²分数：</strong> 衡量模型拟合优度，越接近 1 越好。</li>
+        </ul>
+        <p><strong>聚类任务：</strong></p>
+        <ul>
+          <li><strong>轮廓系数：</strong> 值越接近 1，聚类效果越好。</li>
+          <li><strong>Davies-Bouldin / Calinski-Harabasz 指数。</strong></li>
+        </ul>
+        <h3>2. 评估方法</h3>
+        <ul>
+          <li><strong>交叉验证：</strong> (如 K 折交叉验证) 多次划分数据集评估模型稳定性。</li>
+          <li><strong>留出法：</strong> 简单划分为训练集和测试集。</li>
+          <li><strong>自助法：</strong> 有放回抽样，适用于小数据集。</li>
+        </ul>
+
+        <h2>核心算法与流程</h2>
+        <h3>1. KNN (K-最近邻)</h3>
+        <p><strong>思想：</strong> “物以类聚”，一个样本的类别由其最近的 K 个邻居的类别投票决定。</p>
+        <p><strong>流程：</strong> ①数据准备与标准化 → ②选择 K 值 → ③计算新样本与所有训练样本的距离 → ④找出最近的 K 个邻居 → ⑤投票决定类别 → ⑥评估模型。</p>
+
+        <h3>2. K-Means 聚类</h3>
+        <p><strong>思想：</strong> 将数据划分为 K 个簇，使簇内点间距离小，簇间距离大。</p>
+        <p><strong>流程：</strong> ①随机选 K 个初始质心 → ②将各样本分配到最近的质心簇 → ③重新计算每个簇的均值作为新质心 → ④重复②和③直到质心不再变化。</p>
+        <p><strong>优缺点：</strong> 优点是简单高效；缺点是需预设 K 值，对初始质心和噪声敏感。</p>
+
+        <h3>3. 回归算法 (以线性回归/岭回归为例)</h3>
+        <p><strong>思想：</strong> 预测连续值，建立输入特征 X 与输出目标 y 的函数关系。</p>
+        <p><strong>流程：</strong> ①准备数据 (X, y) 并划分 → ②数据预处理 (如标准化) → ③选择并训练模型 (<code>model.fit()</code>) → ④预测 (<code>model.predict()</code>) → ⑤评估 (MSE, R²)。</p>
+        <pre><code># 岭回归示例
+from sklearn.linear_model import Ridge
+# ... 数据准备和标准化 ...
+model = Ridge(alpha=1.0) # alpha为正则化强度
+model.fit(X_train_scaled, y_train)
+y_pred = model.predict(X_test_scaled)</code></pre>
+
+        <h3>4. 支持向量机 (SVC)</h3>
+        <p><strong>思想：</strong> 在特征空间中寻找一个能将不同类别样本最大间隔分开的超平面。</p>
+        <pre><code># SVC 使用示例
+from sklearn.svm import SVC
+# ... 数据准备和标准化 ...
+# kernel常用'rbf','linear','poly'
+model = SVC(kernel='rbf', C=1.0)
+model.fit(X_train, y_train)
+y_pred = model.predict(X_test)</code></pre>
+
+        <h3>5. Scikit-learn 标准流程</h3>
+        <p>
+          ①导入库与模型 → ②加载并划分数据 (<code>train_test_split</code>) → ③特征预处理 (如<code>StandardScaler</code>) → ④创建模型实例 → ⑤训练模型 (<code>model.fit()</code>) → ⑥预测
+          (<code>model.predict()</code>) → ⑦评估模型 (<code>accuracy_score</code>等)。
+        </p>
+
+        <h2>神经网络参数计算</h2>
+        <h3>1. 全连接层</h3>
+        <p>参数量 = <code>(输入神经元数 * 输出神经元数) + 输出神经元数</code></p>
+        <p><strong>示例：</strong> `Dense(256, input_shape=(625,))`</p>
+        <p>参数 = (625 * 256) + 256 = 160,256</p>
+
+        <h3>2. 卷积层</h3>
+        <p>参数量 = <code>(卷积核宽 * 卷积核高 * 输入通道数 + 1) * 卷积核个数(输出通道数)</code></p>
+        <p><strong>示例：</strong> `Conv2D(16, (5,5), input_shape=(64,64,3))`</p>
+        <p>参数 = (5 * 5 * 3 + 1) * 16 = 1,216</p>
       </div>
     </div>
 
     <script>
+      // 下载 PDF 功能（优化版）
+      function downloadPDF() {
+        const element = document.getElementById("page-content-to-download");
+        const opt = {
+          margin: [5, 5, 5, 5],
+          filename: "机器学习 - 小抄.pdf",
+          image: { type: "png", quality: 1.0 },
+          html2canvas: {
+            scale: 4,
+            useCORS: true,
+            letterRendering: true,
+          },
+          jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
+        };
+        html2pdf().from(element).set(opt).save();
+      }
+
       // 下载 HTML 源代码功能
       function downloadSource() {
         const htmlContent = document.documentElement.outerHTML;
