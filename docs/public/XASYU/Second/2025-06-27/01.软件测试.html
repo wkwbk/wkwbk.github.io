@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <title>软件测试</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+      integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <style>
+      /* Basic reset and page background */
+      body {
+        background: #f0f0f0;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* A4 page container styles */
+      .page {
+        background: white;
+        width: 210mm;
+        min-height: 297mm;
+        margin: 10mm auto;
+        padding: 8mm;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        box-sizing: border-box;
+      }
+
+      /* Main content container styles */
+      .page-content {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 10px;
+        line-height: 1.2;
+        color: #333;
+        column-count: 3;
+        column-gap: 5mm;
+        column-rule: 1px solid #eee;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        margin: 4px 0;
+        padding: 0;
+        break-after: avoid;
+      }
+
+      h2 {
+        font-size: 14px;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 2px;
+        margin-top: 5mm;
+        column-span: all;
+      }
+      h2:first-child {
+        margin-top: 0;
+      }
+      h3 {
+        font-size: 12px;
+      }
+
+      p,
+      ul,
+      ol,
+      table {
+        margin: 3px 0;
+      }
+      ul,
+      ol {
+        padding-left: 15px;
+      }
+      li {
+        margin-bottom: 2px;
+      }
+      strong {
+        font-weight: bold;
+      }
+
+      table,
+      img,
+      pre,
+      iframe {
+        break-inside: avoid;
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        font-size: 9px;
+        margin: 5px 0;
+      }
+
+      /* 解决方案：让指定的宽表格横跨所有列 */
+      .wide-table {
+        column-span: all;
+      }
+
+      th,
+      td {
+        border: 1px solid #ccc;
+        padding: 2px 4px;
+        text-align: left;
+        vertical-align: top;
+      }
+      th {
+        background-color: #f2f2f2 !important;
+        font-weight: bold;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        border: 1px solid #eee;
+        margin: 4px auto;
+      }
+
+      pre {
+        background-color: #f4f4f4;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 8px;
+        font-family: "Courier New", Courier, monospace;
+        font-size: 9px;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        margin: 5px 0;
+      }
+
+      code {
+        font-family: inherit;
+      }
+
+      iframe {
+        width: 100%;
+        height: 400px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      /* 强制分页的样式 */
+      .new-page {
+        break-before: page;
+      }
+
+      /* Button container styles */
+      .button-container {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      /* General button styles */
+      .action-button {
+        display: block;
+        padding: 8px 16px;
+        font-size: 14px;
+        font-weight: bold;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.3s;
+        text-decoration: none;
+        text-align: center;
+      }
+
+      /* Button colors */
+      #print-button {
+        background-color: #007bff;
+      }
+      #print-button:hover {
+        background-color: #0056b3;
+      }
+
+      #download-button {
+        background-color: #28a745;
+      }
+      #download-button:hover {
+        background-color: #1e7e34;
+      }
+
+      #download-source-button {
+        background-color: #ffc107;
+        color: #212529;
+      }
+      #download-source-button:hover {
+        background-color: #e0a800;
+      }
+
+      #donate-button {
+        background-color: #e83e8c;
+      }
+      #donate-button:hover {
+        background-color: #c2185b;
+      }
+
+      /* Print-specific styles */
+      @page {
+        size: A4;
+        margin: 0;
+      }
+
+      @media print {
+        body {
+          background: none;
+        }
+        .page {
+          margin: 0;
+          padding: 5mm;
+          box-shadow: none;
+          width: 100%;
+          min-height: 0;
+        }
+        .button-container {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="button-container">
+      <a href="/donate.html" id="donate-button" class="action-button" target="_blank" rel="noopener noreferrer">❤️ 请作者喝杯咖啡</a>
+      <button id="download-source-button" class="action-button" onclick="downloadSource()">💾 下载源码</button>
+      <button id="print-button" class="action-button" onclick="window.print()">🖨️ 打印</button>
+    </div>
+
+    <div class="page" id="page-content-to-download">
+      <div class="page-content">
+        <h2>第一大题</h2>
+
+        <h3>1.1</h3>
+        <p><strong>依据核心代码绘制程序流程图如下</strong>：</p>
+        <img src="https://lisir.me/assets/001.BlEiEYGF.png" alt="程序流程图" />
+        <p><strong>依据程序流程图可得控制流图如下</strong>：</p>
+        <img src="https://lisir.me/assets/002.DZHoHdAe.png" alt="控制流图" />
+        <p><strong>计算环路复杂度</strong>：V(G) = <code>判断节点个数 + 1</code> = <code>3 + 1</code> = <code>4</code></p>
+        <p><strong>独立路径为</strong>：</p>
+        <ul>
+          <li>路径 1：<code>0--&gt;1--&gt;2--&gt;9</code></li>
+          <li>路径 2：<code>0--&gt;1--&gt;3--&gt;4--&gt;9</code></li>
+          <li>路径 3：<code>0--&gt;1--&gt;3--&gt;5、6--&gt;7--&gt;9</code></li>
+          <li>路径 4：<code>0--&gt;1--&gt;3--&gt;5、6--&gt;8--&gt;9</code></li>
+        </ul>
+
+        <h3>1.2</h3>
+        <p>设定测试输入数据的顺序为（金额，账户状态，交易频次，是否高风险区域），按语句覆盖要求，每条独立路径的测试用例如下表所示：</p>
+        <table>
+          <thead>
+            <tr>
+              <th>独立路径</th>
+              <th>测试数据组合</th>
+              <th>预期输出</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>路径 1</td>
+              <td>（500，False，3，True）</td>
+              <td>True</td>
+            </tr>
+            <tr>
+              <td>路径 2</td>
+              <td>（15000，True，2，False）</td>
+              <td>True</td>
+            </tr>
+            <tr>
+              <td>路径 3</td>
+              <td>（21000，True，5，False）</td>
+              <td>True</td>
+            </tr>
+            <tr>
+              <td>路径 4</td>
+              <td>（21000，True，3，False）</td>
+              <td>False</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>第二大题</h2>
+
+        <h3>2.1</h3>
+        <table class="wide-table">
+          <thead>
+            <tr>
+              <th colspan="2"></th>
+              <th>条件与动作</th>
+              <th>1</th>
+              <th>2</th>
+              <th>3</th>
+              <th>4</th>
+              <th>5</th>
+              <th>6</th>
+              <th>7</th>
+              <th>8</th>
+              <th>9</th>
+              <th>10</th>
+              <th>11</th>
+              <th>12</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td rowspan="4"><strong>条件桩</strong></td>
+              <td>C4</td>
+              <td>是否限时秒杀商品</td>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td>C1</td>
+              <td>用户类型</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>C2</td>
+              <td>优惠券类型</td>
+              <td>0</td>
+              <td>0</td>
+              <td>1</td>
+              <td>1</td>
+              <td>0</td>
+              <td>0</td>
+              <td>1</td>
+              <td>1</td>
+              <td>0</td>
+              <td>0</td>
+              <td>1</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>C3</td>
+              <td>订单金额 ≥ 门槛金额</td>
+              <td>1</td>
+              <td>0</td>
+              <td>1</td>
+              <td>0</td>
+              <td>1</td>
+              <td>0</td>
+              <td>1</td>
+              <td>0</td>
+              <td>1</td>
+              <td>0</td>
+              <td>1</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td rowspan="4"><strong>动作桩</strong></td>
+              <td>A1</td>
+              <td>执行满减券</td>
+              <td>✔</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>✔</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>✔</td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>A2</td>
+              <td>执行折扣券</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>✔</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>✔</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>A3</td>
+              <td>VIP 叠加优惠</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>✔</td>
+              <td></td>
+              <td>✔</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>A4</td>
+              <td>提示不可用</td>
+              <td></td>
+              <td>✔</td>
+              <td>✔</td>
+              <td>✔</td>
+              <td></td>
+              <td>✔</td>
+              <td></td>
+              <td>✔</td>
+              <td></td>
+              <td>✔</td>
+              <td></td>
+              <td>✔</td>
+            </tr>
+          </tbody>
+        </table>
+        <p><strong>符号说明</strong>：<code>1</code>：真，<code>0</code>：假，<code>-</code>：不相关，<code>✔</code>：执行</p>
+
+        <h3>2.2</h3>
+        <p>设定输入数据的顺序为（商品类型，用户类型，优惠券类型，订单金额达标），则测试用例如表所示。</p>
+        <table>
+          <thead>
+            <tr>
+              <th>规则</th>
+              <th>测试数据组合</th>
+              <th>预期输出</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>（限时秒杀，不考虑，满减券，是）</td>
+              <td>A1</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>商品类型=限时秒杀，优惠券类型=满减券，订单金额达标=否</td>
+              <td>A4</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>商品类型=限时秒杀，优惠券类型=折扣券，订单金额达标=是</td>
+              <td>A4</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>商品类型=限时秒杀，优惠券类型=折扣券，订单金额达标=否</td>
+              <td>A4</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>商品类型=普通，用户类型=普通，优惠券类型=满减券，订单金额达标=是</td>
+              <td>A1</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>商品类型=普通，用户类型=普通，优惠券类型=满减券，订单金额达标=否</td>
+              <td>A4</td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td>商品类型=普通，用户类型=普通，优惠券类型=折扣券，订单金额达标=是</td>
+              <td>A2</td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td>商品类型=普通，用户类型=普通，优惠券类型=折扣券，订单金额达标=否</td>
+              <td>A4</td>
+            </tr>
+            <tr>
+              <td>9</td>
+              <td>商品类型=普通，用户类型=VIP, 优惠券类型=满减券，订单金额达标=是</td>
+              <td>A1 + A3</td>
+            </tr>
+            <tr>
+              <td>10</td>
+              <td>商品类型=普通，用户类型=VIP, 优惠券类型=满减券，订单金额达标=否</td>
+              <td>A4</td>
+            </tr>
+            <tr>
+              <td>11</td>
+              <td>商品类型=普通，用户类型=VIP, 优惠券类型=折扣券，订单金额达标=是</td>
+              <td>A2 + A3</td>
+            </tr>
+            <tr>
+              <td>12</td>
+              <td>商品类型=普通，用户类型=VIP, 优惠券类型=折扣券，订单金额达标=否</td>
+              <td>A4</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>第三大题</h2>
+
+        <h3>3.1</h3>
+        <p><strong>修改后代码：</strong></p>
+        <pre><code># sort.py
+def iterative_calculation(initial_num, operation_type):
+    result = 0
+    current_num = initial_num
+    while current_num > 0:
+        if operation_type == 0:
+            result += 2
+        elif operation_type == 1:
+            result += 10
+        else:
+            result += 20
+        current_num -= 1 # 修正：此行应在循环内
+    return result</code></pre>
+
+        <h3>3.2</h3>
+        <p><strong>修改后代码：</strong></p>
+        <pre><code># sort_test.py
+import sys
+import unittest
+from ddt import ddt, data, unpack
+
+sys.path.append(r"D:\Demo")
+from sort import iterative_calculation
+
+@ddt
+class TestRewardSystem(unittest.TestCase):
+    @data(
+        (3, 0, 6),
+        (0, 0, 0),
+        (5, 1, 50),
+        (5, 2, 100),
+        (-1, 0, 0), # 修正: 无效次数应为0分
+        (10, 1, 100)
+    )
+    @unpack
+    def test_calculate_rewards(self, input_num, mode, expected):
+        result = iterative_calculation(input_num, mode)
+        self.assertEqual(result, expected, msg=f"实际结果:{result}")
+
+    def test_policy_compliance(self):
+        # 修正: 假设测试农产品兑换场景
+        agricultural_points = iterative_calculation(15, 2)
+        self.assertEqual(agricultural_points, 300, "金卡15次消费应为300分")
+
+if __name__ == '__main__':
+    unittest.main()</code></pre>
+
+        <h2 class="new-page">第四大题</h2>
+
+        <h3>4.1</h3>
+        <p><strong>社会影响</strong>: 挂号系统崩溃导致异地患者就医受阻，破坏“公平可及”；退款超时引发医患矛盾，导致信任危机；隐私泄露引发诈骗风险，触及法律红线。</p>
+        <p><strong>测试意义</strong>: 充分的功能/性能测试保障系统可用性；合规/时效性测试确保政策落地，维护患者经济权益；安全性测试防止隐私泄露，保障公共数据安全。</p>
+        <p><strong>责任缺失点</strong>:</p>
+        <ol>
+          <li>需求分析阶段：未定义异地医保高并发场景，遗漏性能测试需求。</li>
+          <li>测试设计阶段：无超时边界测试（如退款>48h），缺失时效性测试用例。</li>
+          <li>测试执行阶段：未实施渗透测试，未检查就诊记录访问控制。</li>
+          <li>过程管理：缺少端到端的流程追踪，如退款流程。</li>
+        </ol>
+
+        <h3>4.2</h3>
+        <p><strong>核心业务测试方案</strong>:</p>
+        <ul>
+          <li><strong>全流程测试</strong>: 使用自动化工具（如 Selenium）模拟三类患者执行挂号、退号全流程，验证与省级/国家医保平台对接的稳定性和兼容性。</li>
+          <li><strong>资金安全时效测试</strong>: 运用边界值分析法（47/48/49 小时）和异常注入，强制触发退款延迟场景，监控资金返还路径的合规与可追溯性。</li>
+          <li><strong>安全防护测试</strong>: 实施渗透测试，模拟伪造医保凭证、SQL 注入等攻击，检测就诊记录泄露风险及身份认证漏洞。</li>
+        </ul>
+        <p><strong>流程优化建议</strong>:</p>
+        <ul>
+          <li>针对政策变更：构建动态策略规则库，实现自动化业务逻辑回归测试，确保规则变更后快速验证。</li>
+          <li>针对接口调整：引入契约测试（如 Pact），在开发早期验证服务间的交互逻辑，提前暴露兼容性问题，减少后期集成风险。</li>
+        </ul>
+      </div>
+    </div>
+
+    <script>
+      // 下载 HTML 源代码功能
+      function downloadSource() {
+        const htmlContent = document.documentElement.outerHTML;
+        const blob = new Blob([htmlContent], { type: "text/html;charset=utf-8" });
+        const link = document.createElement("a");
+        link.href = URL.createObjectURL(blob);
+        link.download = "软件测试 - 小抄 - 源代码.html";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        URL.revokeObjectURL(link.href);
+      }
+    </script>
+  </body>
+</html>
