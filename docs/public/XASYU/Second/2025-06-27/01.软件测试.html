@@ -223,9 +223,9 @@
 
         <h3>1.1</h3>
         <p><strong>依据核心代码绘制程序流程图如下</strong>：</p>
-        <img src="https://lisir.me/assets/001.BlEiEYGF.png" alt="程序流程图" />
+        <img src="./assets/001.png" alt="程序流程图" />
         <p><strong>依据程序流程图可得控制流图如下</strong>：</p>
-        <img src="https://lisir.me/assets/002.DZHoHdAe.png" alt="控制流图" />
+        <img src="./assets/002.png" alt="控制流图" />
         <p><strong>计算环路复杂度</strong>：V(G) = <code>判断节点个数 + 1</code> = <code>3 + 1</code> = <code>4</code></p>
         <p><strong>独立路径为</strong>：</p>
         <ul>
@@ -248,37 +248,10 @@
 
         <h3>2.1</h3>
         <p><strong>决策表规则：</strong></p>
-        <ol>
-          <li><strong>条件：</strong> 限时秒杀 (是), 满减券，金额达标 (是)。<strong>动作：</strong> 执行满减券 (A1)。</li>
-          <li><strong>条件：</strong> 限时秒杀 (是), 满减券，金额达标 (否)。<strong>动作：</strong> 提示不可用 (A4)。</li>
-          <li><strong>条件：</strong> 限时秒杀 (是), 折扣券，金额达标 (是)。<strong>动作：</strong> 提示不可用 (A4)。</li>
-          <li><strong>条件：</strong> 限时秒杀 (是), 折扣券，金额达标 (否)。<strong>动作：</strong> 提示不可用 (A4)。</li>
-          <li><strong>条件：</strong> 普通商品，普通用户，满减券，金额达标 (是)。<strong>动作：</strong> 执行满减券 (A1)。</li>
-          <li><strong>条件：</strong> 普通商品，普通用户，满减券，金额达标 (否)。<strong>动作：</strong> 提示不可用 (A4)。</li>
-          <li><strong>条件：</strong> 普通商品，普通用户，折扣券，金额达标 (是)。<strong>动作：</strong> 执行折扣券 (A2)。</li>
-          <li><strong>条件：</strong> 普通商品，普通用户，折扣券，金额达标 (否)。<strong>动作：</strong> 提示不可用 (A4)。</li>
-          <li><strong>条件：</strong> 普通商品，VIP 用户，满减券，金额达标 (是)。<strong>动作：</strong> 执行满减券 (A1) + VIP 叠加优惠 (A3)。</li>
-          <li><strong>条件：</strong> 普通商品，VIP 用户，满减券，金额达标 (否)。<strong>动作：</strong> 提示不可用 (A4)。</li>
-          <li><strong>条件：</strong> 普通商品，VIP 用户，折扣券，金额达标 (是)。<strong>动作：</strong> 执行折扣券 (A2) + VIP 叠加优惠 (A3)。</li>
-          <li><strong>条件：</strong> 普通商品，VIP 用户，折扣券，金额达标 (否)。<strong>动作：</strong> 提示不可用 (A4)。</li>
-        </ol>
-
+        <img src="./assets/003.png" alt="决策表规则" />
         <h3>2.2</h3>
-        <p>设定输入数据的顺序为（商品类型，用户类型，优惠券类型，订单金额达标），则测试用例如下。</p>
-        <ol>
-          <li><strong>数据：</strong> (限时秒杀，不考虑，满减券，是); <strong>预期：</strong> A1</li>
-          <li><strong>数据：</strong> (限时秒杀，不考虑，满减券，否); <strong>预期：</strong> A4</li>
-          <li><strong>数据：</strong> (限时秒杀，不考虑，折扣券，是); <strong>预期：</strong> A4</li>
-          <li><strong>数据：</strong> (限时秒杀，不考虑，折扣券，否); <strong>预期：</strong> A4</li>
-          <li><strong>数据：</strong> (普通，普通，满减券，是); <strong>预期：</strong> A1</li>
-          <li><strong>数据：</strong> (普通，普通，满减券，否); <strong>预期：</strong> A4</li>
-          <li><strong>数据：</strong> (普通，普通，折扣券，是); <strong>预期：</strong> A2</li>
-          <li><strong>数据：</strong> (普通，普通，折扣券，否); <strong>预期：</strong> A4</li>
-          <li><strong>数据：</strong> (普通，VIP, 满减券，是); <strong>预期：</strong> A1 + A3</li>
-          <li><strong>数据：</strong> (普通，VIP, 满减券，否); <strong>预期：</strong> A4</li>
-          <li><strong>数据：</strong> (普通，VIP, 折扣券，是); <strong>预期：</strong> A2 + A3</li>
-          <li><strong>数据：</strong> (普通，VIP, 折扣券，否); <strong>预期：</strong> A4</li>
-        </ol>
+        <p>决策表测试用例：</p>
+        <img src="./assets/004.png" alt="决策表测试用例" />
 
         <h2>第三大题</h2>
 
