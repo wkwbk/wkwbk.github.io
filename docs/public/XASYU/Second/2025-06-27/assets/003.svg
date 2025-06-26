@@ -1,0 +1,82 @@
+<svg width="800" height="270" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12px">
+  <defs>
+    <style>
+      .header-text { font-weight: bold; fill: #333; }
+      .check-text { font-weight: bold; fill: #28a745; font-size: 14px; }
+      .dash-text { fill: #888; }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="800" height="270" fill="white" stroke="#ccc"/>
+
+  <g stroke="#ccc" stroke-width="1">
+    <line x1="0" y1="30" x2="800" y2="30"/>
+    <line x1="0" y1="60" x2="800" y2="60"/>
+    <line x1="0" y1="90" x2="800" y2="90"/>
+    <line x1="0" y1="120" x2="800" y2="120"/>
+    <line x1="0" y1="150" x2="800" y2="150" stroke-width="1.5" stroke="#999"/>
+    <line x1="0" y1="180" x2="800" y2="180"/>
+    <line x1="0" y1="210" x2="800" y2="210"/>
+    <line x1="0" y1="240" x2="800" y2="240"/>
+    <line x1="200" y1="0" x2="200" y2="270"/>
+    <line x1="250" y1="0" x2="250" y2="270"/>
+    <line x1="300" y1="0" x2="300" y2="270"/>
+    <line x1="350" y1="0" x2="350" y2="270"/>
+    <line x1="400" y1="0" x2="400" y2="270"/>
+    <line x1="450" y1="0" x2="450" y2="270"/>
+    <line x1="500" y1="0" x2="500" y2="270"/>
+    <line x1="550" y1="0" x2="550" y2="270"/>
+    <line x1="600" y1="0" x2="600" y2="270"/>
+    <line x1="650" y1="0" x2="650" y2="270"/>
+    <line x1="700" y1="0" x2="700" y2="270"/>
+    <line x1="750" y1="0" x2="750" y2="270"/>
+  </g>
+
+  <g class="header-text" text-anchor="middle">
+    <text x="100" y="21">条件与动作</text>
+    <text x="225" y="21">1</text> <text x="275" y="21">2</text>
+    <text x="325" y="21">3</text> <text x="375" y="21">4</text>
+    <text x="425" y="21">5</text> <text x="475" y="21">6</text>
+    <text x="525" y="21">7</text> <text x="575" y="21">8</text>
+    <text x="625" y="21">9</text> <text x="675" y="21">10</text>
+    <text x="725" y="21">11</text> <text x="775" y="21">12</text>
+  </g>
+
+  <g text-anchor="start" dominant-baseline="middle">
+    <text x="10" y="45">C4：是否限时秒杀商品</text>
+    <text x="10" y="75">C1：用户类型</text>
+    <text x="10" y="105">C2：优惠券类型</text>
+    <text x="10" y="135">C3：订单金额 ≥ 门槛金额</text>
+    <text x="10" y="165" class="header-text">A1：执行满减券</text>
+    <text x="10" y="195" class="header-text">A2：执行折扣券</text>
+    <text x="10" y="225" class="header-text">A3：VIP 叠加优惠</text>
+    <text x="10" y="255" class="header-text">A4：提示不可用</text>
+  </g>
+  
+  <g text-anchor="middle" dominant-baseline="middle">
+    <text x="225" y="45">1</text> <text x="275" y="45">1</text> <text x="325" y="45">1</text> <text x="375" y="45">1</text>
+    <text x="425" y="45">0</text> <text x="475" y="45">0</text> <text x="525" y="45">0</text> <text x="575" y="45">0</text>
+    <text x="625" y="45">0</text> <text x="675" y="45">0</text> <text x="725" y="45">0</text> <text x="775" y="45">0</text>
+    <text x="225" y="75" class="dash-text">-</text> <text x="275" y="75" class="dash-text">-</text> <text x="325" y="75" class="dash-text">-</text> <text x="375" y="75" class="dash-text">-</text>
+    <text x="425" y="75">0</text> <text x="475" y="75">0</text> <text x="525" y="75">0</text> <text x="575" y="75">0</text>
+    <text x="625" y="75">1</text> <text x="675" y="75">1</text> <text x="725" y="75">1</text> <text x="775" y="75">1</text>
+    <text x="225" y="105">0</text> <text x="275" y="105">0</text> <text x="325" y="105">1</text> <text x="375" y="105">1</text>
+    <text x="425" y="105">0</text> <text x="475" y="105">0</text> <text x="525" y="105">1</text> <text x="575" y="105">1</text>
+    <text x="625" y="105">0</text> <text x="675" y="105">0</text> <text x="725" y="105">1</text> <text x="775" y="105">1</text>
+    <text x="225" y="135">1</text> <text x="275" y="135">0</text> <text x="325" y="135">1</text> <text x="375" y="135">0</text>
+    <text x="425" y="135">1</text> <text x="475" y="135">0</text> <text x="525" y="135">1</text> <text x="575" y="135">0</text>
+    <text x="625" y="135">1</text> <text x="675" y="135">0</text> <text x="725" y="135">1</text> <text x="775" y="135">0</text>
+    <text x="225" y="165" class="check-text">✔</text>
+    <text x="425" y="165" class="check-text">✔</text>
+    <text x="625" y="165" class="check-text">✔</text>
+    <text x="725" y="165" class="check-text">✔</text>
+    <text x="525" y="195" class="check-text">✔</text>
+    <text x="625" y="225" class="check-text">✔</text>
+    <text x="725" y="225" class="check-text">✔</text>
+    <text x="275" y="255" class="check-text">✔</text> <text x="325" y="255" class="check-text">✔</text> <text x="375" y="255" class="check-text">✔</text>
+    <text x="475" y="255" class="check-text">✔</text>
+    <text x="575" y="255" class="check-text">✔</text>
+    <text x="675" y="255" class="check-text">✔</text>
+    <text x="775" y="255" class="check-text">✔</text>
+  </g>
+</svg>

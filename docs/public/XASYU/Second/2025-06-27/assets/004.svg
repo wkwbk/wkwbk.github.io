@@ -1,0 +1,102 @@
+<svg width="600" height="391" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .table-text { 
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif; 
+        font-size: 11px;
+        fill: #333;
+      }
+      .header-text { 
+        font-weight: bold; 
+      }
+      .cell-div {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding: 0 5px;
+        box-sizing: border-box;
+        word-break: break-all;
+        line-height: 1.2;
+      }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="600" height="391" fill="white" />
+
+  <g stroke="#ccc" stroke-width="1">
+    <rect x="0" y="0" width="600" height="30" fill="#f2f2f2" />
+    <line x1="0" y1="30" x2="600" y2="30" />
+    <line x1="0" y1="60" x2="600" y2="60" />
+    <line x1="0" y1="90" x2="600" y2="90" />
+    <line x1="0" y1="120" x2="600" y2="120" />
+    <line x1="0" y1="150" x2="600" y2="150" />
+    <line x1="0" y1="180" x2="600" y2="180" />
+    <line x1="0" y1="210" x2="600" y2="210" />
+    <line x1="0" y1="240" x2="600" y2="240" />
+    <line x1="0" y1="270" x2="600" y2="270" />
+    <line x1="0" y1="300" x2="600" y2="300" />
+    <line x1="0" y1="330" x2="600" y2="330" />
+    <line x1="0" y1="360" x2="600" y2="360" />
+    <line x1="0" y1="390" x2="600" y2="390" />
+    <line x1="50" y1="0" x2="50" y2="390" />
+    <line x1="480" y1="0" x2="480" y2="390" />
+  </g>
+
+  <g class="table-text header-text" text-anchor="middle" dominant-baseline="middle">
+    <text x="25" y="15">规则</text>
+    <text x="265" y="15">测试数据组合</text>
+    <text x="540" y="15">预期输出</text>
+  </g>
+  
+  <g class="table-text">
+    <text x="25" y="45" text-anchor="middle" dominant-baseline="middle">1</text>
+    <foreignObject x="51" y="31" width="428" height="28"><div xmlns="http://www.w3.org/1999/xhtml" class="table-text cell-div">（限时秒杀，不考虑，满减券，是）</div></foreignObject>
+    <text x="540" y="45" text-anchor="middle" dominant-baseline="middle">A1</text>
+    
+    <text x="25" y="75" text-anchor="middle" dominant-baseline="middle">2</text>
+    <foreignObject x="51" y="61" width="428" height="28"><div xmlns="http://www.w3.org/1999/xhtml" class="table-text cell-div">商品类型=限时秒杀，优惠券类型=满减券，订单金额达标=否</div></foreignObject>
+    <text x="540" y="75" text-anchor="middle" dominant-baseline="middle">A4</text>
+
+    <text x="25" y="105" text-anchor="middle" dominant-baseline="middle">3</text>
+    <foreignObject x="51" y="91" width="428" height="28"><div xmlns="http://www.w3.org/1999/xhtml" class="table-text cell-div">商品类型=限时秒杀，优惠券类型=折扣券，订单金额达标=是</div></foreignObject>
+    <text x="540" y="105" text-anchor="middle" dominant-baseline="middle">A4</text>
+
+    <text x="25" y="135" text-anchor="middle" dominant-baseline="middle">4</text>
+    <foreignObject x="51" y="121" width="428" height="28"><div xmlns="http://www.w3.org/1999/xhtml" class="table-text cell-div">商品类型=限时秒杀，优惠券类型=折扣券，订单金额达标=否</div></foreignObject>
+    <text x="540" y="135" text-anchor="middle" dominant-baseline="middle">A4</text>
+
+    <text x="25" y="165" text-anchor="middle" dominant-baseline="middle">5</text>
+    <foreignObject x="51" y="151" width="428" height="28"><div xmlns="http://www.w3.org/1999/xhtml" class="table-text cell-div">商品类型=普通，用户类型=普通，优惠券类型=满减券，订单金额达标=是</div></foreignObject>
+    <text x="540" y="165" text-anchor="middle" dominant-baseline="middle">A1</text>
+
+    <text x="25" y="195" text-anchor="middle" dominant-baseline="middle">6</text>
+    <foreignObject x="51" y="181" width="428" height="28"><div xmlns="http://www.w3.org/1999/xhtml" class="table-text cell-div">商品类型=普通，用户类型=普通，优惠券类型=满减券，订单金额达标=否</div></foreignObject>
+    <text x="540" y="195" text-anchor="middle" dominant-baseline="middle">A4</text>
+    
+    <text x="25" y="225" text-anchor="middle" dominant-baseline="middle">7</text>
+    <foreignObject x="51" y="211" width="428" height="28"><div xmlns="http://www.w3.org/1999/xhtml" class="table-text cell-div">商品类型=普通，用户类型=普通，优惠券类型=折扣券，订单金额达标=是</div></foreignObject>
+    <text x="540" y="225" text-anchor="middle" dominant-baseline="middle">A2</text>
+    
+    <text x="25" y="255" text-anchor="middle" dominant-baseline="middle">8</text>
+    <foreignObject x="51" y="241" width="428" height="28"><div xmlns="http://www.w3.org/1999/xhtml" class="table-text cell-div">商品类型=普通，用户类型=普通，优惠券类型=折扣券，订单金额达标=否</div></foreignObject>
+    <text x="540" y="255" text-anchor="middle" dominant-baseline="middle">A4</text>
+
+    <text x="25" y="285" text-anchor="middle" dominant-baseline="middle">9</text>
+    <foreignObject x="51" y="271" width="428" height="28"><div xmlns="http://www.w3.org/1999/xhtml" class="table-text cell-div">商品类型=普通，用户类型=VIP, 优惠券类型=满减券，订单金额达标=是</div></foreignObject>
+    <text x="540" y="285" text-anchor="middle" dominant-baseline="middle">A1 + A3</text>
+    
+    <text x="25" y="315" text-anchor="middle" dominant-baseline="middle">10</text>
+    <foreignObject x="51" y="301" width="428" height="28"><div xmlns="http://www.w3.org/1999/xhtml" class="table-text cell-div">商品类型=普通，用户类型=VIP, 优惠券类型=满减券，订单金额达标=否</div></foreignObject>
+    <text x="540" y="315" text-anchor="middle" dominant-baseline="middle">A4</text>
+    
+    <text x="25" y="345" text-anchor="middle" dominant-baseline="middle">11</text>
+    <foreignObject x="51" y="331" width="428" height="28"><div xmlns="http://www.w3.org/1999/xhtml" class="table-text cell-div">商品类型=普通，用户类型=VIP, 优惠券类型=折扣券，订单金额达标=是</div></foreignObject>
+    <text x="540" y="345" text-anchor="middle" dominant-baseline="middle">A2 + A3</text>
+    
+    <text x="25" y="375" text-anchor="middle" dominant-baseline="middle">12</text>
+    <foreignObject x="51" y="361" width="428" height="28"><div xmlns="http://www.w3.org/1999/xhtml" class="table-text cell-div">商品类型=普通，用户类型=VIP, 优惠券类型=折扣券，订单金额达标=否</div></foreignObject>
+    <text x="540" y="375" text-anchor="middle" dominant-baseline="middle">A4</text>
+    
+  </g>
+</svg>
