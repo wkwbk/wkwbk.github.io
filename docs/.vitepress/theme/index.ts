@@ -2,6 +2,7 @@
 import DefaultTheme from 'vitepress/theme'
 import MyLayout from './components/MyLayout.vue'
 import confetti from "./components/confetti.vue"
+import BackToTop from "./components/BackToTop.vue"
 import MNavLinks from './components/MNavLinks.vue'
 import HomeUnderline from "./components/HomeUnderline.vue"
 import ArticleMetadata from "./components/ArticleMetadata.vue"
@@ -35,6 +36,7 @@ export default {
     // 注册组件
     app.use(NolebaseGitChangelogPlugin)
     app.component('confetti', confetti)
+    app.component('BackToTop', BackToTop)
     app.component('MNavLinks', MNavLinks)
     app.component('HomeUnderline', HomeUnderline)
     app.component('ArticleMetadata', ArticleMetadata)

@@ -45,6 +45,10 @@ provide("toggle-appearance", async ({ clientX: x, clientY: y }: MouseEvent) => {
     <template #layout-top>
       <NolebaseHighlightTargetedHeading />
     </template>
+    <!-- doc-footer-before 插槽 -->
+    <template #doc-footer-before>
+      <BackToTop />
+    </template>
   </DefaultTheme.Layout>
 </template>
 
