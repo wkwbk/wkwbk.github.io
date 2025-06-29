@@ -49,6 +49,7 @@
         margin: 4px 0;
         padding: 0;
         break-after: avoid;
+        font-weight: bold;
       }
 
       h2 {
@@ -68,6 +69,11 @@
         margin-top: 8px;
         padding-bottom: 2px;
       }
+      h4 {
+        font-size: 11px;
+        font-weight: bold;
+        margin-top: 6px;
+      }
 
       p,
       ul,
@@ -78,6 +84,8 @@
       ul,
       ol {
         padding-left: 15px;
+        list-style-position: inside; /* Keeps numbers inside the column */
+        text-indent: -15px; /* Aligns text correctly */
       }
       li {
         margin-bottom: 2px;
@@ -91,8 +99,21 @@
 
       table,
       img,
-      pre {
+      pre,
+      details {
         break-inside: avoid;
+      }
+
+      details {
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 5px;
+        margin: 5px 0;
+      }
+      summary {
+        font-weight: bold;
+        cursor: pointer;
+        outline: none;
       }
 
       /* Button container styles */
@@ -130,26 +151,12 @@
         background-color: #0056b3;
       }
 
-      #download-button {
-        background-color: #28a745;
-      }
-      #download-button:hover {
-        background-color: #1e7e34;
-      }
-
       #download-source-button {
         background-color: #ffc107;
         color: #212529;
       }
       #download-source-button:hover {
         background-color: #e0a800;
-      }
-
-      #donate-button {
-        background-color: #e83e8c;
-      }
-      #donate-button:hover {
-        background-color: #c2185b;
       }
 
       /* Print-specific styles */
@@ -177,7 +184,6 @@
   </head>
   <body>
     <div class="button-container">
-      <a href="/donate/index.html" id="donate-button" class="action-button" target="_blank" rel="noopener noreferrer">❤️ 请作者喝杯咖啡</a>
       <button id="download-source-button" class="action-button" onclick="downloadSource()">💾 下载源码</button>
       <button id="print-button" class="action-button" onclick="window.print()">🖨️ 打印</button>
     </div>
@@ -185,7 +191,216 @@
     <div class="page" id="page-content-to-download">
       <div class="page-content">
         <h2>听力</h2>
-        <p>暂无</p>
+        <h3>Unit 1</h3>
+        <h4>Section A</h4>
+        <ol>
+          <li>C) It sent two dogs to the wrong destinations.</li>
+          <li>A) Correct their mistake as soon as possible.</li>
+          <li>A) Ship traffic in the Atlantic.</li>
+          <li>D) They may be affecting the world's climate.</li>
+          <li>D) Old taxis were replaced with new cabs.</li>
+          <li>A) All taxis began to use meters.</li>
+          <li>B) All new cabs provide air-conditioning.</li>
+        </ol>
+        <h4>Section B</h4>
+        <ol start="8">
+          <li>A) She wanted to save for a new phone.</li>
+          <li>D) They are less aware of the value of their money.</li>
+          <li>B) More non-essential things.</li>
+          <li>C) It may lead to excessive spending.</li>
+          <li>D) From a professional interior designer.</li>
+          <li>B) She is well informed about the design business.</li>
+          <li>C) The cost was affordable.</li>
+          <li>B) She wants him to share his renovation experience with her.</li>
+        </ol>
+        <h4>Section C</h4>
+        <ol start="16">
+          <li>D) The change in people's immune system as they get older.</li>
+          <li>B) Offer blood samples.</li>
+          <li>C) Helping improve old people's health conditions.</li>
+          <li>A) To solve word search puzzles.</li>
+          <li>B) They could no longer concentrate on their task.</li>
+          <li>C) A reduction in the amount of sleep.</li>
+          <li>B) Reading to their children is important.</li>
+          <li>D) The quality and quantity of time parents spend playing with them.</li>
+          <li>D) Books with specifically labeled images.</li>
+          <li>C) Choose carefully what to read to their children.</li>
+        </ol>
+        <h3>Unit 2</h3>
+        <h4>Section A</h4>
+        <ol>
+          <li>C) Less than 3 million.</li>
+          <li>B) To protect people from being attacked by hackers.</li>
+          <li>A) The melting of the entire glacier in Greenland.</li>
+          <li>C) Warmer air temperatures.</li>
+          <li>C) France.</li>
+          <li>C) The cost of education is lower.</li>
+          <li>B) To improve its economic competitiveness.</li>
+        </ol>
+        <h4>Section B</h4>
+        <ol start="8">
+          <li>A) Disappointed</li>
+          <li>D) They have two books left in another store.</li>
+          <li>D) Pay the reservation fee.</li>
+          <li>C) Fill in the customer card.</li>
+          <li>C) He used to work out with the woman.</li>
+          <li>D) She felt tired and lonely.</li>
+          <li>A) Help the clients re-evaluate their lives.</li>
+          <li>A) To ask for professional advice.</li>
+        </ol>
+        <h4>Section C</h4>
+        <ol start="16">
+          <li>C) The widespread use of color in commerce and art.</li>
+          <li>A) It made the mass production of color possible.</li>
+          <li>C) German immigrants brought it there.</li>
+          <li>D) The reason is not clear to us.</li>
+          <li>C) The subjects can easily fall asleep when imagining a soothing scene.</li>
+          <li>D) Imagine soothing images before sleep.</li>
+          <li>C) The temperature has reached a new high this month.</li>
+          <li>C) Global warming as well as natural climate variability.</li>
+          <li>B) High food prices.</li>
+          <li>D) The annual bushfire.</li>
+        </ol>
+        <h3>Unit 3</h3>
+        <h4>Section A</h4>
+        <ol>
+          <li>D) It started from Turkey.</li>
+          <li>B) They went to Europe by sea.</li>
+          <li>B) Serena Williams was pronounced Sportsperson of the year.</li>
+          <li>C) They raised a number of complaints.</li>
+          <li>D) It would keep prices steady.</li>
+          <li>C) Less than 1%.</li>
+          <li>A) The economy would react badly.</li>
+        </ol>
+        <h4>Section B</h4>
+        <ol start="8">
+          <li>B) He has missed too many classes.</li>
+          <li>A) He has a part-time job.</li>
+          <li>B) It's the last day Steve can drop the class with a full refund.</li>
+          <li>A) Drop the class.</li>
+          <li>B) Most people are reducing their consumption.</li>
+          <li>A) Electrical appliances.</li>
+          <li>B) 90 per cent of them are reasonable.</li>
+          <li>C) Two to three weeks.</li>
+        </ol>
+        <h4>Section C</h4>
+        <ol start="16">
+          <li>A) It is an international organization.</li>
+          <li>B) To help the wounded in the battle.</li>
+          <li>B) Teaching first aid to the public.</li>
+          <li>C) People who will retire in a few years are the target students.</li>
+          <li>B) Retired people.</li>
+          <li>A) They can attend any courses for free.</li>
+          <li>D) It is provided only in the evening.</li>
+          <li>B) They know clearly what they want to learn.</li>
+          <li>A) The knowledge of teachers.</li>
+          <li>D) English for businessman.</li>
+        </ol>
+        <h3>Unit 4</h3>
+        <h4>Section A</h4>
+        <ol>
+          <li>C) Cease building new coal power plants.</li>
+          <li>B) Market force.</li>
+          <li>C) 13</li>
+          <li>C) By sea.</li>
+          <li>D) Protecting the Great Barrier Reef.</li>
+          <li>C) Sediment has been down 12 percent.</li>
+          <li>C) Excited.</li>
+        </ol>
+        <h4>Section B</h4>
+        <ol start="8">
+          <li>B) Interviewing a person for a job.</li>
+          <li>D) How much the job pays.</li>
+          <li>C) He has classes earlier in the day.</li>
+          <li>C) To fill in an application form and hand it back.</li>
+          <li>D) To raise funds for a hospital.</li>
+          <li>A) In tents.</li>
+          <li>C) Serve refreshments.</li>
+          <li>B) He feels it would be worthwhile.</li>
+        </ol>
+        <h4>Section C</h4>
+        <ol start="16">
+          <li>B) Only a few people had them.</li>
+          <li>A) They were a symbol of wealth.</li>
+          <li>C) The availability of watches increased.</li>
+          <li>C) To prevent car accidents.</li>
+          <li>D) It bases its analysis on the driver's heartbeat.</li>
+          <li>B) It sounds an alarm to warn the driver.</li>
+          <li>C) Familiarizing new students with the campus.</li>
+          <li>D) A campus map.</li>
+          <li>D) In the cafeteria.</li>
+          <li>B) Find their classrooms.</li>
+        </ol>
+        <h3>Unit 5</h3>
+        <h4>Section A</h4>
+        <ol>
+          <li>B) Guests can go direct to their rooms.</li>
+          <li>A) 2</li>
+          <li>A) He will be sent back even if he is unfit to stand trial.</li>
+          <li>D) Having his wife killed.</li>
+          <li>C) Their parents failed to pay for school lunch.</li>
+          <li>B) They were surprised.</li>
+          <li>C) On Monday.</li>
+        </ol>
+        <h4>Section B</h4>
+        <ol start="8">
+          <li>A) She is environmentally-concerned.</li>
+          <li>C) Diana has taken a class on environmental engineering.</li>
+          <li>A) It makes the fuel burn more efficiently.</li>
+          <li>D) Better environment.</li>
+          <li>A) The hotel confused him with another guest.</li>
+          <li>C) There was a conference going on.</li>
+          <li>C) There is a roll-away bed.</li>
+          <li>B) A honeymoon suite for $225 for the night and free breakfast of western style.</li>
+        </ol>
+        <h4>Section C</h4>
+        <ol start="16">
+          <li>A) Watching TV can cause physical diseases.</li>
+          <li>D) Television in itself is neither good nor bad.</li>
+          <li>C) How people put it to use.</li>
+          <li>D) He was extremely anxious about its negative effect.</li>
+          <li>C) He was becoming very difficult to be with in 1804.</li>
+          <li>B) He remained single all his life.</li>
+          <li>A) About 1920.</li>
+          <li>D) Over 2.5 million.</li>
+          <li>B) Soybean.</li>
+          <li>A) Corn.</li>
+        </ol>
+        <h3>Unit 6</h3>
+        <h4>Section A</h4>
+        <ol>
+          <li>C) The amount of it grows in winter and shrinks in summer.</li>
+          <li>C) It is hard to identify.</li>
+          <li>B) It is warming at a quicker pace that elsewhere.</li>
+          <li>D) The sea-level rise is accelerating.</li>
+          <li>B) Hydrogen might be turned into a metal.</li>
+          <li>A) By compressing it to 4.9 million times atmospheric pressure.</li>
+          <li>C) Most of them work only at extremely cold temperatures.</li>
+        </ol>
+        <h4>Section B</h4>
+        <ol start="8">
+          <li>A) He is applying for a job.</li>
+          <li>A) Because he does not want his college education to be useless.</li>
+          <li>C) How to understand the needs of the poor.</li>
+          <li>B) It is natural.</li>
+          <li>B) Because people in that period believed in the power of mankind.</li>
+          <li>B) He was one of the drafters of the Declaration of Independence.</li>
+          <li>D) He was a successful statesman and scientist.</li>
+          <li>A) So far as you work hard, you can make your dream come true.</li>
+        </ol>
+        <h4>Section C</h4>
+        <ol start="16">
+          <li>A) A new exhibition to explore the significance of selfies as an art form.</li>
+          <li>C) A shift in society using technology as a means of self-expression.</li>
+          <li>C) The smartphone.</li>
+          <li>A) A punishing figure.</li>
+          <li>B) They try to run away.</li>
+          <li>B) In Austrian folklore.</li>
+          <li>C) The key to learning English speaking.</li>
+          <li>D) More input.</li>
+          <li>A) Because they tend to think in their native language.</li>
+          <li>B) It is a skill and should be trained.</li>
+        </ol>
 
         <h2>阅读（4 选 2）</h2>
         <h3>第一篇</h3>
@@ -230,11 +445,39 @@
         <h3>第二篇</h3>
         <p>C, A, G, B, E, H, D, I, J, F(chen make)</p>
 
-        <h2>完形填空（2 选 1）</h2>
+        <h2>选词填空（2 选 1）</h2>
         <h3>第一篇</h3>
-        <p>G, L, I, O, H, F, E, A, J, D</p>
+        <blockquote>
+          <p>Humans use water ...</p>
+        </blockquote>
+        <ul>
+          <li>G (available)</li>
+          <li>N (raising)</li>
+          <li>I (unevenly)</li>
+          <li>O (supply)</li>
+          <li>H (determined)</li>
+          <li>F (distribution)</li>
+          <li>E (negative)</li>
+          <li>A (access)</li>
+          <li>J (unfit)</li>
+          <li>D (compete)</li>
+        </ul>
         <h3>第二篇</h3>
-        <p>D, F, C, K, B, M, J, N, O, I</p>
+        <blockquote>
+          <p>The economic costs of noise are several ...</p>
+        </blockquote>
+        <ul>
+          <li>D (capacity)</li>
+          <li>F (restrictions)</li>
+          <li>C (profitable)</li>
+          <li>K (modified)</li>
+          <li>B (equip)</li>
+          <li>M (considering)</li>
+          <li>J (acceptable)</li>
+          <li>N (occur)</li>
+          <li>O (aspect)</li>
+          <li>I (Furthermore)</li>
+        </ul>
 
         <h2>作文（3 选 1）</h2>
         <h3>第一篇</h3>
@@ -267,7 +510,9 @@
       // 下载 HTML 源代码功能
       function downloadSource() {
         const htmlContent = document.documentElement.outerHTML;
-        const blob = new Blob([htmlContent], { type: "text/html;charset=utf-8" });
+        const blob = new Blob([htmlContent], {
+          type: "text/html;charset=utf-8",
+        });
         const link = document.createElement("a");
         link.href = URL.createObjectURL(blob);
         link.download = "大学英语 - 源代码.html";
