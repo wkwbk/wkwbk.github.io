@@ -10,6 +10,23 @@
       referrerpolicy="no-referrer"
     ></script>
 
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+          displayMath: [
+            ["$$", "$$"],
+            ["\\[", "\\]"],
+          ],
+        },
+      };
+    </script>
+
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
     <style>
       /* Basic reset and page background */
       body {
@@ -33,7 +50,7 @@
       .page-content {
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
         font-size: 10px;
-        line-height: 1.2;
+        line-height: 1.4;
         color: #333;
         column-count: 3;
         column-gap: 5mm;
@@ -49,6 +66,24 @@
         margin: 4px 0;
         padding: 0;
         break-after: avoid;
+        font-weight: bold;
+      }
+
+      h1 {
+        column-span: all;
+        text-align: center;
+        font-size: 18px;
+        border-bottom: 2px solid black;
+        padding-bottom: 4px;
+        margin-bottom: 5px;
+      }
+
+      .header-info {
+        column-span: all;
+        display: flex;
+        justify-content: space-around;
+        font-size: 11px;
+        margin-bottom: 10px;
       }
 
       h2 {
@@ -63,12 +98,14 @@
       }
       h3 {
         font-size: 12px;
+        margin-top: 4px;
       }
 
       p,
       ul,
       ol,
-      table {
+      table,
+      blockquote {
         margin: 3px 0;
       }
       ul,
@@ -86,6 +123,13 @@
       img,
       pre {
         break-inside: avoid;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 4px 0;
       }
 
       table {
@@ -130,9 +174,22 @@
         border-radius: 0;
       }
 
-      /* 强制分页的样式 */
-      .new-page {
-        break-before: page;
+      blockquote {
+        border-left: 3px solid #ddd;
+        padding-left: 10px;
+        color: #555;
+        font-style: italic;
+      }
+
+      hr {
+        column-span: all;
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 10px 0;
+      }
+
+      iframe {
+        column-span: all;
       }
 
       /* Button container styles */
@@ -170,26 +227,12 @@
         background-color: #0056b3;
       }
 
-      #download-button {
-        background-color: #28a745;
-      }
-      #download-button:hover {
-        background-color: #1e7e34;
-      }
-
       #download-source-button {
         background-color: #ffc107;
         color: #212529;
       }
       #download-source-button:hover {
         background-color: #e0a800;
-      }
-
-      #donate-button {
-        background-color: #e83e8c;
-      }
-      #donate-button:hover {
-        background-color: #c2185b;
       }
 
       /* Print-specific styles */
@@ -217,7 +260,6 @@
   </head>
   <body>
     <div class="button-container">
-      <a href="/donate/index.html" id="donate-button" class="action-button" target="_blank" rel="noopener noreferrer">❤️ 请作者喝杯咖啡</a>
       <button id="download-source-button" class="action-button" onclick="downloadSource()">💾 下载源码</button>
       <button id="print-button" class="action-button" onclick="window.print()">🖨️ 打印</button>
     </div>
@@ -225,139 +267,196 @@
     <div class="page" id="page-content-to-download">
       <div class="page-content">
         <h2>第一大题</h2>
-        <p>分支限界法与回溯法（环保方案投资问题）</p>
 
         <h3>1.1</h3>
-        <p><strong>数学建模</strong></p>
-        <ol>
-          <li><strong>问题转化</strong>：将环保投资问题建模为 0-1 背包问题模型。</li>
-          <li>
-            <strong>变量定义</strong>：
-            <ul>
-              <li>
-                <code>x<sub>i</sub> ∈ {0,1}</code> 表示是否投资第 <code>i</code> 个方案（1=投资，0=不投资）。
-              </li>
-            </ul>
-          </li>
-          <li>
-            <strong>目标函数</strong>：最大化总减碳量 <code>max Σ v<sub>i</sub>x<sub>i</sub></code> (i=1 to 3)，其中 <code>v<sub>i</sub></code> 为减碳量。
-          </li>
-          <li>
-            <strong>约束条件</strong>：总成本 <code>Σ w<sub>i</sub>x<sub>i</sub> ≤ 30</code> (i=1 to 3)，其中 <code>w<sub>i</sub></code> 为成本。
-          </li>
-          <li>
-            <strong>答案</strong>：
-            <ul>
-              <li>减碳量等效为背包“价值”，成本等效为“重量”，投资上限 30 等效为背包容量。</li>
-            </ul>
-          </li>
-        </ol>
+        <blockquote>
+          <p>分支限界法和回溯法的区别及相同点？</p>
+        </blockquote>
+        <p><strong>求解目标不同：</strong></p>
+        <ul>
+          <li>回溯法的求解目标是找出解空间树中满足约束条件的所有解</li>
+          <li>分支限界法的求解目标是找出满足约束条件的一个解，或是在满足约束条件的解中找出在某种意义下的最优解</li>
+        </ul>
+        <p><strong>搜索方式不同：</strong></p>
+        <ul>
+          <li>回溯法以深度优先的方式搜索解空间树</li>
+          <li>分支限界法以广度优先或以最小耗费优先的方式搜索解空间树</li>
+        </ul>
+        <p><strong>相同点：</strong></p>
+        <ul>
+          <li>均基于解空间树搜索；采用剪枝优化搜索效率。</li>
+        </ul>
 
         <h3>1.2</h3>
-        <p><strong>队列式分支限界法求解过程</strong></p>
+        <blockquote>
+          <p>数学建模。</p>
+        </blockquote>
         <ol>
-          <li><strong>构造解空间树</strong>：三层二叉树（左分支=选方案，右分支=不选）。</li>
+          <li><strong>问题转化</strong>：将环保投资问题建模为 0-1 背包问题模型。</li>
+          <li><strong>变量定义</strong>：$x_i \in \{0,1\}$ 表示是否投资第 $i$ 个方案（1=投资，0=不投资）。</li>
+          <li><strong>目标函数</strong>：最大化总减碳量 $\max \sum_{i=1}^{3} v_i x_i$（$v_i$ 为减碳量）。</li>
+          <li><strong>约束条件</strong>：总成本 $\sum_{i=1}^{3} w_i x_i \leq 30$（$w_i$ 为成本）。</li>
+          <li><strong>结论</strong>：减碳量等效为背包"价值"，成本等效为"重量"，投资上限 30 等效为背包容量。</li>
+        </ol>
+        <blockquote>
+          <p>队列式分支限界法求解过程？最大减碳量？最优方案组合？</p>
+        </blockquote>
+        <ol>
+          <li><strong>构造解空间树</strong>：三层二叉树（左分支=选方案，右分支=不选方案）。</li>
           <li>
             <strong>搜索过程</strong>：
-            <ul>
-              <li>扩展根节点 A → 生成 B（选方案 1，成本 16≤30）、C（不选方案 1，成本 0）。活结点表：[B, C]。</li>
-              <li>扩展 B → 生成 D（选方案 2，成本 16+15=31>30，不可行）、E（不选方案 2，成本 16）。活结点表：[C, E]。</li>
-              <li>扩展 C → 生成 F（选方案 2，成本 15）、G（不选方案 2，成本 0）。活结点表：[E, F, G]。</li>
-              <li>扩展 E → 生成 J（选方案 3，成本 16+10=26）、K（不选方案 3，成本 16）。K 为叶子节点，减碳量=45。活结点表：[F, G]。</li>
-              <li>扩展 F → 生成 L（选方案 3，成本 15+10=25）、M（不选方案 3，成本 15）。L 为叶子节点，减碳量=25+25=50。活结点表：[G, M]。</li>
-              <li>扩展 G → 生成 N（选方案 3，成本 10）、O（不选方案 3，成本 0）。N 减碳量=25，O 减碳量=0。</li>
-            </ul>
+            <pre><code>[A] B, C      =&gt; B, C
+[B, C] D, E    =&gt; E
+[C, E] F, G    =&gt; F, G
+[E, F, G] J, K  =&gt; K(45)[1,0,0]
+[F, G] L, M    =&gt; L(50)[0,1,1], M(25)[0,1,0]
+[G] N, O      =&gt; N(25)[0,0,1], O(0)[0,0,0]</code></pre>
           </li>
-          <li>
-            <strong>最优解</strong>：
-            <ul>
-              <li>最大减碳量 = 50 万吨（方案组合：选方案 2 和方案 3，即 <code>x = [0,1,1]</code>）。</li>
-            </ul>
-          </li>
+          <li><strong>最优值（最大减碳量）</strong>：50 万吨</li>
+          <li><strong>最优解（最优方案组合）</strong>：选方案 2 和方案 3，即 $x = [0,1,1]$</li>
         </ol>
+        <img src="./assets/009.png" alt="解空间树" />
 
         <h3>1.3</h3>
-        <p><strong>回溯法编程实现</strong></p>
-        <ol>
-          <li>
-            <strong>伪代码框架</strong>：
-            <pre><code>def backtrack(i, cw, cv):
-  # i: 当前决策方案索引
-  # cw: 当前总成本
-  # cv: 当前总减碳量
-  if i > n: # 到达叶子节点
-    if cv > best_value:
-      best_value = cv
-      best_solution = x.copy()
-    return
-  # 左子树：选择当前方案
-  if cw + w[i] <= C: # 满足成本约束
-    x[i] = 1
-    backtrack(i+1, cw + w[i], cv + v[i])
-    x[i] = 0 # 回溯
-  # 右子树：不选当前方案（需剪枝）
-  # 计算剩余方案减碳量上界
-  bound = cv + bound_func(i+1, C-cw)
-  if bound > best_value: # 上界可能更优才搜索
-    x[i] = 0
-    backtrack(i+1, cw, cv)</code></pre>
-          </li>
-          <li>
-            <strong>关键函数</strong>：
-            <ul>
-              <li><code>bound_func</code>：贪心估算剩余方案最大减碳量（允许部分投资）。</li>
-            </ul>
-          </li>
-        </ol>
+        <blockquote>
+          <p>回溯法编程实现，找这个方案的最大减碳量以及最优方案组合。</p>
+        </blockquote>
+        <p><strong>[回溯函数]</strong></p>
+        <pre><code class="language-cpp">void Backtrack(int i) {
+    // 如果到达叶子节点
+    if (i > n) { 
+        bestp = cp; 
+        return; 
+    }
+
+    // 进入左子树
+    if (cw + w[i] <= c) {
+        cw += w[i];
+        cp += p[i];
+        Backtrack(i + 1);
+        cw -= w[i];
+        cp -= p[i];
+    }
+
+    // 进入右子树
+    if (Bound(i + 1) > bestp) {
+        Backtrack(i + 1);
+    }
+}</code></pre>
+        <p><strong>[限界函数]</strong></p>
+        <pre><code class="language-cpp">private static double Bound(int i) {
+    // 计算剩余容量
+    double cleft = c - cw;  
+
+    double bound = cp;
+
+    // 以物品单位重量价值递减序装入物品
+    while (i <= n && w[i] <= cleft) {
+        cleft -= w[i];
+        bound += p[i];
+        i++;
+    }
+
+    // 装满背包
+    if (i <= n) {
+        bound += p[i] / w[i] * cleft; 
+    }
+
+    return bound;
+}</code></pre>
 
         <h2>第二大题</h2>
-        <p>贪心算法（哈夫曼编码应用）</p>
 
         <h3>2.1</h3>
-        <p><strong>哈夫曼编码原理</strong></p>
+        <blockquote>
+          <p>贪心算法的原理是什么？</p>
+        </blockquote>
+        <ul>
+          <li>贪心算法是一种通过局部最优选择来构建全局最优解的算法。</li>
+          <li>它依赖于贪心选择性质和最优子结构，即每一步都选择当前最优，期望最终得到全局最优解，且无需回溯。</li>
+        </ul>
+        <blockquote>
+          <p>哈夫曼编码原理是什么？</p>
+        </blockquote>
         <ol>
-          <li><strong>核心原则</strong>：频率越高，编码越短（不定长编码）。</li>
+          <li><strong>变长编码</strong>：哈夫曼编码是一种变长编码方式。出现频率高的字符分配较短的编码，出现频率低的字符分配较长的编码。</li>
+          <li><strong>频率排序</strong>：首先将字符按照出现频率从小到大排序。</li>
           <li>
-            <strong>构造步骤</strong>：
+            <strong>构造哈夫曼树</strong>：
             <ul>
-              <li>按频率升序排序节点。</li>
-              <li>每次合并频率最小的两个节点，生成父节点（频率=子节点和）。</li>
-              <li>重复直至只剩根节点。</li>
-              <li>左分支标 0，右分支标 1，从根到叶路径即为编码。</li>
+              <li>每次选取频率最小的两个节点。</li>
+              <li>创建一个父节点，其频率等于这两个子节点频率之和。</li>
+              <li>将该父节点按照频率大小重新插入到排序好的节点队列中。</li>
+              <li>重复以上步骤，直到队列中只剩下一个节点，这个节点就是哈夫曼树的根节点。</li>
+            </ul>
+          </li>
+          <li>
+            <strong>编码</strong>：在哈夫曼树上，左分支编 <code>0</code> 右分支编 <code>1</code>，直到到达叶子节点，路径上的 <code>0</code> 和 <code>1</code> 组成的字符串就是该字符的哈夫曼编码。
+          </li>
+        </ol>
+        <blockquote>
+          <p>定长编码的原理是什么？</p>
+        </blockquote>
+        <p>定长编码也称为等长编码，是一种数据编码方式，其中每个字符或符号都用固定长度的二进制位来表示。</p>
+        <p><strong>定长编码计算方式：</strong></p>
+        <ol>
+          <li>确定字符集大小 $N$（需编码的不同字符总数）。</li>
+          <li>
+            计算最小编码位长 $L$：$2^L \geqslant N$
+            <ul>
+              <li>等价对数形式：$L = \lceil \log_2 N \rceil$，其中 $\lceil \cdot \rceil$ 表示向上取整函数。</li>
             </ul>
           </li>
         </ol>
 
         <h3>2.2</h3>
-        <p><strong>构造哈夫曼树及编码</strong></p>
-        <ol>
-          <li>
-            <strong>构造过程</strong>：
-            <ul>
-              <li>初始节点：其他 (10%)、有害 (15%)、厨余 (30%)、可回收 (45%)。</li>
-              <li>合并其他 (10%) + 有害 (15%) → 节点 A(25%)。</li>
-              <li>合并 A(25%) + 厨余 (30%) → 节点 B(55%)。</li>
-              <li>合并 B(55%) + 可回收 (45%) → 根节点 (100%)。</li>
-            </ul>
-          </li>
-          <li>
-            <strong>编码结果</strong>：
-            <ul>
-              <li>可回收物：<code>0</code></li>
-              <li>厨余垃圾：<code>11</code></li>
-              <li>有害垃圾：<code>101</code></li>
-              <li>其他垃圾：<code>100</code></li>
-            </ul>
-          </li>
-        </ol>
+        <blockquote>
+          <p>构造哈夫曼树及编码，写出具体的构造过程，写出每种垃圾名称的具体编码。</p>
+        </blockquote>
+        <p>垃圾类型由小到大排序：</p>
+        <table>
+          <thead>
+            <tr>
+              <th>4</th>
+              <th>3</th>
+              <th>2</th>
+              <th>1</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>其他垃圾</td>
+              <td>有害垃圾</td>
+              <td>厨余垃圾</td>
+              <td>可回收垃圾</td>
+            </tr>
+            <tr>
+              <td>10%</td>
+              <td>15%</td>
+              <td>30%</td>
+              <td>45%</td>
+            </tr>
+          </tbody>
+        </table>
+        <p><strong>构造哈夫曼树：</strong></p>
+        <img src="./assets/010.png" alt="哈夫曼树" />
+        <p><strong>根据哈夫曼树可得：</strong></p>
+        <ul>
+          <li>可回收物：<code>0</code></li>
+          <li>厨余垃圾：<code>11</code></li>
+          <li>有害垃圾：<code>101</code></li>
+          <li>其他垃圾：<code>100</code></li>
+        </ul>
 
         <h3>2.3</h3>
-        <p><strong>编码长度与节省比例计算</strong></p>
+        <blockquote>
+          <p>编码长度与节省比例计算</p>
+        </blockquote>
         <ol>
           <li>
             <strong>定长编码</strong>：
             <ul>
-              <li>4 种类型需 2 位二进制（<code>2<sup>2</sup>=4</code>），总码长 = 2 × 10000 = 20000 位（假设处理 1 万次）。</li>
+              <li>4 种类型需 2 位二进制（$2^2=4$），总码长 = $2 \times 10000 = 20000$ 位（假设处理 1 万次）。</li>
             </ul>
           </li>
           <li>
@@ -367,177 +466,136 @@
               <li>厨余垃圾：2 位 × 3000 次 = 6000 位</li>
               <li>有害垃圾：3 位 × 1500 次 = 4500 位</li>
               <li>其他垃圾：3 位 × 1000 次 = 3000 位</li>
-              <li>总码长 = 4500 + 6000 + 4500 + 3000 = 18000 位。</li>
+              <li>总码长 = $4500 + 6000 + 4500 + 3000 = 18000$ 位。</li>
             </ul>
           </li>
           <li>
             <strong>节省比例</strong>：
             <ul>
-              <li>节省位数 = 20000 - 18000 = 2000 位</li>
-              <li>节省比例 = 2000 / 20000 = 10%。</li>
+              <li>节省位数 = $20000 - 18000 = 2000$ 位</li>
+              <li>节省比例 = $2000 / 20000 = 10\%$。</li>
             </ul>
           </li>
         </ol>
 
         <h2>第三大题</h2>
-        <p>动态规划（多阶段决策问题）</p>
 
         <h3>3.1</h3>
-        <p><strong>状态转移方程</strong></p>
+        <blockquote>
+          <p>动态规划求解最短路径步骤</p>
+        </blockquote>
+        <ol>
+          <li>找出最优解的性质，并描绘其结构特征。</li>
+          <li>递归的定义最优值。</li>
+          <li>以自底向上的方式计算出最优值，构造最优解。</li>
+        </ol>
+
+        <h3>3.2</h3>
+        <blockquote>
+          <p>建立状态转移方程</p>
+        </blockquote>
         <ol>
           <li>
             <strong>定义</strong>：
             <ul>
-              <li><code>f[s]</code>：从节点 1 到节点 s 的最短距离。</li>
-              <li><code>p[s]</code>：节点 s 的前驱节点。</li>
+              <li>$s$：当前节点</li>
+              <li>$x$：节点 $s$ 的前驱节点</li>
+              <li>$c(x, s)$：$x$ 到 $s$ 的边</li>
             </ul>
           </li>
           <li>
-            <strong>转移方程</strong>：
-            <ul>
-              <li>边界：<code>f[1] = 0</code></li>
-              <li>
-                递推：<code>f[s] = min<sub>(x,s)∈E</sub> { f[x] + c<sub>x,s</sub> }</code>（x 为 s 的前驱节点）。
-              </li>
-            </ul>
+            <strong>转移方程分段函数</strong>： $$ f(s) = \begin{cases} 0 & \text{若 } s = 1 & \text{(起点)} \\ \min \big\{ f(x) + c(x, s) \big\} & \text{若 } s \neq 1 & \text{(其他节点)} \end{cases}
+            $$
           </li>
         </ol>
-
-        <h3>3.2</h3>
-        <p><strong>填表计算最优值</strong></p>
+        <blockquote>
+          <p>填表计算最优值</p>
+        </blockquote>
+        <ul>
+          <li>$f[i]$：从节点 1 到节点 $i$ 的最短距离</li>
+          <li>$p[i]$：节点 $i$ 的前驱节点</li>
+        </ul>
         <table>
           <thead>
             <tr>
-              <th>节点</th>
-              <th>f[s]</th>
-              <th>p[s]</th>
-              <th>计算过程</th>
+              <th></th>
+              <th>1</th>
+              <th>2</th>
+              <th>3</th>
+              <th>4</th>
+              <th>5</th>
+              <th>6</th>
+              <th>7</th>
+              <th>8</th>
+              <th>9</th>
+              <th>10</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>1</td>
+              <td><strong>f[i]</strong></td>
               <td>0</td>
-              <td>-</td>
-              <td>边界</td>
-            </tr>
-            <tr>
-              <td>2</td>
               <td>4</td>
-              <td>1</td>
-              <td><code>f[1] + 4</code></td>
-            </tr>
-            <tr>
-              <td>3</td>
               <td>2</td>
-              <td>1</td>
-              <td><code>f[1] + 2</code></td>
-            </tr>
-            <tr>
-              <td>4</td>
               <td>3</td>
-              <td>1</td>
-              <td><code>f[1] + 3</code></td>
-            </tr>
-            <tr>
-              <td>5</td>
               <td>8</td>
-              <td>3</td>
-              <td>min(14, 8) → 8</td>
-            </tr>
-            <tr>
               <td>6</td>
-              <td>6</td>
-              <td>4</td>
-              <td>min(13, 9, 6) → 6</td>
-            </tr>
-            <tr>
-              <td>7</td>
               <td>11</td>
-              <td>4</td>
-              <td>min(12, 11) → 11</td>
-            </tr>
-            <tr>
-              <td>8</td>
               <td>12</td>
-              <td>5</td>
-              <td>min(12, 15, 16) → 12</td>
-            </tr>
-            <tr>
-              <td>9</td>
               <td>12</td>
-              <td>6</td>
-              <td>min(16, 12, 15) → 12</td>
-            </tr>
-            <tr>
-              <td>10</td>
               <td>16</td>
+            </tr>
+            <tr>
+              <td><strong>p[i]</strong></td>
+              <td>0</td>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+              <td>3</td>
+              <td>4</td>
+              <td>4</td>
+              <td>5</td>
+              <td>6</td>
               <td>9</td>
-              <td>min(20, 16) → 16</td>
             </tr>
           </tbody>
         </table>
-
-        <h3>3.3</h3>
-        <p><strong>最优解构造</strong></p>
+        <blockquote>
+          <p>最短路径长度及最优路线</p>
+        </blockquote>
         <ol>
-          <li><strong>最短路径长度</strong>：16。</li>
-          <li>
-            <strong>路径</strong>：
-            <ul>
-              <li>10 ← 9 ← 6 ← 4 ← 1</li>
-              <li>即 <code>1 → 4 → 6 → 9 → 10</code>。</li>
-            </ul>
-          </li>
+          <li><strong>最短路径长度</strong>：$f(10) = 16$。</li>
+          <li><strong>路径</strong>：$1 \to 4 \to 6 \to 9 \to 10$。</li>
         </ol>
 
         <h2>第四大题</h2>
-        <p>分治法（大整数乘法）</p>
 
         <h3>4.1</h3>
-        <p><strong>普通乘法复杂度</strong></p>
-        <ol>
-          <li><strong>算法</strong>：每位相乘，复杂度 <code>O(n<sup>2</sup>)</code>。</li>
-        </ol>
+        <blockquote>
+          <p>分治法</p>
+        </blockquote>
+        <p>将 $X，Y$ 拆分为两半（$k = n/2 = 4$ 位）：</p>
+        <p>$A=1234$，$B=5678$，$C=5678$，$D=4321$</p>
+        <p>$X = A \times 10^k + B$，$Y = C \times 10^k + D$</p>
+        <p>$XY = AC \cdot 10^{2k} + (AD + BC) \cdot 10^k + BD$</p>
+        <p><strong>乘法次数：</strong>4 次</p>
 
         <h3>4.2</h3>
-        <p><strong>分治法原理及优化</strong></p>
-        <ol>
-          <li>
-            <strong>分治步骤</strong>：
-            <ul>
-              <li>
-                将 X, Y 拆分为两半（<code>k = n/2</code> 位）：
-                <ul>
-                  <li>
-                    <code>X = A × 10<sup>k</sup> + B</code> (A=1234, B=5678)
-                  </li>
-                  <li>
-                    <code>Y = C × 10<sup>k</sup> + D</code> (C=5678, D=4321)
-                  </li>
-                </ul>
-              </li>
-              <li>
-                原始计算：<code>XY = AC·10<sup>2k</sup> + (AD+BC)·10<sup>k</sup> + BD</code>（需 4 次乘法）。
-              </li>
-            </ul>
-          </li>
-          <li>
-            <strong>优化（减少乘法次数）</strong>：
-            <ul>
-              <li>
-                公式：<code>XY = AC·10<sup>2k</sup> + [(A+B)(C+D) - AC - BD]·10<sup>k</sup> + BD</code>
-              </li>
-              <li>乘法次数：3 次（计算 <code>AC</code>, <code>BD</code>, <code>(A+B)(C+D)</code>)。</li>
-            </ul>
-          </li>
-        </ol>
+        <blockquote>
+          <p>算法优化</p>
+        </blockquote>
+        <p><strong>优化关键点：</strong></p>
+        $$ \begin{align*} (AD + BC) &= (AC + AD + BC + BD) - AC - BD \\ &= A(C+D) + B(C+D) - AC - BD \\ &= (A+B)(C+D) - AC - BD \end{align*} $$
+        <p>$XY = AC \cdot 10^{2k} + [(A+B)(C+D) - AC - BD] \cdot 10^k + BD$</p>
+        <p><strong>乘法次数：</strong>$AC$、$BD$、$(A+B)(C+D)$</p>
 
         <h3>4.3</h3>
-        <p><strong>复杂度对比</strong></p>
+        <blockquote>
+          <p>复杂度对比</p>
+        </blockquote>
         <ol>
-          <li><strong>优化前</strong>：<code>T(n) = 4T(n/2) + O(n)</code>，解得 <code>T(n) = O(n<sup>2</sup>)</code>。</li>
-          <li><strong>优化后</strong>：<code>T(n) = 3T(n/2) + O(n)</code>，解得 <code>T(n) = O(n<sup>log<sub>2</sub>3</sup>) ≈ O(n<sup>1.585</sup>)</code>。</li>
+          <li><strong>优化前</strong>：$T(n) = 4T(n/2) + O(n)$，解得 $T(n) = O(n^2)$。</li>
+          <li><strong>优化后</strong>：$T(n) = 3T(n/2) + O(n)$，解得 $T(n) = O(n^{\log_2 3}) \approx O(n^{1.585})$。</li>
           <li><strong>结论</strong>：优化后效率显著提升（指数级降低）。</li>
         </ol>
       </div>
@@ -547,7 +605,9 @@
       // 下载 HTML 源代码功能
       function downloadSource() {
         const htmlContent = document.documentElement.outerHTML;
-        const blob = new Blob([htmlContent], { type: "text/html;charset=utf-8" });
+        const blob = new Blob([htmlContent], {
+          type: "text/html;charset=utf-8",
+        });
         const link = document.createElement("a");
         link.href = URL.createObjectURL(blob);
         link.download = "算法分析与设计 - 源代码.html";
