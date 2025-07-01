@@ -6,8 +6,6 @@ export const nav: DefaultTheme.Config['nav'] = [
 
   { text: '导航', link: '/nav/' },
 
-  { text: '技术栈', link: '/Stack/00.技术选型指南' },
-
   {
     text: '人工智能',
     items: [
@@ -49,6 +47,12 @@ export const nav: DefaultTheme.Config['nav'] = [
         items: [
           { text: 'Git', link: '/Notes/Tool/Git/00.Git-学习笔记' },
           { text: 'GitHub', link: '/Notes/Tool/GitHub/00.GitHub-基础操作' },
+        ]
+      },
+      {
+        text: '技术选型',
+        items: [
+          { text: '技术栈', link: '/Notes/Stack/00.技术选型指南' },
         ]
       },
     ]
