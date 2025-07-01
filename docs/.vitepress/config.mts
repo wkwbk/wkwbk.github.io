@@ -261,6 +261,16 @@ export default defineConfig({
         sortMenusOrderNumericallyFromLink: true,
       },
       {
+        documentRootPath: '/docs/Notes',
+        scanStartPath: 'Interview',
+        resolvePath: '/Notes/Interview/',
+        collapseDepth: 2,
+        sortMenusByName: true,
+        useTitleFromFileHeading: true,
+        useFolderTitleFromIndexFile: true,
+        sortMenusOrderNumericallyFromLink: true,
+      },
+      {
         documentRootPath: '/docs',
         scanStartPath: 'Exam',
         resolvePath: '/Exam/',

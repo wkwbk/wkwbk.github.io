@@ -6,6 +6,8 @@ export const nav: DefaultTheme.Config['nav'] = [
 
   { text: '导航', link: '/nav/' },
 
+  { text: '面试', link: '/Notes/Interview/00.面试经验' },
+
   {
     text: '学习笔记',
     items: [
