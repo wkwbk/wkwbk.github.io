@@ -7,15 +7,6 @@ export const nav: DefaultTheme.Config['nav'] = [
   { text: '导航', link: '/nav/' },
 
   {
-    text: '人工智能',
-    items: [
-      { text: 'API', link: '/Notes/AI/API/00.主流人工智能-API-使用指南' },
-      { text: 'Cursor', link: '/Notes/AI/Cursor/01.Cursor-基本使用' },
-      { text: 'MCP', link: '/Notes/AI/MCP/00.MCP-配置指南' },
-    ]
-  },
-
-  {
     text: '学习笔记',
     items: [
       {
@@ -43,8 +34,10 @@ export const nav: DefaultTheme.Config['nav'] = [
         ]
       },
       {
-        text: '协作工具',
+        text: '开发工具',
         items: [
+          { text: 'AI', link: '/Notes/Tool/AI/00.API-使用指南' },
+          { text: 'IDE', link: '/Notes/Tool/IDE/00.Android-Studio' },
           { text: 'Git', link: '/Notes/Tool/Git/00.Git-学习笔记' },
           { text: 'GitHub', link: '/Notes/Tool/GitHub/00.GitHub-基础操作' },
         ]

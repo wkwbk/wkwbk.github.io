@@ -222,16 +222,6 @@ export default defineConfig({
       },
       {
         documentRootPath: '/docs/Notes',
-        scanStartPath: 'AI',
-        resolvePath: '/Notes/AI/',
-        collapseDepth: 2,
-        sortMenusByName: true,
-        useTitleFromFileHeading: true,
-        useFolderTitleFromIndexFile: true,
-        sortMenusOrderNumericallyFromLink: true,
-      },
-      {
-        documentRootPath: '/docs/Notes',
         scanStartPath: 'Sys',
         resolvePath: '/Notes/Sys/',
         collapseDepth: 2,
