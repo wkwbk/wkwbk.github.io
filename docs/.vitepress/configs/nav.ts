@@ -45,9 +45,9 @@ export const nav: DefaultTheme.Config['nav'] = [
         ]
       },
       {
-        text: '技术选型',
+        text: '开发指南',
         items: [
-          { text: '技术栈', link: '/Notes/Stack/00.技术选型指南' },
+          { text: '开发流程', link: '/Notes/Stack/00.项目开发流程' },
         ]
       },
     ]
