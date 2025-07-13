@@ -8,9 +8,9 @@ VitePress 是一个由 Vite 和 Vue 驱动的静态站点生成器（SSG）。
 
 1. 工具安装
 
-    - 运行环境（必装）：[Node.js](https://nodejs.org/zh-cn)
+    - 运行环境（必装）：[Node.js](https://nodejs.org/zh-cn/download)
     - 代码编辑器（建议安装）：[VS Code](https://code.visualstudio.com/) 或者 [Cursor](https://cursor.com/) 等
-    - 代码管理工具（可选安装）：[Git](https://git-scm.com/)
+    - 代码管理工具（可选安装）：[Git](https://git-scm.com/downloads)
 
 2. 更换 `Node.js` 镜像源
 
