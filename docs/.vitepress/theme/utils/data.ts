@@ -6,37 +6,37 @@ export const NAV_DATA: NavData[] = [
     items: [
       {
         badge: '在线',
-        icon: 'https://grok.com/icon-512x512.png',
+        icon: 'https://favicon.im/grok.com?larger=true',
         title: 'Grok',
         link: 'https://grok.com/'
       },
       {
         badge: '在线',
-        icon: 'https://claude.ai/favicon.ico',
+        icon: 'https://favicon.im/claude.ai?larger=true',
         title: 'Claude',
         link: 'https://claude.ai/'
       },
       {
         badge: '在线',
-        icon: 'https://www.gstatic.com/lamda/images/gemini_favicon_f069958c85030456e93de685481c559f160ea06b.png',
+        icon: 'https://favicon.im/gemini.google.com?larger=true',
         title: 'Gemini',
         link: 'https://gemini.google.com/'
       },
       {
         badge: '在线',
-        icon: 'https://cdn.oaistatic.com/assets/favicon-180x180-od45eci6.webp',
+        icon: 'https://favicon.im/chatgpt.com?larger=true',
         title: 'ChatGPT',
         link: 'https://chatgpt.com/'
       },
       {
         badge: '在线',
-        icon: 'https://www.perplexity.ai/favicon.ico',
+        icon: 'https://favicon.im/www.perplexity.ai?larger=true',
         title: 'Perplexity',
         link: 'https://www.perplexity.ai/'
       },
       {
         badge: '在线',
-        icon: 'https://chat.deepseek.com/favicon.svg',
+        icon: 'https://favicon.im/chat.deepseek.com?larger=true',
         title: 'DeepSeek',
         link: 'https://chat.deepseek.com/'
       },
