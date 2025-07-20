@@ -262,8 +262,8 @@ export default defineConfig({
       },
       {
         documentRootPath: '/docs/Notes',
-        scanStartPath: 'Interview',
-        resolvePath: '/Notes/Interview/',
+        scanStartPath: 'Job',
+        resolvePath: '/Notes/Job/',
         collapseDepth: 2,
         sortMenusByName: true,
         useTitleFromFileHeading: true,
