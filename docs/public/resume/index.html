@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>李伟朋 - 个人简历</title>
+    <link rel="icon" href="/logo.png" type="image/png" />
+    <!-- 引入 Font Awesome 图标 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="button-container">
+      <button id="print-button" class="action-button" onclick="window.print()">🖨️ 打印</button>
+    </div>
+
+    <div class="page" id="page-content-to-download">
+      <div class="header">
+        <div class="personal-info">
+          <h1>李伟朋</h1>
+          <p>
+            <span class="icon"><i class="fas fa-phone"></i></span> 177******** <span class="icon" style="margin-left: 15px"><i class="fas fa-envelope"></i></span> lisir.me@qq.com | 男 | 23 岁 | 177cm | 70kg
+          </p>
+          <p>
+            <span class="icon"><i class="fab fa-github"></i></span> <a href="https://github.com/wkwbk" target="_blank">https://github.com/wkwbk</a>
+          </p>
+          <p>
+            <span class="icon"><i class="fas fa-graduation-cap"></i></span> 应届毕业生 <span class="icon" style="margin-left: 10px"><i class="fas fa-code"></i></span> Java 后端开发工程师
+          </p>
+          <p>
+            <span class="icon"><i class="fas fa-book"></i></span> 本科 <span class="icon" style="margin-left: 10px"><i class="fas fa-globe"></i></span>
+            <a href="https://lisir.me" target="_blank">https://lisir.me</a>
+          </p>
+        </div>
+        <!-- 请替换为实际的图片路径 -->
+        <img class="profile-pic" src="/avatar.png" alt="头像" />
+      </div>
+
+      <h2>教育经历</h2>
+      <div class="section-content">
+        <div class="education-item">
+          <div>
+            <h3>西安思源学院 | 计算机科学与技术 | 本科</h3>
+            <p class="details">2024-09 ~ 至今</p>
+          </div>
+          <p class="sub-details">全日制 | 电子信息工程学院 | 西安</p>
+        </div>
+      </div>
+
+      <h2>专业技能</h2>
+      <div class="section-content">
+        <ul>
+          <li>熟练使用 Java、Spring Boot、MyBatis-Plus、Redis、MySQL、JUnit</li>
+          <li>掌握 Vue 3 / React 前端开发，熟悉组件化设计与响应式编程</li>
+          <li>熟悉 Ant Design Pro / Vant UI 组件库，能快速构建管理后台与移动端页面</li>
+          <li>了解 Docker、Nginx、Git、Serverless 部署等运维与发布技能</li>
+          <li>具备 AI 应用开发能力，熟悉 Spring AI、RAG、Tool Calling、MCP 智能体架构</li>
+        </ul>
+      </div>
+
+      <h2>项目经历</h2>
+      <div class="section-content">
+        <div class="project-item">
+          <div class="project-title-row">
+            <h3>AI 恋爱大师智能体</h3>
+            <p class="time">2025-04 ~ 2025-06</p>
+          </div>
+          <p class="project-description">基于 Spring Boot 3 + Spring AI + RAG + MCP 构建的智能体系统，支持多轮对话、知识问答、工具调用和自主规划。</p>
+          <div class="project-details">
+            <ul>
+              <li>整合通义千问和 Ollama 本地大模型，支持模型自动切换与自定义 Prompt</li>
+              <li>实现 ChatMemory + 文件持久化方案，实现 AI 会话上下文记忆</li>
+              <li>集成 RAG 知识库（文档读取 + 分块切片 + PGVector 向量搜索）</li>
+              <li>开发 MCP 工具服务，如地图推荐、图片搜索、PDF 生成等</li>
+              <li>基于 ReAct 架构实现具备规划能力的分层智能体，支持任务循环执行与终止判断</li>
+              <li>前端基于 Vue3 + TypeScript + SSE 实现流式聊天 UI，支持实时思考过程展示</li>
+              <li>采用 Serverless + Docker 部署至云平台，具备扩容能力与良好可维护性</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <div class="project-title-row">
+            <h3>用户匹配与管理系统</h3>
+            <p class="time">2025-02 ~ 2025-04</p>
+          </div>
+          <p class="project-description">基于 Spring Boot + Vue3 的一站式用户管理与匹配平台，实现了用户注册登录、标签搜索、智能推荐、组队管理等功能。</p>
+          <div class="project-details">
+            <ul>
+              <li>后端使用 MyBatis-Plus 快速生成 CRUD，封装通用服务模板，提升开发效率</li>
+              <li>整合 Redis 实现分布式 Session 登录态同步，支持高并发访问</li>
+              <li>实现基于标签的用户匹配与编辑距离算法的相似度推荐逻辑</li>
+              <li>支持 EasyExcel 批量导入用户数据，结合线程池并发导入百万数据</li>
+              <li>使用 Spring Scheduler 完成缓存预热与定时任务调度</li>
+              <li>前端使用 Vue 3 + Vant UI + TypeScript，封装全局 Layout 与请求逻辑</li>
+              <li>项目使用 Docker 部署，前端部署至 Vercel，后端容器化发布上线</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

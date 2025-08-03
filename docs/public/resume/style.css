@@ -1,0 +1,217 @@
+body {
+  background: #f0f0f0;
+  margin: 0;
+  padding: 0;
+}
+
+.page {
+  background: white;
+  width: 210mm;
+  min-height: 297mm;
+  margin: 10mm auto;
+  padding: 8mm;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+}
+
+.button-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.action-button {
+  display: block;
+  padding: 8px 16px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s;
+  text-decoration: none;
+  text-align: center;
+}
+
+/* Button colors */
+#print-button {
+  background-color: #007bff;
+}
+#print-button:hover {
+  background-color: #0056b3;
+}
+
+/* 覆盖全局行距，让标题行紧凑 */
+h1,
+h2 {
+  color: #222;
+  margin-top: 0;
+  margin-bottom: 10px;
+  line-height: 1.2; /* 标题行距更小 */
+}
+
+h1 {
+  font-size: 28px;
+  font-weight: bold;
+  display: inline-block;
+  vertical-align: middle;
+  margin-bottom: 5px; /* 姓名下方间距 */
+}
+
+h2 {
+  font-size: 22px;
+  padding-bottom: 5px;
+  border-bottom: 2px solid black;
+  margin-top: 25px; /* 增加与上一节的间距 */
+  margin-bottom: 15px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 15px; /* 调整与教育经历的间距 */
+}
+
+.personal-info {
+  flex-grow: 1;
+  margin-right: 20px;
+}
+
+.personal-info p {
+  margin: 2px 0; /* 个人信息行间距更紧凑 */
+  font-size: 16px; /* 保持字号 */
+  line-height: 22px; /* 保持行距 */
+  display: flex;
+  align-items: center;
+}
+
+.personal-info p .icon {
+  width: 18px; /* 调整图标宽度 */
+  text-align: center;
+  margin-right: 6px; /* 调整图标与文字间距 */
+  color: #666;
+  font-size: 16px; /* 图标大小与字号保持一致 */
+}
+
+.personal-info a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.personal-info a:hover {
+  text-decoration: underline;
+}
+
+.profile-pic {
+  width: 80px; /* 缩小头像 */
+  height: 96px; /* 对应缩小 */
+  border-radius: 4px;
+  object-fit: cover;
+  border: 1px solid #ddd;
+  flex-shrink: 0;
+  margin-top: 5px; /* 微调头像位置 */
+}
+
+.section-content {
+  margin-left: 0;
+}
+
+.section-content ul {
+  list-style-type: disc;
+  padding-left: 20px; /* 列表左侧缩进 */
+  margin-top: 0;
+  margin-bottom: 10px; /* 列表下方间距 */
+}
+
+.section-content ul li {
+  margin-bottom: 3px; /* 列表项间距更小 */
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.education-item,
+.project-item {
+  margin-bottom: 15px; /* 减少项目/教育项之间的间距 */
+}
+
+.education-item div,
+.project-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 3px; /* 标题与内容间距 */
+}
+
+.education-item h3,
+.project-item h3 {
+  font-size: 18px; /* 标题略小于主标题 */
+  font-weight: bold;
+  margin: 0;
+  flex-grow: 1;
+  line-height: 22px;
+}
+
+.education-item p.details,
+.project-item p.time {
+  font-size: 16px;
+  color: #666;
+  margin: 0;
+  white-space: nowrap;
+  line-height: 22px;
+}
+
+.education-item p.sub-details {
+  font-size: 16px;
+  color: #666;
+  margin: 0;
+  padding-left: 0;
+  line-height: 22px;
+}
+
+.project-description {
+  font-size: 16px;
+  margin: 0px;
+  line-height: 22px;
+}
+
+.project-details ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-top: 3px;
+  margin-bottom: 0; /* 移除项目详情列表底部间距 */
+}
+
+.project-details ul li {
+  margin-bottom: 2px; /* 项目详情列表项间距更小 */
+  font-size: 16px;
+  line-height: 22px;
+}
+
+/* 打印样式 */
+@page {
+  size: A4; /* 设置打印页面为 A4 大小 */
+  margin: 0; /* 设置页边距，可根据需要调整 */
+}
+
+@media print {
+  body {
+    background: none;
+  }
+  .page {
+    margin: 0;
+    padding: 6mm;
+    box-shadow: none;
+    width: 100%;
+    min-height: 0;
+  }
+  .button-container {
+    display: none;
+  }
+}
