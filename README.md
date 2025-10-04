@@ -2,7 +2,7 @@
 
 ## 关于项目
 
-这是一个基于 VitePress 构建的个人博客网站，网址为[LI SIR - 个人博客](https://lisir.me)。
+这是一个基于 VitePress 构建的个人博客网站，网址为[LI SIR - 个人博客](https://lisir.cc)。
 
 > 你的时间花在哪里，你的收获就在哪里
 
@@ -64,8 +64,8 @@ pnpm docs:preview
 
 - 网站名称：**LI SIR**
 - 网站描述：**你的时间花在哪里，你的收获就在哪里**
-- 网站地址：**<https://lisir.me>**
-- 网站图标：**<https://lisir.me/logo.png>**
+- 网站地址：**<https://lisir.cc>**
+- 网站图标：**<https://lisir.cc/logo.png>**
 
 ## 许可证
 
