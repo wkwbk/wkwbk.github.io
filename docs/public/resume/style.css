@@ -175,6 +175,21 @@ h2 {
   line-height: 22px;
 }
 
+/* 教育经历内通用段落行距与间距（包含主修课程/个人证书等） */
+.education-item p {
+  font-size: 16px;
+  line-height: 22px;
+  margin: 0;
+}
+
+/* 教育经历中：专业/学历/学制/学院/学校地址 等次要信息 */
+.education-item .muted {
+  color: #888; /* 次文字颜色 */
+}
+
+/* 教育经历中：主修课程、个人证书 使用主体文字颜色 */
+/* 不再需要额外类，使用默认正文颜色 */
+
 .project-description {
   font-size: 16px;
   margin: 0px;
