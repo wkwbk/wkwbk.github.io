@@ -24,8 +24,10 @@ export const nav: DefaultTheme.Config['nav'] = [
       {
         text: '系统运维',
         items: [
-          { text: 'Linux', link: '/Notes/Sys/Linux/00.Linux-学习笔记' },
-          { text: 'Docker', link: '/Notes/Sys/Docker/00.Docker-安装教程' },
+          { text: 'Linux', link: '/Notes/DevOps/Linux/00.Linux-学习笔记' },
+          { text: 'Docker', link: '/Notes/DevOps/Docker/00.Docker-安装教程' },
+          { text: 'Ansible', link: '/Notes/DevOps/Ansible/00.Ansible-基础' },
+          { text: 'Network', link: '/Notes/DevOps/Network/00.Nginx-学习笔记' },
         ]
       },
       {

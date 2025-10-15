@@ -222,8 +222,8 @@ export default defineConfig({
       },
       {
         documentRootPath: '/docs/Notes',
-        scanStartPath: 'Sys',
-        resolvePath: '/Notes/Sys/',
+        scanStartPath: 'DevOps',
+        resolvePath: '/Notes/DevOps/',
         collapseDepth: 2,
         sortMenusByName: true,
         useTitleFromFileHeading: true,
