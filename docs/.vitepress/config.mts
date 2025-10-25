@@ -93,6 +93,7 @@ export default defineConfig({
   // Fav 图标
   head: [
     ['link', { rel: 'icon', href: '/logo.png' }],
+    ['script', { defer: 'true', src: 'https://umami.lisir.cc/script.js', 'data-website-id': 'e7fa385a-b86e-4108-89d9-cbe9bede5726' }],
   ],
 
   // 站点地图
