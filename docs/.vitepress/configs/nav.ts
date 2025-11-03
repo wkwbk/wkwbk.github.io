@@ -61,7 +61,6 @@ export const nav: DefaultTheme.Config['nav'] = [
     items: [
       { text: '思源', link: '/Exam/XASYU/Second/' },
       { text: '软考中级', link: '/Exam/SDE/00.软考中级-软件设计师' },
-      { text: '计算机二级', link: '/Exam/NCRE/00.计算机二级-MS-Office' },
     ]
   },
 
