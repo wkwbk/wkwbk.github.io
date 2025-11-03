@@ -252,9 +252,9 @@ export default defineConfig({
         sortMenusOrderNumericallyFromLink: true,
       },
       {
-        documentRootPath: '/docs/Notes',
+        documentRootPath: '/docs',
         scanStartPath: 'Stack',
-        resolvePath: '/Notes/Stack/',
+        resolvePath: '/Stack/',
         collapseDepth: 2,
         sortMenusByName: true,
         useTitleFromFileHeading: true,
@@ -262,9 +262,9 @@ export default defineConfig({
         sortMenusOrderNumericallyFromLink: true,
       },
       {
-        documentRootPath: '/docs/Notes',
+        documentRootPath: '/docs',
         scanStartPath: 'Job',
-        resolvePath: '/Notes/Job/',
+        resolvePath: '/Job/',
         collapseDepth: 2,
         sortMenusByName: true,
         useTitleFromFileHeading: true,

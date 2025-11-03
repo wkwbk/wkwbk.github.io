@@ -6,7 +6,9 @@ export const nav: DefaultTheme.Config['nav'] = [
 
   { text: '导航', link: '/nav/' },
 
-  { text: '求职', link: '/Notes/Job/求职扫盲/00.专业术语.md' },
+  { text: '求职', link: '/Job/求职扫盲/00.专业术语.md' },
+
+  { text: '技术栈', link: '/Stack/00.项目开发流程' },
 
   {
     text: '学习笔记',
@@ -45,12 +47,6 @@ export const nav: DefaultTheme.Config['nav'] = [
           { text: 'IDE', link: '/Notes/Tool/IDE/00.Android-Studio' },
           { text: 'Git', link: '/Notes/Tool/Git/00.Git-学习笔记' },
           { text: 'GitHub', link: '/Notes/Tool/GitHub/00.GitHub-基础操作' },
-        ]
-      },
-      {
-        text: '开发指南',
-        items: [
-          { text: '开发流程', link: '/Notes/Stack/00.项目开发流程' },
         ]
       },
     ]
