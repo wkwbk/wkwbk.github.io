@@ -59,11 +59,6 @@ $$ x = {-b \pm \sqrt{b^2-4ac} \over 2a} $$
 | $\nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} = \frac{4\pi}{c}\vec{\mathbf{j}}    \nabla \cdot \vec{\mathbf{E}} = 4 \pi \rho$ | _wha?_                                                                                 |
 
 ```mermaid
-flowchart LR
-  Start --> Stop
-```
-
-```mermaid
 graph LR
     A[Java 数据类型] --> B[原始数据类型]
     A[Java 数据类型] --> C[引用数据类型]
@@ -127,4 +122,37 @@ gantt
     section Another
         Task in Another :2014-01-12, 12d
         another task    :24d
+```
+
+```markmap
+# Root
+## Branch 1
+- Item 1
+- Item 2
+## Branch 2
+- Item A
+- Item B
+```
+
+```mermaid
+xychart-beta
+    title "Sales Revenue"
+    x-axis [jan, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec]
+    y-axis "Revenue (in $)" 4000 --> 11000
+    bar [5000, 6000, 7500, 8200, 9500, 10500, 11000, 10200, 9200, 8500, 7000, 6000]
+    line [5000, 6000, 7500, 8200, 9500, 10500, 11000, 10200, 9200, 8500, 7000, 6000]
+```
+
+```mermaid
+treemap-beta
+"Section 1"
+    "Leaf 1.1": 12
+    "Section 1.2":::class1
+      "Leaf 1.2.1": 12
+"Section 2"
+    "Leaf 2.1": 20:::class1
+    "Leaf 2.2": 25
+    "Leaf 2.3": 12
+
+classDef class1 fill:red,color:blue,stroke:#FFD600;
 ```

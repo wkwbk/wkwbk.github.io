@@ -17,7 +17,8 @@ import { NolebaseHighlightTargetedHeading } from '@nolebase/vitepress-plugin-hig
 import '@nolebase/vitepress-plugin-highlight-targeted-heading/client/style.css'
 import { NolebaseGitChangelogPlugin } from '@nolebase/vitepress-plugin-git-changelog/client'
 import '@nolebase/vitepress-plugin-git-changelog/client/style.css'
-
+import { initComponent } from 'vitepress-plugin-legend/component';
+import 'vitepress-plugin-legend/dist/index.css';
 import { useData, useRoute } from 'vitepress'
 import mediumZoom from 'medium-zoom';
 import { onMounted, watch, nextTick, h } from 'vue';
@@ -34,6 +35,7 @@ export default {
 
   enhanceApp({ app, router }) {
     // 注册组件
+    initComponent(app);
     app.use(NolebaseGitChangelogPlugin)
     app.component('confetti', confetti)
     app.component('BackToTop', BackToTop)
