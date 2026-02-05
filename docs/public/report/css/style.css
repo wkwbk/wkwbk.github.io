@@ -1,0 +1,716 @@
+/* 
+ * 述职报告样式文件
+ * 作者：李伟朋
+ * 日期：2026-02-05
+ */
+
+/* ========== 字体导入 ========== */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+
+/* ========== CSS变量 ========== */
+:root {
+    --ppt-blue: #004e82;
+    --ppt-blue-light: #0066a8;
+    --accent-green: #10b981;
+    --accent-green-light: #34d399;
+    --gray-50: #f9fafb;
+    --gray-100: #f3f4f6;
+    --gray-200: #e5e7eb;
+    --gray-300: #d1d5db;
+    --gray-400: #9ca3af;
+    --gray-500: #6b7280;
+    --gray-600: #4b5563;
+    --gray-700: #374151;
+    --gray-800: #1f2937;
+    --gray-900: #111827;
+    --white: #ffffff;
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+}
+
+/* ========== 基础样式 ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--gray-50);
+    color: var(--gray-800);
+    line-height: 1.6;
+}
+
+/* ========== 通用工具类 ========== */
+.bg-ppt-blue { background-color: var(--ppt-blue); }
+.text-ppt-blue { color: var(--ppt-blue); }
+.bg-white { background-color: var(--white); }
+.bg-gray-50 { background-color: var(--gray-50); }
+
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+
+.font-bold { font-weight: 700; }
+.font-medium { font-weight: 500; }
+
+/* ========== 装饰线 ========== */
+.accent-line {
+    width: 40px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent-green), var(--accent-green-light));
+    border-radius: 2px;
+    margin: 0 auto;
+}
+
+/* ========== 卡片悬停效果 ========== */
+.card-hover {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+}
+
+/* ========== 布局容器 ========== */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.section {
+    padding: 5rem 0;
+}
+
+/* ========== 网格布局 ========== */
+.grid {
+    display: grid;
+    gap: 2rem;
+}
+
+.grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
+
+@media (max-width: 768px) {
+    .grid-cols-2,
+    .grid-cols-3,
+    .grid-cols-4 {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ========== 封面页 ========== */
+.cover {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--white) 0%, var(--gray-50) 100%);
+    border-top: 8px solid var(--ppt-blue);
+    padding: 2rem;
+    position: relative;
+}
+
+.cover h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--ppt-blue);
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.cover .subtitle {
+    font-size: 1.5rem;
+    color: var(--gray-500);
+    margin-bottom: 2rem;
+}
+
+.cover .author-info {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.cover .author-info p {
+    color: var(--gray-600);
+    margin-bottom: 0.5rem;
+}
+
+.cover .author-info .name {
+    font-weight: 500;
+    color: var(--gray-900);
+}
+
+.cover .scroll-indicator {
+    position: absolute;
+    bottom: 3rem;
+    animation: bounce 2s infinite;
+}
+
+.cover .scroll-indicator a {
+    color: var(--ppt-blue);
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-10px); }
+    60% { transform: translateY(-5px); }
+}
+
+/* ========== 章节标题 ========== */
+.section-title {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: var(--ppt-blue);
+    border-left: 4px solid var(--ppt-blue);
+    padding-left: 1rem;
+    margin-bottom: 3rem;
+}
+
+/* ========== 模块卡片 ========== */
+.module-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: var(--shadow-sm);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.module-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.module-card.featured {
+    border-top: 4px solid var(--ppt-blue);
+}
+
+.module-card .icon {
+    font-size: 2.5rem;
+    color: var(--ppt-blue);
+    margin-bottom: 1.5rem;
+}
+
+.module-card h4 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--gray-900);
+}
+
+.module-card p {
+    font-size: 0.875rem;
+    color: var(--gray-500);
+    line-height: 1.6;
+}
+
+/* ========== 数据展示区 ========== */
+.stats-section {
+    background: linear-gradient(135deg, var(--ppt-blue) 0%, var(--ppt-blue-light) 100%);
+    color: var(--white);
+    padding: 5rem 0;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1rem;
+}
+
+.highlight-box {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 1rem;
+    margin-top: 3rem;
+}
+
+.highlight-box h4 {
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.highlight-box p {
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 0.5rem;
+}
+
+/* ========== 问题复盘区 ========== */
+.review-card {
+    padding: 2rem;
+    border-radius: 1rem;
+    text-align: left;
+}
+
+.review-card.problem {
+    background-color: #fef2f2;
+    border-left: 4px solid #f87171;
+}
+
+.review-card.solution {
+    background-color: #ecfdf5;
+    border-left: 4px solid #34d399;
+}
+
+.review-card h4 {
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.review-card.problem h4 { color: #b91c1c; }
+.review-card.solution h4 { color: #047857; }
+
+.review-card p {
+    font-size: 0.875rem;
+    color: var(--gray-600);
+    margin-bottom: 0.5rem;
+}
+
+/* ========== 时间线规划 ========== */
+.timeline {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gray-200);
+    transform: translateY(-50%);
+    z-index: 0;
+}
+
+.timeline-item {
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--gray-100);
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    flex: 1;
+}
+
+.timeline-number {
+    width: 3rem;
+    height: 3rem;
+    background: var(--white);
+    border: 4px solid var(--ppt-blue);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    font-weight: 700;
+    color: var(--ppt-blue);
+}
+
+.timeline-number.accent {
+    border-color: var(--accent-green);
+    color: var(--accent-green);
+}
+
+.timeline-item h4 {
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-item p {
+    font-size: 0.75rem;
+    color: var(--gray-500);
+}
+
+@media (max-width: 768px) {
+    .timeline {
+        flex-direction: column;
+    }
+    
+    .timeline::before {
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        width: 4px;
+        height: 100%;
+        transform: translateX(-50%);
+    }
+}
+
+/* ========== 引用区块 ========== */
+.quote-section {
+    background: var(--gray-50);
+    padding: 3rem;
+    border-radius: 1.5rem;
+    position: relative;
+}
+
+.quote-section .quote-icon {
+    font-size: 2.5rem;
+    color: var(--gray-200);
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+}
+
+.quote-section .quote-text {
+    font-size: 1.25rem;
+    font-style: italic;
+    color: var(--gray-600);
+    line-height: 1.8;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.quote-section .suggestions {
+    border-top: 1px solid var(--gray-200);
+    padding-top: 2rem;
+}
+
+.quote-section .suggestions p {
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+}
+
+/* ========== 页脚 ========== */
+.footer {
+    padding: 5rem 0;
+    background: var(--white);
+    text-align: center;
+    border-top: 1px solid var(--gray-100);
+}
+
+.footer h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--ppt-blue);
+    margin-bottom: 1rem;
+}
+
+.footer .subtitle {
+    color: var(--gray-400);
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+}
+
+.footer .author {
+    color: var(--gray-500);
+    font-weight: 500;
+}
+
+/* ========== 详情展示区（左文右图） ========== */
+.detail-section {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 3rem;
+    align-items: start;
+    margin-bottom: 4rem;
+}
+
+@media (max-width: 1024px) {
+    .detail-section {
+        grid-template-columns: 1fr;
+    }
+}
+
+.detail-content {
+    position: sticky;
+    top: 2rem;
+}
+
+.detail-content h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--ppt-blue);
+    margin-bottom: 1.5rem;
+}
+
+.detail-content ul {
+    list-style: none;
+}
+
+.detail-content ul li {
+    margin-bottom: 1rem;
+    color: var(--gray-700);
+    padding-left: 1.5rem;
+    position: relative;
+    font-size: 0.95rem;
+}
+
+.detail-content ul li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--ppt-blue);
+}
+
+.detail-content ul li strong {
+    color: var(--gray-900);
+}
+
+/* ========== 图片轮播容器 ========== */
+.screenshot-carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 1rem;
+    box-shadow: var(--shadow-lg);
+    background: var(--white);
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    position: relative;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.carousel-slide .caption {
+    background: var(--gray-50);
+    color: var(--gray-800);
+    padding: 1rem 1.5rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-top: 1px solid var(--gray-200);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.carousel-slide .caption::before {
+    content: '📸';
+}
+
+/* 轮播导航按钮 */
+.carousel-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-md);
+    z-index: 10;
+    transition: all 0.3s;
+}
+
+.carousel-nav:hover {
+    background: var(--white);
+    box-shadow: var(--shadow-lg);
+}
+
+.carousel-nav.prev { left: 1rem; }
+.carousel-nav.next { right: 1rem; }
+
+.carousel-nav i {
+    color: var(--ppt-blue);
+    font-size: 1rem;
+}
+
+/* 轮播指示器 */
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    background: var(--gray-50);
+}
+
+.carousel-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--gray-300);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.carousel-dot.active {
+    background: var(--ppt-blue);
+    transform: scale(1.2);
+}
+
+/* 单张图片展示 */
+.screenshot-single {
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    background: var(--white);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.screenshot-single:hover {
+    box-shadow: var(--shadow-xl);
+}
+
+.screenshot-single img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.screenshot-single .caption {
+    background: var(--gray-50);
+    color: var(--gray-800);
+    padding: 1rem 1.5rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-top: 1px solid var(--gray-200);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.screenshot-single .caption::before {
+    content: '📸';
+}
+
+/* ========== 灯箱效果 ========== */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    padding: 2rem;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox img {
+    max-width: 95%;
+    max-height: 95%;
+    object-fit: contain;
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow-2xl);
+}
+
+.lightbox .close-btn {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    color: var(--white);
+    font-size: 2rem;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.1);
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
+}
+
+.lightbox .close-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* ========== 功能标签 ========== */
+.feature-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.feature-tag {
+    background: rgba(0, 78, 130, 0.1);
+    color: var(--ppt-blue);
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+/* ========== 滚动动画 ========== */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ========== 响应式调整 ========== */
+@media (max-width: 768px) {
+    .cover h1 {
+        font-size: 2rem;
+    }
+    
+    .cover .subtitle {
+        font-size: 1.125rem;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+    }
+    
+    .stat-number {
+        font-size: 2.25rem;
+    }
+    
+    .section {
+        padding: 3rem 0;
+    }
+
+    .carousel-nav {
+        width: 32px;
+        height: 32px;
+    }
+}

@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-2026年度述职报告 - 李伟朋</title>
+    <meta name="description" content="李伟朋 2025-2026年度述职报告 - 技术部全栈开发实习生">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- 自定义样式 -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- 1. 封面 -->
+    <header class="cover">
+        <h1>2025-2026年度述职报告</h1>
+        <p class="subtitle">技术部 · 全栈开发实习生</p>
+        <div class="accent-line"></div>
+        <div class="author-info">
+            <p>述职人：<span class="name">李伟朋 (Li Weipeng)</span></p>
+            <p style="font-size: 0.875rem; color: var(--gray-400);">实习周期：2025.11 - 2026.01</p>
+        </div>
+        <div class="scroll-indicator">
+            <a href="#intro"><i class="fas fa-chevron-down"></i></a>
+        </div>
+    </header>
+
+    <!-- 2. 自我介绍 -->
+    <section id="intro" class="section bg-white">
+        <div class="container">
+            <div class="detail-section">
+                <div class="detail-content fade-in">
+                    <h2 class="section-title">自我介绍与实习概况</h2>
+                    <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem;">李伟朋 | 全栈开发实习生</h3>
+                    <p style="color: var(--gray-600); line-height: 1.8; margin-bottom: 1.5rem;">
+                        在为期三个月的实习过程中，我深入参与了公司核心业务系统的开发。作为技术部的一员，我负责跨越三个核心中心、共计10个功能页面的前端界面构建与后端逻辑实现。
+                    </p>
+                    <ul style="list-style: none;">
+                        <li style="display: flex; align-items: center; margin-bottom: 0.75rem; color: var(--gray-700);">
+                            <i class="fas fa-check-circle text-ppt-blue" style="margin-right: 0.75rem;"></i>
+                            快速融入团队，适应敏捷开发节奏
+                        </li>
+                        <li style="display: flex; align-items: center; margin-bottom: 0.75rem; color: var(--gray-700);">
+                            <i class="fas fa-check-circle text-ppt-blue" style="margin-right: 0.75rem;"></i>
+                            承接从底层数据库设计到前端交互的完整链路
+                        </li>
+                        <li style="display: flex; align-items: center; margin-bottom: 0.75rem; color: var(--gray-700);">
+                            <i class="fas fa-check-circle text-ppt-blue" style="margin-right: 0.75rem;"></i>
+                            参与并主导了多项核心业务逻辑的重构与优化
+                        </li>
+                    </ul>
+                </div>
+                <div class="screenshot-single fade-in">
+                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80" alt="工作站">
+                    <div class="caption">技术开发工作环境</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. 业务模块 -->
+    <section class="section bg-gray-50">
+        <div class="container">
+            <h2 class="section-title fade-in">实习期主要负责业务模块</h2>
+            <div class="grid grid-cols-3" style="gap: 2rem;">
+                <div class="module-card fade-in">
+                    <i class="fas fa-shopping-cart icon"></i>
+                    <h4>产品中心</h4>
+                    <p>负责产品服务标准化管理，优化产品详情展示与查询性能。</p>
+                    <div class="feature-tags">
+                        <span class="feature-tag">产品服务</span>
+                        <span class="feature-tag">套餐管理</span>
+                    </div>
+                </div>
+                <div class="module-card featured fade-in">
+                    <i class="fas fa-chart-line icon"></i>
+                    <h4>销售中心</h4>
+                    <p>贯穿线索、商机、订单到收款的全生命周期数字化管理系统。</p>
+                    <div class="feature-tags">
+                        <span class="feature-tag">线索管理</span>
+                        <span class="feature-tag">商机管理</span>
+                        <span class="feature-tag">订单收款</span>
+                    </div>
+                </div>
+                <div class="module-card fade-in">
+                    <i class="fas fa-database icon"></i>
+                    <h4>运营中心</h4>
+                    <p>多平台数据集成与处理，实现自动化报表与门店数据分析。</p>
+                    <div class="feature-tags">
+                        <span class="feature-tag">数据导入</span>
+                        <span class="feature-tag">报表分析</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. 产品中心详情 -->
+    <section class="section bg-white">
+        <div class="container">
+            <h2 class="section-title fade-in">产品中心：产品服务管理</h2>
+            <div class="detail-section fade-in">
+                <div class="detail-content">
+                    <h3>产品服务标准化</h3>
+                    <ul>
+                        <li><strong>服务套餐管理：</strong>支持多种套餐类型的创建与维护</li>
+                        <li><strong>价格体系：</strong>灵活的价格配置与销量统计</li>
+                        <li><strong>产品分类：</strong>多维度的产品筛选与检索</li>
+                        <li><strong>上下架管理：</strong>一键控制产品展示状态</li>
+                    </ul>
+                </div>
+                <div class="screenshot-single">
+                    <img src="img/PixPin_2026-02-05_15-27-13.png" alt="产品服务管理">
+                    <div class="caption">产品服务管理界面</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. 销售中心详情 -->
+    <section class="section bg-gray-50">
+        <div class="container">
+            <h2 class="section-title fade-in">销售中心：全链路业务闭环</h2>
+            
+            <!-- 线索与商机 -->
+            <div class="detail-section fade-in" style="margin-bottom: 4rem;">
+                <div class="detail-content">
+                    <h3>线索 → 商机管理</h3>
+                    <ul>
+                        <li><strong>线索管理：</strong>支持公海池认领、释放及转商机逻辑</li>
+                        <li><strong>商机跟进：</strong>意向客户签约预估与跟踪</li>
+                        <li><strong>数据看板：</strong>部门维度的业绩排行榜</li>
+                        <li><strong>多维筛选：</strong>按来源、阶段、产品等精准检索</li>
+                    </ul>
+                </div>
+                <!-- 多图轮播 -->
+                <div class="screenshot-carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-slide">
+                            <img src="img/PixPin_2026-02-05_15-27-30.png" alt="线索管理">
+                            <div class="caption">线索管理与排行榜</div>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="img/PixPin_2026-02-05_15-27-36.png" alt="商机管理">
+                            <div class="caption">商机管理与签约预估</div>
+                        </div>
+                    </div>
+                    <button class="carousel-nav prev"><i class="fas fa-chevron-left"></i></button>
+                    <button class="carousel-nav next"><i class="fas fa-chevron-right"></i></button>
+                    <div class="carousel-dots">
+                        <span class="carousel-dot active"></span>
+                        <span class="carousel-dot"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 客户与门店 -->
+            <div class="detail-section fade-in" style="margin-bottom: 4rem;">
+                <div class="detail-content">
+                    <h3>客户/门店管理</h3>
+                    <ul>
+                        <li><strong>客户档案：</strong>建立统一的伙伴关系模型</li>
+                        <li><strong>RFM分层：</strong>客户价值分析与分级</li>
+                        <li><strong>状态追踪：</strong>运营中、待续费等状态管理</li>
+                        <li><strong>平台绑定：</strong>美团、抖音等多平台关联</li>
+                    </ul>
+                </div>
+                <div class="screenshot-single">
+                    <img src="img/PixPin_2026-02-05_15-27-44.png" alt="客户管理">
+                    <div class="caption">客户管理与RFM分析</div>
+                </div>
+            </div>
+
+            <!-- 订单与收款 -->
+            <div class="detail-section fade-in" style="margin-bottom: 4rem;">
+                <div class="detail-content">
+                    <h3>订单/收款管理</h3>
+                    <ul>
+                        <li><strong>订单管理：</strong>实现自动化的欠款计算</li>
+                        <li><strong>收款记录：</strong>多类型收款与开票状态追踪</li>
+                        <li><strong>并发安全：</strong>悲观锁机制防止重复收款</li>
+                        <li><strong>数据导出：</strong>支持Excel批量导出</li>
+                    </ul>
+                </div>
+                <!-- 多图轮播 -->
+                <div class="screenshot-carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-slide">
+                            <img src="img/PixPin_2026-02-05_15-27-50.png" alt="订单管理">
+                            <div class="caption">订单管理与欠款追踪</div>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="img/PixPin_2026-02-05_15-27-55.png" alt="收款管理">
+                            <div class="caption">收款管理界面</div>
+                        </div>
+                    </div>
+                    <button class="carousel-nav prev"><i class="fas fa-chevron-left"></i></button>
+                    <button class="carousel-nav next"><i class="fas fa-chevron-right"></i></button>
+                    <div class="carousel-dots">
+                        <span class="carousel-dot active"></span>
+                        <span class="carousel-dot"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 拜访记录 -->
+            <div class="detail-section fade-in">
+                <div class="detail-content">
+                    <h3>拜访记录管理</h3>
+                    <ul>
+                        <li><strong>拜访计划：</strong>支持计划制定与执行跟踪</li>
+                        <li><strong>地图选点：</strong>集成地图API进行距离校验</li>
+                        <li><strong>多阶段记录：</strong>拜访前、中、后全流程记录</li>
+                        <li><strong>业绩排行：</strong>部门维度拜访次数统计</li>
+                    </ul>
+                </div>
+                <div class="screenshot-single">
+                    <img src="img/PixPin_2026-02-05_15-28-00.png" alt="拜访记录">
+                    <div class="caption">拜访记录与排行榜</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. 运营中心详情 -->
+    <section class="section bg-white">
+        <div class="container">
+            <h2 class="section-title fade-in">运营中心：多源数据集成中心</h2>
+            
+            <!-- 多图轮播：门店数据、平台数据源、数据报表 -->
+            <div class="detail-section fade-in">
+                <div class="detail-content">
+                    <h3>数据集成与分析</h3>
+                    <ul>
+                        <li><strong>门店数据：</strong>状态监控、达标分析、趋势图表</li>
+                        <li><strong>平台导入：</strong>美团、抖音等20+平台数据导入</li>
+                        <li><strong>异步处理：</strong>大文件队列排队机制</li>
+                        <li><strong>数据报表：</strong>成交统计、核销分析、人员效能</li>
+                        <li><strong>代运营概况：</strong>合作概况与诊断报告</li>
+                    </ul>
+                </div>
+                <!-- 3图轮播 -->
+                <div class="screenshot-carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-slide">
+                            <img src="img/PixPin_2026-02-05_15-28-09.png" alt="门店数据">
+                            <div class="caption">门店数据与达标分析</div>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="img/PixPin_2026-02-05_15-28-15.png" alt="平台数据源">
+                            <div class="caption">多平台数据导入</div>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="img/PixPin_2026-02-05_15-28-23.png" alt="数据报表">
+                            <div class="caption">数据报表与效能分析</div>
+                        </div>
+                    </div>
+                    <button class="carousel-nav prev"><i class="fas fa-chevron-left"></i></button>
+                    <button class="carousel-nav next"><i class="fas fa-chevron-right"></i></button>
+                    <div class="carousel-dots">
+                        <span class="carousel-dot active"></span>
+                        <span class="carousel-dot"></span>
+                        <span class="carousel-dot"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. 数据体量 -->
+    <section class="stats-section">
+        <div class="container">
+            <h2 style="font-size: 1.875rem; font-weight: 700; margin-bottom: 4rem; text-align: center;" class="fade-in">核心工作产出与数据体现</h2>
+            <div class="grid grid-cols-3" style="gap: 2rem; text-align: center;">
+                <div class="stat-item fade-in">
+                    <div class="stat-number">200+</div>
+                    <p class="stat-label">Git 提交记录 (Commit)</p>
+                </div>
+                <div class="stat-item fade-in">
+                    <div class="stat-number">10+</div>
+                    <p class="stat-label">核心业务功能页面</p>
+                </div>
+                <div class="stat-item fade-in">
+                    <div class="stat-number">100%</div>
+                    <p class="stat-label">分配任务按期完成率</p>
+                </div>
+            </div>
+            <div class="highlight-box fade-in">
+                <h4>技术亮点总结：</h4>
+                <p>1. 性能优化：引入线程池与RabbitMQ，将海量平台数据导入的平均处理耗时降低了 60%。</p>
+                <p>2. 交互提升：为全站选择器增加远程搜索与滚动加载功能，支撑万级基础数据的极速检索。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. 问题复盘 -->
+    <section class="section bg-white">
+        <div class="container">
+            <h2 class="section-title fade-in" style="text-align: center; border: none; padding: 0;">工作中存在的问题与复盘</h2>
+            <div class="grid grid-cols-2" style="gap: 2rem; margin-top: 3rem;">
+                <div class="review-card problem fade-in">
+                    <h4>发现的问题</h4>
+                    <p>● 业务耦合度：初期开发中，部分选择组件与特定模块耦合较紧，导致多处重复代码。</p>
+                    <p>● 数据兼容性：面对不同平台的Excel格式，解析逻辑初期较为脆弱。</p>
+                </div>
+                <div class="review-card solution fade-in">
+                    <h4>改进措施</h4>
+                    <p>● 抽象与解耦：抽离出通用的 ObjectSelector 与 usePageRefresh 组合式函数。</p>
+                    <p>● 容错增强：建立 AbstractPlatformDataImporter 模板，引入表头校验机制。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. 2026 规划 -->
+    <section class="section bg-gray-50">
+        <div class="container">
+            <h2 class="section-title fade-in">2026年度工作展望与规划</h2>
+            <div class="timeline fade-in">
+                <div class="timeline-item">
+                    <div class="timeline-number">1</div>
+                    <h4>夯实基础</h4>
+                    <p>持续深度优化现有模块，完善数据报表的精细度。</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-number accent">2</div>
+                    <h4>提效赋能</h4>
+                    <p>研究更高效的数据可视化方案，提升决策支持能力。</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-number">3</div>
+                    <h4>跨部协作</h4>
+                    <p>主动了解运营部门需求，将技术触角延伸至业务前线。</p>
+                </div>
+            </div>
+            <p style="margin-top: 4rem; text-align: center; font-size: 1.5rem; font-weight: 700; color: var(--ppt-blue);" class="fade-in">
+                目标：成为能够独当一面的全栈业务专家
+            </p>
+        </div>
+    </section>
+
+    <!-- 10. 寄语与结尾 -->
+    <section class="section bg-white">
+        <div class="container" style="max-width: 800px;">
+            <div class="quote-section fade-in">
+                <i class="fas fa-quote-left quote-icon"></i>
+                <p class="quote-text">
+                    "在技术部的三个月，我感受到公司对数据精准度的极致追求和对技术的严谨态度。作为实习生，我不仅获得了技术上的锤炼，更重要的是建立了'业务优先'的思维方式。"
+                </p>
+                <div class="suggestions">
+                    <p><strong>个人/部门建议：</strong>建议定期组织跨组技术分享，沉淀通用组件库以提升整体开发效率。</p>
+                    <p><strong>对公司建议：</strong>运营中心的数据价值极大，建议未来可加强基于AI的数据分析能力。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <h2 class="fade-in">谢谢聆听</h2>
+        <p class="subtitle fade-in">请各位领导指正</p>
+        <div class="author fade-in">李伟朋 | 2026.02.05</div>
+    </footer>
+
+    <!-- 自定义脚本 -->
+    <script src="js/main.js"></script>
+</body>
+</html>
