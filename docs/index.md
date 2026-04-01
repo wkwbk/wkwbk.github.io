@@ -109,9 +109,6 @@ import MFriends from './home/MFriends.vue'
 
 <div class="spotify-grid">
   <div class="spotify-item">
-    <iframe src="https://spotify.libk.top/embed/playlist/5RlAHB43BgBxAOKruTWkYm?utm_source=generator&theme=0" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-  </div>
-  <div class="spotify-item">
     <iframe src="https://spotify.libk.top/embed/playlist/14xDEqPsOMWjY4hUJtDihj?utm_source=generator&theme=0" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
   </div>
   <div class="spotify-item">
