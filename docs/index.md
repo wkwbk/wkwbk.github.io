@@ -43,7 +43,7 @@ import MFriends from './home/MFriends.vue'
 
 ::: details 申请友链
 
-### 申请前请先添加本站
+## 申请前请先添加本站
 
 > 申请前请先添加本站！！！
 

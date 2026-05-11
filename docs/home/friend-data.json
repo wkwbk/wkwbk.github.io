@@ -12,12 +12,6 @@
     "icon": "https://npm.elemecdn.com/akilar-candyassets/image/siteicon/favicon.png"
   },
   {
-    "title": "山暮云秋",
-    "desc": "千里关山边草暮，一星烽火朔云秋",
-    "link": "https://blog.muyun.space",
-    "icon": "https://jsd.vxo.im/gh/ShanMuYunQiu/Image/info/user.jpg"
-  },
-  {
     "title": "伊奥's 教程集",
     "desc": "青，取之于蓝，而青于蓝；冰，水为之，而寒于水。 --荀子〔劝学〕",
     "link": "https://yiov.top",
@@ -54,12 +48,6 @@
     "icon": "https://iflux.art/favicon.ico"
   },
   {
-    "title": "lllidan",
-    "desc": "你的时间花在哪里，你的收获就在哪里",
-    "link": "https://8520123.xyz",
-    "icon": "https://8520123.xyz/logo.png"
-  },
-  {
     "title": "XING",
     "desc": "永远太久了   晚上一起吃顿饭",
     "link": "https://20021202.xyz",
@@ -69,12 +57,6 @@
     "title": "龚东海的博客",
     "desc": "真诚记录，生活值得",
     "link": "https://mgrowup.com",
-    "icon": "https://gdhblog.com/avatar.png"
-  },
-  {
-    "title": "时光驿站",
-    "desc": "一个专注于全栈开发与前沿技术的个人知识库",
-    "link": "https://kandu.cxcare.top/",
-    "icon": "https://kandu.cxcare.top/logo.svg"
+    "icon": "https://mgrowup.com/avatar.webp"
   }
 ]
