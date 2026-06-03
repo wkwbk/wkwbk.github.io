@@ -65,7 +65,7 @@ export const nav: DefaultTheme.Config['nav'] = [
     items: [
       { text: '介绍', link: '/GFW/介绍/00.科学上网工具介绍' },
       { text: '搭建', link: '/GFW/搭建/00.节点搭建教程' },
-      { text: '使用', link: '/GFW/使用/00.v2rayN-使用教程' }
+      { text: '使用', link: '/GFW/使用/00.v2rayN&G-使用教程' }
     ]
   },
 
