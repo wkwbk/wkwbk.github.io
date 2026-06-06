@@ -33,7 +33,7 @@ export default {
     return h(MyLayout)
   },
 
-  enhanceApp({ app, router }) {
+  enhanceApp({ app, router }: any) {
     // 注册组件
     initComponent(app);
     app.use(NolebaseGitChangelogPlugin)
@@ -90,8 +90,21 @@ export default {
     );
 
     const initZoom = () => {
-      // mediumZoom('[data-zoomable]', { background: 'var(--vp-c-bg)' }); // 默认
-      mediumZoom('.main img', { background: 'var(--vp-c-bg)' }); // 不显式添加{data-zoomable}的情况下为所有图像启用此功能
+      if (typeof window === 'undefined') return;
+      const images = Array.from(document.querySelectorAll<HTMLElement>('.main img')).filter(img => {
+        // 排除链接包围的图片（如徽章图标、下载按钮）
+        if (img.closest('a')) return false;
+        // 排除贡献者头像和提交日志相关图片
+        if (
+          img.closest('[class*="avatar"]') ||
+          img.closest('[class*="changelog"]') ||
+          img.closest('[class*="contributor"]')
+        ) {
+          return false;
+        }
+        return true;
+      });
+      mediumZoom(images, { background: 'var(--vp-c-bg)' });
     };
     onMounted(() => {
       initZoom();
