@@ -49,6 +49,12 @@ export const nav: DefaultTheme.Config['nav'] = [
           { text: 'GitHub', link: '/Notes/Tool/GitHub/00.GitHub-基础操作' },
         ]
       },
+      {
+        text: '办公软件',
+        items: [
+          { text: 'Office', link: '/Notes/Tool/Office/00.Word中英文空格批量删除' },
+        ]
+      },
     ]
   },
 
