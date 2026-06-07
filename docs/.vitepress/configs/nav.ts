@@ -38,6 +38,7 @@ export const nav: DefaultTheme.Config['nav'] = [
           { text: 'MySQL', link: '/Notes/DB/MySQL/00.MySQL-学习笔记' },
           { text: 'Hadoop', link: '/Notes/DB/Hadoop/00.虚拟机中搭建-Hadoop-集群' },
           { text: 'Redis', link: '/Notes/DB/Redis/00.Redis-学习笔记' },
+          { text: 'PostgreSQL', link: '/Notes/DB/PostgreSQL/00.PostgreSQL-学习笔记' },
         ]
       },
       {
